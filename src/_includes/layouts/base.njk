@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title or "lucid vagary" }}</title>
+  <meta name="description" content="{{ description or 'whims, clearly seen' }}">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo-link">lucid vagary</a>
+      <nav class="site-nav">
+        <a href="/">home</a>
+        <a href="/posts/">posts</a>
+        <a href="/tags/">tags</a>
+        <a href="/about/">about</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; {{ currentYear }} lucid vagary</p>
+  </footer>
+</body>
+</html>

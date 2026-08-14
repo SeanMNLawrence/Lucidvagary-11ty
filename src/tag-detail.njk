@@ -1,0 +1,30 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: collections.tagList
+  size: 1
+  alias: tag
+permalink: "/tags/{{ tag | slugify }}/"
+eleventyComputed:
+  title: "{{ tag }} - lucid vagary"
+---
+<section class="posts-section">
+  <h1 class="posts-title">{{ tag }}</h1>
+  <div class="posts-list">
+    {% for post in collections.posts %}
+      {% if tag in post.data.tags %}
+      <a href="{{ post.url }}" class="post-card">
+        {% if post.data.image %}
+        <div class="post-image">
+          <img src="{{ post.data.image }}" alt="{{ post.data.description or post.data.title }}" loading="lazy">
+        </div>
+        {% endif %}
+        <div class="post-card-body">
+          <h3>{{ post.data.title }}</h3>
+          <p class="post-date">{{ post.date | readableDate }}</p>
+        </div>
+      </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>

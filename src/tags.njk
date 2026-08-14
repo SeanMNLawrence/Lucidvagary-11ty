@@ -1,0 +1,13 @@
+---
+layout: layouts/base.njk
+title: "tags - lucid vagary"
+permalink: /tags/
+---
+<section class="posts-section">
+  <h1 class="posts-title">tags</h1>
+  <div class="tag-list">
+    {% for tag in collections.tagList %}
+    <a href="/tags/{{ tag | slugify }}/" class="post-tag">{{ tag }}</a>
+    {% endfor %}
+  </div>
+</section>

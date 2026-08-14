@@ -1,0 +1,40 @@
+---
+layout: layouts/base.njk
+title: "lucid vagary"
+---
+<section class="hero-section">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1 class="hero-title">
+        <span class="hero-title-line1">lucid vagary</span>
+        <span class="hero-title-line2">whims, clearly seen</span>
+      </h1>
+      <p class="hero-subtitle">&gt; These fragments of my mind about a little thing here and there pulled together for your...well, you'll figure it out.</p>
+    </div>
+    <div class="hero-image">
+      <img src="/images/hero-tower.jpg" alt="lucid vagary" class="hero-logo">
+    </div>
+  </div>
+</section>
+
+<section class="posts-section">
+  <h2 class="posts-title">recent posts</h2>
+  <div class="posts-list">
+    {% for post in collections.posts %}
+    <a href="{{ post.url }}" class="post-card">
+      {% if post.data.image %}
+      <div class="post-image">
+        <img src="{{ post.data.image }}" alt="{{ post.data.description or post.data.title }}" loading="lazy">
+      </div>
+      {% endif %}
+      <div class="post-card-body">
+        <h3>{{ post.data.title }}</h3>
+        <p class="post-date">{{ post.date | readableDate }}</p>
+        {% if post.data.description %}
+        <p class="post-excerpt">{{ post.data.description }}</p>
+        {% endif %}
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,28 @@
+---
+layout: layouts/base.njk
+---
+<article class="post-single">
+  <header class="post-header">
+    <h1>{{ title }}</h1>
+    <p class="post-date">{{ page.date | readableDate }}</p>
+    {% if tags %}
+    <div class="post-tags">
+      {% for tag in tags %}
+        {% if tag != "poem" and tag != "fragment" and tag != "artwork" %}
+          <a href="/tags/{{ tag | slugify }}/" class="post-tag">{{ tag }}</a>
+        {% endif %}
+      {% endfor %}
+    </div>
+    {% endif %}
+  </header>
+
+  {% if image %}
+  <div class="post-image">
+    <img src="{{ image }}" alt="{{ description or title }}">
+  </div>
+  {% endif %}
+
+  <div class="post-content">
+    {{ content | safe }}
+  </div>
+</article>
