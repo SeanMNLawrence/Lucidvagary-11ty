@@ -194,6 +194,33 @@ a {
   .home-grid {
     grid-template-columns: 1fr;
   }
+  .home-hero { order: 1; }
+  .home-recent { order: 2; }
+  .home-bytag { order: 3; }
+  .home-recent {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .recent-card {
+    flex: 1 1 140px;
+    min-width: 140px;
+  }
+  .bytag-card {
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-grid {
+    padding: 1.5rem 1rem;
+  }
+  .home-hero h2 {
+    font-size: 1.5rem;
+  }
+  .recent-card {
+    flex: 1 1 100%;
+  }
 }
 
 /* Posts listing page (separate from homepage) */
