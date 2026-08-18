@@ -37,6 +37,22 @@ module.exports = function (eleventyConfig) {
     return [...tagSet].sort();
   });
 
+  // One highlight per tag: the newest post carrying each tag.
+  // Used for the homepage's "most interesting from each tag" column.
+  eleventyConfig.addCollection("highlightsByTag", function (collectionApi) {
+    const posts = collectionApi
+      .getFilteredByGlob("src/posts/**/*.md")
+      .sort((a, b) => b.date - a.date);
+    const tagSet = new Set();
+    posts.forEach((item) => (item.data.tags || []).forEach((t) => tagSet.add(t)));
+    const highlights = [];
+    [...tagSet].sort().forEach((tag) => {
+      const match = posts.find((p) => (p.data.tags || []).includes(tag));
+      if (match) highlights.push({ tag, post: match });
+    });
+    return highlights;
+  });
+
   // Human-readable date filter
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     return new Date(dateObj).toLocaleDateString("en-US", {

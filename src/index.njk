@@ -2,39 +2,66 @@
 layout: layouts/base.njk
 title: "lucid vagary"
 ---
-<section class="hero-section">
-  <div class="hero-content">
-    <div class="hero-text">
-      <h1 class="hero-title">
-        <span class="hero-title-line1">lucid vagary</span>
-        <span class="hero-title-line2">whims, clearly seen</span>
-      </h1>
-      <p class="hero-subtitle">&gt; These fragments of my mind about a little thing here and there pulled together for your...well, you'll figure it out.</p>
-    </div>
-    <div class="hero-image">
-      <img src="/images/hero-tower.jpg" alt="lucid vagary" class="hero-logo">
-    </div>
-  </div>
-</section>
+<div class="home-grid">
 
-<section class="posts-section">
-  <h2 class="posts-title">recent posts</h2>
-  <div class="posts-list">
-    {% for post in collections.posts %}
-    <a href="{{ post.url }}" class="post-card">
+  {# LEFT: recent posts feed (skips the hero, which is the newest) #}
+  <aside class="home-recent">
+    {% for post in collections.posts.slice(1, 4) %}
+    <a href="{{ post.url }}" class="recent-card">
       {% if post.data.image %}
-      <div class="post-image">
+      <div class="recent-image">
         <img src="{{ post.data.image }}" alt="{{ post.data.description or post.data.title }}" loading="lazy">
       </div>
       {% endif %}
-      <div class="post-card-body">
-        <h3>{{ post.data.title }}</h3>
-        <p class="post-date">{{ post.date | readableDate }}</p>
-        {% if post.data.description %}
-        <p class="post-excerpt">{{ post.data.description }}</p>
-        {% endif %}
+      {% if post.data.tags %}
+      <div class="post-tags-mini">
+        {% for tag in post.data.tags %}
+        <span class="post-tag-mini">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+      <h4>{{ post.data.title }}</h4>
+      <p class="post-date">{{ post.date | readableDate }}</p>
+    </a>
+    {% endfor %}
+  </aside>
+
+  {# CENTER: hero - the single newest post #}
+  {% set hero = collections.posts | first %}
+  <section class="home-hero">
+    {% if hero.data.image %}
+    <a href="{{ hero.url }}" class="hero-featured-image">
+      <img src="{{ hero.data.image }}" alt="{{ hero.data.description or hero.data.title }}">
+    </a>
+    {% endif %}
+    {% if hero.data.tags %}
+    <div class="post-tags-mini">
+      {% for tag in hero.data.tags %}
+      <span class="post-tag-mini">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+    <h2><a href="{{ hero.url }}">{{ hero.data.title }}</a></h2>
+    {% if hero.data.description %}
+    <p class="hero-featured-excerpt">{{ hero.data.description }}</p>
+    {% endif %}
+  </section>
+
+  {# RIGHT: one highlight per tag #}
+  <aside class="home-bytag">
+    {% for item in collections.highlightsByTag %}
+    <a href="{{ item.post.url }}" class="bytag-card">
+      {% if item.post.data.image %}
+      <div class="bytag-image">
+        <img src="{{ item.post.data.image }}" alt="{{ item.post.data.description or item.post.data.title }}" loading="lazy">
+      </div>
+      {% endif %}
+      <div class="bytag-body">
+        <span class="post-tag-mini">{{ item.tag }}</span>
+        <p class="bytag-excerpt">{{ item.post.data.description or item.post.data.title }}</p>
       </div>
     </a>
     {% endfor %}
-  </div>
-</section>
+  </aside>
+
+</div>
