@@ -4,9 +4,11 @@ title: "lucid vagary"
 ---
 <div class="home-grid">
 
-  {# LEFT: recent posts feed (skips the hero, which is the newest) #}
+  {% set hero = collections.featuredPost | first %}
+
+  {# LEFT: recent posts feed, hero already excluded in the collection itself #}
   <aside class="home-recent">
-    {% for post in collections.posts.slice(1, 4) %}
+    {% for post in collections.recentPosts %}
     <a href="{{ post.url }}" class="recent-card">
       {% if post.data.image %}
       <div class="recent-image">
@@ -26,8 +28,7 @@ title: "lucid vagary"
     {% endfor %}
   </aside>
 
-  {# CENTER: hero - the single newest post #}
-  {% set hero = collections.posts | first %}
+  {# CENTER: the single assigned/featured post - nothing else lives here #}
   <section class="home-hero">
     {% if hero.data.image %}
     <a href="{{ hero.url }}" class="hero-featured-image">
@@ -47,7 +48,7 @@ title: "lucid vagary"
     {% endif %}
   </section>
 
-  {# RIGHT: one highlight per tag #}
+  {# RIGHT: one highlight per tag, never repeating the hero or each other #}
   <aside class="home-bytag">
     {% for item in collections.highlightsByTag %}
     <a href="{{ item.post.url }}" class="bytag-card">

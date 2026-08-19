@@ -37,20 +37,53 @@ module.exports = function (eleventyConfig) {
     return [...tagSet].sort();
   });
 
-  // One highlight per tag: the newest post carrying each tag.
-  // Used for the homepage's "most interesting from each tag" column.
-  eleventyConfig.addCollection("highlightsByTag", function (collectionApi) {
+  // Shared homepage layout logic: figures out the hero, the next 3
+  // "recent" posts, and one highlight per tag - making sure none of the
+  // three sections repeat the same post.
+  function computeHomepageLayout(collectionApi) {
     const posts = collectionApi
       .getFilteredByGlob("src/posts/**/*.md")
       .sort((a, b) => b.date - a.date);
+    const hero = posts.find((p) => p.data.featured === true) || posts[0];
+    const used = new Set(hero ? [hero.url] : []);
+
+    const recent = posts.filter((p) => !used.has(p.url)).slice(0, 3);
+    recent.forEach((p) => used.add(p.url));
+
     const tagSet = new Set();
     posts.forEach((item) => (item.data.tags || []).forEach((t) => tagSet.add(t)));
     const highlights = [];
     [...tagSet].sort().forEach((tag) => {
-      const match = posts.find((p) => (p.data.tags || []).includes(tag));
-      if (match) highlights.push({ tag, post: match });
+      const candidates = posts.filter((p) => (p.data.tags || []).includes(tag));
+      const fresh = candidates.find((p) => !used.has(p.url));
+      // If every post carrying this tag is already shown elsewhere on the
+      // homepage, skip the tag rather than showing the same post again.
+      if (!fresh) return;
+      highlights.push({ tag, post: fresh });
+      used.add(fresh.url);
     });
-    return highlights;
+
+    return { hero, recent, highlights };
+  }
+
+  // One highlight per tag: the newest post carrying each tag, preferring
+  // posts not already shown as the hero or in the recent feed, so the
+  // homepage never repeats the same piece across its three sections.
+  eleventyConfig.addCollection("highlightsByTag", function (collectionApi) {
+    return computeHomepageLayout(collectionApi).highlights;
+  });
+
+  // Featured post for the homepage hero: the post with `featured: true`
+  // in its front matter, if one is set; otherwise the newest post.
+  eleventyConfig.addCollection("featuredPost", function (collectionApi) {
+    const hero = computeHomepageLayout(collectionApi).hero;
+    return hero ? [hero] : [];
+  });
+
+  // Recent posts feed: the 3 posts shown in the homepage's left column,
+  // already excluding the hero and never repeated in the tag column.
+  eleventyConfig.addCollection("recentPosts", function (collectionApi) {
+    return computeHomepageLayout(collectionApi).recent;
   });
 
   // Human-readable date filter
