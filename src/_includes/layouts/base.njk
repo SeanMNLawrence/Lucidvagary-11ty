@@ -21,15 +21,22 @@
     <div class="header-inner">
       <a href="/" class="logo-link">lucid vagary</a>
       <nav class="site-nav">
-        <a href="/">home</a>
-        <a href="/posts/">posts</a>
-        <a href="/tags/">tags</a>
-        <a href="/about/">about</a>
+        <div class="site-nav-links" id="site-nav-links">
+          <a href="/">home</a>
+          <a href="/posts/">posts</a>
+          <a href="/tags/">tags</a>
+          <a href="/about/">about</a>
+        </div>
         <button class="search-toggle" id="search-toggle" aria-label="Search" type="button">
           &#128269;
         </button>
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark theme" type="button">
           <span id="theme-icon">&#9789;</span>
+        </button>
+        <button class="hamburger-toggle" id="hamburger-toggle" aria-label="Menu" type="button">
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
       </nav>
     </div>
@@ -50,6 +57,16 @@
   </div>
 
   <script>
+    // Hamburger nav toggle (mobile)
+    (function () {
+      var toggle = document.getElementById("hamburger-toggle");
+      var links = document.getElementById("site-nav-links");
+      toggle.addEventListener("click", function () {
+        links.classList.toggle("open");
+        toggle.classList.toggle("open");
+      });
+    })();
+
     // Theme toggle
     (function () {
       var toggle = document.getElementById("theme-toggle");
