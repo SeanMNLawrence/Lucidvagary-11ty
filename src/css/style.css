@@ -388,15 +388,14 @@ a {
 .post-image {
   flex-shrink: 0;
   width: 260px;
-  height: 130px;
   border-radius: 0;
   overflow: hidden;
 }
 
 .post-image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  display: block;
 }
 
 .post-card-body h3 {
@@ -422,7 +421,6 @@ a {
   }
   .post-image {
     width: 100%;
-    height: 200px;
   }
 }
 
