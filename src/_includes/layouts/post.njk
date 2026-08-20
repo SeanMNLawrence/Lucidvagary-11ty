@@ -1,28 +1,48 @@
 ---
 layout: layouts/base.njk
 ---
-<article class="post-single">
-  <header class="post-header">
-    <h1>{{ title }}</h1>
-    <p class="post-date">{{ page.date | readableDate }}</p>
-    {% if tags %}
-    <div class="post-tags">
-      {% for tag in tags %}
-        {% if tag != "poem" and tag != "fragment" and tag != "artwork" %}
-          <a href="/tags/{{ tag | slugify }}/" class="post-tag">{{ tag }}</a>
-        {% endif %}
-      {% endfor %}
+<div class="post-with-sidebar">
+  <article class="post-single">
+    <header class="post-header">
+      <h1>{{ title }}</h1>
+      <p class="post-date">{{ page.date | readableDate }}</p>
+      {% if tags %}
+      <div class="post-tags">
+        {% for tag in tags %}
+          {% if tag != "poem" and tag != "fragment" and tag != "artwork" %}
+            <a href="/tags/{{ tag | slugify }}/" class="post-tag">{{ tag }}</a>
+          {% endif %}
+        {% endfor %}
+      </div>
+      {% endif %}
+    </header>
+
+    {% if image %}
+    <div class="post-image">
+      <img src="{{ image }}" alt="{{ description or title }}">
     </div>
     {% endif %}
-  </header>
 
-  {% if image %}
-  <div class="post-image">
-    <img src="{{ image }}" alt="{{ description or title }}">
-  </div>
-  {% endif %}
+    <div class="post-content">
+      {{ content | safe }}
+    </div>
+  </article>
 
-  <div class="post-content">
-    {{ content | safe }}
-  </div>
-</article>
+  <aside class="post-sidebar">
+    <h4 class="sidebar-title">more from lucid vagary</h4>
+    {% set related = collections.posts | relatedPosts(page.url, tags, 4) %}
+    {% for post in related %}
+    <a href="{{ post.url }}" class="sidebar-card">
+      {% if post.data.image %}
+      <div class="sidebar-card-image">
+        <img src="{{ post.data.image }}" alt="{{ post.data.description or post.data.title }}" loading="lazy">
+      </div>
+      {% endif %}
+      <div class="sidebar-card-body">
+        <h5>{{ post.data.title }}</h5>
+        <p class="post-date">{{ post.date | readableDate }}</p>
+      </div>
+    </a>
+    {% endfor %}
+  </aside>
+</div>

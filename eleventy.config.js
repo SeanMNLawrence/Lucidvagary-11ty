@@ -104,6 +104,24 @@ module.exports = function (eleventyConfig) {
       .replace(/(^-|-$)/g, "");
   });
 
+  // Related posts for the single-post sidebar: posts sharing at least one
+  // tag with the current post, newest first, excluding the post itself.
+  // Backfills with the most recent other posts if there aren't enough.
+  eleventyConfig.addFilter("relatedPosts", (posts, currentUrl, currentTags, limit) => {
+    limit = limit || 4;
+    const tags = currentTags || [];
+    const others = posts.filter((p) => p.url !== currentUrl);
+    const shared = others.filter((p) => (p.data.tags || []).some((t) => tags.includes(t)));
+    const result = [...shared];
+    if (result.length < limit) {
+      others.forEach((p) => {
+        if (result.length >= limit) return;
+        if (!result.includes(p)) result.push(p);
+      });
+    }
+    return result.slice(0, limit);
+  });
+
   return {
     dir: {
       input: "src",

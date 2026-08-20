@@ -9,7 +9,7 @@ permalink: /posts/
     {% for post in collections.posts %}
     <a href="{{ post.url }}" class="post-card">
       {% if post.data.image %}
-      <div class="post-image">
+      <div class="listing-card-image">
         <img src="{{ post.data.image }}" alt="{{ post.data.description or post.data.title }}" loading="lazy">
       </div>
       {% endif %}

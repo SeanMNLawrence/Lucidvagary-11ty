@@ -2,19 +2,41 @@
 layout: layouts/base.njk
 title: "lucid vagary"
 ---
+{% set hero = collections.featuredPost | first %}
 <div class="home-grid">
 
-  {% set hero = collections.featuredPost | first %}
-
-  {# LEFT: recent posts feed, hero already excluded in the collection itself #}
-  <aside class="home-recent">
-    {% for post in collections.recentPosts %}
-    <a href="{{ post.url }}" class="recent-card">
-      {% if post.data.image %}
-      <div class="recent-image">
-        <img src="{{ post.data.image }}" alt="{{ post.data.description or post.data.title }}" loading="lazy">
+  {# HERO: the single assigned/featured post, given a bigger card #}
+  <a href="{{ hero.url }}" class="grid-card grid-card-hero">
+    {% if hero.data.image %}
+    <div class="grid-card-image">
+      <img src="{{ hero.data.image }}" alt="{{ hero.data.description or hero.data.title }}">
+    </div>
+    {% endif %}
+    <div class="grid-card-body">
+      {% if hero.data.tags %}
+      <div class="post-tags-mini">
+        {% for tag in hero.data.tags %}
+        <span class="post-tag-mini">{{ tag }}</span>
+        {% endfor %}
       </div>
       {% endif %}
+      <h2>{{ hero.data.title }}</h2>
+      <p class="post-date">{{ hero.date | readableDate }}</p>
+      {% if hero.data.description %}
+      <p class="grid-card-excerpt">{{ hero.data.description }}</p>
+      {% endif %}
+    </div>
+  </a>
+
+  {# RECENT: the next few posts, same card size as everything else #}
+  {% for post in collections.recentPosts %}
+  <a href="{{ post.url }}" class="grid-card">
+    {% if post.data.image %}
+    <div class="grid-card-image">
+      <img src="{{ post.data.image }}" alt="{{ post.data.description or post.data.title }}" loading="lazy">
+    </div>
+    {% endif %}
+    <div class="grid-card-body">
       {% if post.data.tags %}
       <div class="post-tags-mini">
         {% for tag in post.data.tags %}
@@ -22,47 +44,26 @@ title: "lucid vagary"
         {% endfor %}
       </div>
       {% endif %}
-      <h4>{{ post.data.title }}</h4>
+      <h3>{{ post.data.title }}</h3>
       <p class="post-date">{{ post.date | readableDate }}</p>
-    </a>
-    {% endfor %}
-  </aside>
+    </div>
+  </a>
+  {% endfor %}
 
-  {# CENTER: the single assigned/featured post - nothing else lives here #}
-  <section class="home-hero">
-    {% if hero.data.image %}
-    <a href="{{ hero.url }}" class="hero-featured-image">
-      <img src="{{ hero.data.image }}" alt="{{ hero.data.description or hero.data.title }}">
-    </a>
-    {% endif %}
-    {% if hero.data.tags %}
-    <div class="post-tags-mini">
-      {% for tag in hero.data.tags %}
-      <span class="post-tag-mini">{{ tag }}</span>
-      {% endfor %}
+  {# ONE HIGHLIGHT PER TAG: fills out the rest of the grid #}
+  {% for item in collections.highlightsByTag %}
+  <a href="{{ item.post.url }}" class="grid-card">
+    {% if item.post.data.image %}
+    <div class="grid-card-image">
+      <img src="{{ item.post.data.image }}" alt="{{ item.post.data.description or item.post.data.title }}" loading="lazy">
     </div>
     {% endif %}
-    <h2><a href="{{ hero.url }}">{{ hero.data.title }}</a></h2>
-    {% if hero.data.description %}
-    <p class="hero-featured-excerpt">{{ hero.data.description }}</p>
-    {% endif %}
-  </section>
-
-  {# RIGHT: one highlight per tag, never repeating the hero or each other #}
-  <aside class="home-bytag">
-    {% for item in collections.highlightsByTag %}
-    <a href="{{ item.post.url }}" class="bytag-card">
-      {% if item.post.data.image %}
-      <div class="bytag-image">
-        <img src="{{ item.post.data.image }}" alt="{{ item.post.data.description or item.post.data.title }}" loading="lazy">
-      </div>
-      {% endif %}
-      <div class="bytag-body">
-        <span class="post-tag-mini">{{ item.tag }}</span>
-        <p class="bytag-excerpt">{{ item.post.data.description or item.post.data.title }}</p>
-      </div>
-    </a>
-    {% endfor %}
-  </aside>
+    <div class="grid-card-body">
+      <span class="post-tag-mini">{{ item.tag }}</span>
+      <h3>{{ item.post.data.title }}</h3>
+      <p class="grid-card-excerpt">{{ item.post.data.description or "" }}</p>
+    </div>
+  </a>
+  {% endfor %}
 
 </div>
