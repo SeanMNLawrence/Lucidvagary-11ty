@@ -53,14 +53,26 @@ module.exports = function (eleventyConfig) {
     const tagSet = new Set();
     posts.forEach((item) => (item.data.tags || []).forEach((t) => tagSet.add(t)));
     const highlights = [];
+    const perTagLimit = 2;
     [...tagSet].sort().forEach((tag) => {
       const candidates = posts.filter((p) => (p.data.tags || []).includes(tag));
-      const fresh = candidates.find((p) => !used.has(p.url));
-      // If every post carrying this tag is already shown elsewhere on the
-      // homepage, skip the tag rather than showing the same post again.
-      if (!fresh) return;
-      highlights.push({ tag, post: fresh });
-      used.add(fresh.url);
+      let count = 0;
+      candidates.forEach((p) => {
+        if (count >= perTagLimit || used.has(p.url)) return;
+        highlights.push({ tag, post: p });
+        used.add(p.url);
+        count++;
+      });
+    });
+
+    // Anything still unused after the above (e.g. a piece whose tags were
+    // all already spoken for) gets one more pass, grouped under its first tag,
+    // so nothing in the archive stays permanently hidden from the homepage.
+    posts.forEach((p) => {
+      if (used.has(p.url)) return;
+      const tag = (p.data.tags || [])[0] || "more";
+      highlights.push({ tag, post: p });
+      used.add(p.url);
     });
 
     return { hero, recent, highlights };
