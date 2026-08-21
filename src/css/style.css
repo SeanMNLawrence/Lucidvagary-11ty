@@ -65,7 +65,7 @@ a {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-accent);
-  padding: 1rem 1.5rem;
+  padding: 1rem clamp(1.5rem, 6vw, 240px);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -194,7 +194,7 @@ a {
 .home-grid {
   width: 100%;
   margin: 0;
-  padding: 2rem 1.5rem;
+  padding: 2rem clamp(1.5rem, 6vw, 240px);
   display: grid;
   grid-template-columns: 220px 1fr 300px;
   gap: 2rem;
@@ -352,7 +352,7 @@ a {
 .posts-section {
   width: 100%;
   margin: 0;
-  padding: 2rem 1.5rem;
+  padding: 2rem clamp(1.5rem, 6vw, 240px);
 }
 
 .posts-title {
