@@ -370,18 +370,13 @@ a {
 .post-card {
   display: flex;
   gap: 1.5rem;
-  padding: 1.5rem;
-  background-color: var(--card-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 0;
-  border: 1px solid var(--card-border);
-  transition: all 0.2s ease;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border-accent);
+  transition: opacity 0.2s ease;
 }
 
 .post-card:hover {
-  border-color: var(--accent);
-  box-shadow: 0 4px 20px rgba(176, 99, 224, 0.1);
+  opacity: 0.85;
 }
 
 .listing-card-image {
@@ -456,7 +451,7 @@ a {
   display: grid;
   grid-template-columns: 1fr 280px;
   gap: 2rem;
-  padding: 3rem 1.5rem;
+  padding: 3rem clamp(1.5rem, 6vw, 240px);
   align-items: start;
 }
 
@@ -561,7 +556,7 @@ a {
 .about-section {
   max-width: 800px;
   margin: 0;
-  padding: 3rem 1.5rem;
+  padding: 3rem clamp(1.5rem, 6vw, 240px);
 }
 
 .about-section h1 {
