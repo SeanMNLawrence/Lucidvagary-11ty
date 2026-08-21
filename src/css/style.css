@@ -30,12 +30,12 @@
   --text-dim: #94a3b8;
   --text-content: #334155;
   --header-bg: rgba(255, 255, 255, 0.85);
-  --border-accent: rgba(147, 51, 234, 0.2);
+  --border-accent: rgba(0, 0, 0, 0.35);
   --card-bg: rgba(147, 51, 234, 0.04);
-  --card-border: rgba(147, 51, 234, 0.15);
-  --tag-border: rgba(147, 51, 234, 0.35);
-  --tag-text: #7c3aed;
-  --tag-bg: rgba(147, 51, 234, 0.08);
+  --card-border: rgba(0, 0, 0, 0.2);
+  --tag-border: #000000;
+  --tag-text: #000000;
+  --tag-bg: rgba(0, 0, 0, 0.05);
   --accent: #9333ea;
 }
 
