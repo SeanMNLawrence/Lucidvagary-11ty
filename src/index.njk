@@ -57,10 +57,9 @@ title: "lucid vagary"
         <img src="{{ item.post.data.image }}" alt="{{ item.post.data.description or item.post.data.title }}" loading="lazy">
       </div>
       {% endif %}
-      <div class="bytag-body">
-        <span class="post-tag-mini">{{ item.tag }}</span>
-        <p class="bytag-excerpt">{{ item.post.data.description or item.post.data.title }}</p>
-      </div>
+      <span class="post-tag-mini">{{ item.tag }}</span>
+      <h4>{{ item.post.data.title }}</h4>
+      <p class="bytag-excerpt">{{ item.post.data.description or "" }}</p>
     </a>
     {% endfor %}
   </aside>
