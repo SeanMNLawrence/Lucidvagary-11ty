@@ -196,7 +196,7 @@ a {
   margin: 0;
   padding: 2rem clamp(1.5rem, 6vw, 240px);
   display: grid;
-  grid-template-columns: 220px 1fr 300px;
+  grid-template-columns: 220px minmax(300px, 720px) 300px;
   gap: 2rem;
   align-items: start;
 }
