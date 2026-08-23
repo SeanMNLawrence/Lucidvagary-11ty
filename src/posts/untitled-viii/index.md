@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-title: "Untitled"
+title: "Holy Angel"
 date: 1993-10-01
 tags: ["artwork", "1993"]
 image: "/posts/untitled-viii/image.jpg"
