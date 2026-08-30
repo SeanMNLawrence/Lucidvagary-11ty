@@ -28,6 +28,17 @@ module.exports = function (eleventyConfig) {
       .sort((a, b) => b.date - a.date);
   });
 
+  // Collection filtered to sketch/artwork pieces
+  eleventyConfig.addCollection("sketches", function (collectionApi) {
+    return collectionApi
+      .getFilteredByGlob("src/posts/**/*.md")
+      .filter((item) => {
+        const tags = item.data.tags || [];
+        return tags.includes("artwork") || tags.includes("sketch");
+      })
+      .sort((a, b) => b.date - a.date);
+  });
+
   // Tag list helper, mirrors Hugo's /tags/ pages
   eleventyConfig.addCollection("tagList", function (collectionApi) {
     const tagSet = new Set();

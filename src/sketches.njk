@@ -1,0 +1,26 @@
+---
+layout: layouts/base.njk
+title: "sketches - lucid vagary"
+permalink: /sketches/
+---
+<section class="posts-section">
+  <h1 class="posts-title">sketches</h1>
+  <div class="posts-list">
+    {% for sketch in collections.sketches %}
+    <a href="{{ sketch.url }}" class="post-card">
+      {% if sketch.data.image %}
+      <div class="listing-card-image">
+        <img src="{{ sketch.data.image }}" alt="{{ sketch.data.description or sketch.data.title }}" loading="lazy">
+      </div>
+      {% endif %}
+      <div class="post-card-body">
+        <h3>{{ sketch.data.title }}</h3>
+        <p class="post-date">{{ sketch.date | readableDate }}</p>
+        {% if sketch.data.description %}
+        <p class="post-excerpt">{{ sketch.data.description }}</p>
+        {% endif %}
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
