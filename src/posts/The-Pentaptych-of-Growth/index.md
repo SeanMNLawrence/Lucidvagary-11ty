@@ -19,15 +19,11 @@ tags: ["artwork", "drawings"]
     <div class="pentaptych-item">
       <img src="/posts/Sketch-059/image.jpg" alt="Sketch 59">
     </div>
-    <div class="pentaptych-item">
-      <img src="/posts/Sketch-060/image.jpg" alt="Sketch 60">
-    </div>
   </div>
   
   <div class="pentaptych-row-bottom">
     <div class="pentaptych-item">
-      <img src="/posts/Sketch-037/image.jpg" alt="Sketch 037">
-      <p class="pentaptych-caption">Future drawing</p>
+      <img src="/posts/Sketch-060/image.jpg" alt="Sketch 60">
     </div>
   </div>
 </div>
