@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: "The Pentaptych of Growth"
 date: 2026-09-08
-tags: ["artwork", "sketch"]
+tags: ["artwork", "drawings"]
 ---
 
 <div class="pentaptych-grid">
@@ -19,11 +19,15 @@ tags: ["artwork", "sketch"]
     <div class="pentaptych-item">
       <img src="/posts/Sketch-059/image.jpg" alt="Sketch 59">
     </div>
+    <div class="pentaptych-item">
+      <img src="/posts/Sketch-060/image.jpg" alt="Sketch 60">
+    </div>
   </div>
   
   <div class="pentaptych-row-bottom">
     <div class="pentaptych-item">
-      <img src="/posts/Sketch-060/image.jpg" alt="Sketch 60">
+      <img src="/posts/Sketch-037/image.jpg" alt="Sketch 037">
+      <p class="pentaptych-caption">Future drawing</p>
     </div>
   </div>
 </div>
