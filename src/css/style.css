@@ -546,6 +546,68 @@ a {
   margin-bottom: 1.5rem;
 }
 
+/* Pentaptych Grid - "The Pentaptych of Growth" */
+.pentaptych-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.pentaptych-row-top,
+.pentaptych-row-bottom {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.pentaptych-row-middle {
+  display: flex;
+  justify-content: center;
+}
+
+.pentaptych-item {
+  overflow: hidden;
+  border-radius: 0;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pentaptych-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 600px;
+  object-fit: contain;
+}
+
+.pentaptych-row-middle .pentaptych-item {
+  max-width: 400px;
+}
+
+@media (max-width: 640px) {
+  .pentaptych-grid {
+    gap: 1.5rem;
+  }
+
+  .pentaptych-row-top,
+  .pentaptych-row-bottom {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .pentaptych-item img {
+    max-height: 400px;
+  }
+
+  .pentaptych-row-middle .pentaptych-item {
+    max-width: 100%;
+  }
+}
+
 /* About */
 .about-section {
   max-width: 800px;
