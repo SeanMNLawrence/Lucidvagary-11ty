@@ -555,15 +555,11 @@ a {
 }
 
 .pentaptych-row-top,
+.pentaptych-row-middle,
 .pentaptych-row-bottom {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-}
-
-.pentaptych-row-middle {
-  display: flex;
-  justify-content: center;
 }
 
 .pentaptych-item {
@@ -572,8 +568,10 @@ a {
   background-color: var(--card-bg);
   border: 1px solid var(--card-border);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .pentaptych-item img {
@@ -584,8 +582,12 @@ a {
   object-fit: contain;
 }
 
-.pentaptych-row-middle .pentaptych-item {
-  max-width: 400px;
+.pentaptych-caption {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 1rem;
+  font-style: italic;
 }
 
 @media (max-width: 640px) {
@@ -594,6 +596,7 @@ a {
   }
 
   .pentaptych-row-top,
+  .pentaptych-row-middle,
   .pentaptych-row-bottom {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -601,10 +604,6 @@ a {
 
   .pentaptych-item img {
     max-height: 400px;
-  }
-
-  .pentaptych-row-middle .pentaptych-item {
-    max-width: 100%;
   }
 }
 
