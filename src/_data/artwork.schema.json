@@ -67,24 +67,21 @@
       "type": "array",
       "uniqueItems": true,
       "items": {
-        "type": "string",
-        "minLength": 1
+        "$ref": "#/$defs/taxonomyId"
       }
     },
     "themes": {
       "type": "array",
       "uniqueItems": true,
       "items": {
-        "type": "string",
-        "minLength": 1
+        "$ref": "#/$defs/taxonomyId"
       }
     },
     "constellations": {
       "type": "array",
       "uniqueItems": true,
       "items": {
-        "type": "string",
-        "minLength": 1
+        "$ref": "#/$defs/taxonomyId"
       }
     },
     "relationships": {
@@ -160,6 +157,7 @@
     "artworkRelationship": {
       "type": "object",
       "additionalProperties": false,
+      "description": "Unique by the object key pair of type + target_slug.",
       "required": ["type", "target_slug"],
       "properties": {
         "type": {
@@ -177,6 +175,10 @@
           "minLength": 1
         }
       }
+    },
+    "taxonomyId": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
     },
     "digitalAsset": {
       "type": "object",

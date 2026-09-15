@@ -5,3 +5,4 @@
 ## Data model
 
 Canonical artwork schema: `/src/_data/artwork.schema.json`.
+Use this schema to validate artwork records and their nested digital assets before adding or transforming artwork content.
