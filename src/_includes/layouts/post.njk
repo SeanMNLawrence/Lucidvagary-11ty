@@ -30,7 +30,7 @@ layout: layouts/base.njk
       <h3>alternate photographs</h3>
       <ul>
         {% for asset in assets %}
-          {% if not primary or asset != primary %}
+          {% if primaryAssetIndex == null or loop.index0 != primaryAssetIndex %}
           <li>
             <a href="{{ asset.src }}">{{ asset.alt or title }}</a>
           </li>

@@ -37,11 +37,18 @@ module.exports = function (eleventyConfig) {
       assets[0].primary = true;
     }
 
-    const primaryAsset = assets.find((asset) => asset.primary) || assets[0] || null;
-    item.data.digitalAssets = assets;
-    item.data.primaryAsset = primaryAsset;
-    item.data.image = primaryAsset ? primaryAsset.src : undefined;
-    return item;
+    const primaryAssetIndex = assets.findIndex((asset) => asset.primary);
+    const primaryAsset = primaryAssetIndex >= 0 ? assets[primaryAssetIndex] : null;
+
+    return Object.assign(Object.create(item), {
+      data: {
+        ...item.data,
+        digitalAssets: assets,
+        primaryAsset,
+        primaryAssetIndex,
+        image: primaryAsset ? primaryAsset.src : undefined,
+      },
+    });
   }
 
   function getCanonicalPosts(collectionApi) {
