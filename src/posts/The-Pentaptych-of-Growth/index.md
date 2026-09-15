@@ -8,22 +8,22 @@ tags: ["artwork", "drawings"]
 <div class="pentaptych-grid">
   <div class="pentaptych-row-top">
     <div class="pentaptych-item">
-      <img src="/posts/Sketch-057/image.jpg" alt="Sketch 57">
+      {% optimizedImage "/posts/Sketch-057/image.jpg", "Sketch 57", "artwork", "lazy" %}
     </div>
     <div class="pentaptych-item">
-      <img src="/posts/Sketch-058/image.jpg" alt="Sketch 58">
+      {% optimizedImage "/posts/Sketch-058/image.jpg", "Sketch 58", "artwork", "lazy" %}
     </div>
   </div>
   
   <div class="pentaptych-row-middle">
     <div class="pentaptych-item">
-      <img src="/posts/Sketch-059/image.jpg" alt="Sketch 59">
+      {% optimizedImage "/posts/Sketch-059/image.jpg", "Sketch 59", "artwork", "lazy" %}
     </div>
   </div>
   
   <div class="pentaptych-row-bottom">
     <div class="pentaptych-item">
-      <img src="/posts/Sketch-060/image.jpg" alt="Sketch 60">
+      {% optimizedImage "/posts/Sketch-060/image.jpg", "Sketch 60", "artwork", "lazy" %}
     </div>
   </div>
 </div>

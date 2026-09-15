@@ -12,7 +12,7 @@ title: "lucid vagary"
     <a href="{{ post.url }}" class="recent-card">
       {% if post.data.image %}
       <div class="recent-image">
-        <img src="{{ post.data.image }}" alt="{{ post.data.description or post.data.title }}" loading="lazy">
+        {% optimizedImage post.data.image, post.data.description or post.data.title, "thumbnail", "lazy" %}
       </div>
       {% endif %}
       {% if post.data.tags %}
@@ -32,7 +32,7 @@ title: "lucid vagary"
   <section class="home-hero">
     {% if hero.data.image %}
     <a href="{{ hero.url }}" class="hero-featured-image">
-      <img src="{{ hero.data.image }}" alt="{{ hero.data.description or hero.data.title }}">
+      {% optimizedImage hero.data.image, hero.data.description or hero.data.title, "artwork", "eager" %}
     </a>
     {% endif %}
     {% if hero.data.tags %}
@@ -54,7 +54,7 @@ title: "lucid vagary"
     <a href="{{ item.post.url }}" class="bytag-card">
       {% if item.post.data.image %}
       <div class="bytag-image">
-        <img src="{{ item.post.data.image }}" alt="{{ item.post.data.description or item.post.data.title }}" loading="lazy">
+        {% optimizedImage item.post.data.image, item.post.data.description or item.post.data.title, "thumbnail", "lazy" %}
       </div>
       {% endif %}
       <div class="bytag-body">
