@@ -2,6 +2,8 @@
 layout: layouts/post.njk
 title: "Sanguineous"
 date: 2025-12-01
+anchorWork: true
+anchorOrder: 2
 tags: ["poem", "visual poetry", "hemorrhagic"]
 description: "A visual poetry piece exploring hemorrhagic themes."
 image: "/images/sanguineous.jpg"
