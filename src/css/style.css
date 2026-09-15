@@ -355,6 +355,16 @@ a {
   color: var(--text-heading);
 }
 
+.posts-intro {
+  max-width: 52rem;
+  color: var(--text-muted);
+  margin: -0.5rem 0 2rem;
+}
+
+.archive-link {
+  color: var(--accent);
+}
+
 .posts-list {
   display: flex;
   flex-direction: column;
