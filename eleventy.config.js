@@ -40,7 +40,7 @@ module.exports = function (eleventyConfig) {
     const primaryAsset = assets.find((asset) => asset.primary) || assets[0] || null;
     item.data.digitalAssets = assets;
     item.data.primaryAsset = primaryAsset;
-    if (primaryAsset) item.data.image = primaryAsset.src;
+    item.data.image = primaryAsset ? primaryAsset.src : undefined;
     return item;
   }
 
