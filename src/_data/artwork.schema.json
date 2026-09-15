@@ -5,26 +5,6 @@
   "description": "Canonical model for an artwork and its one-or-more digital assets.",
   "type": "object",
   "additionalProperties": false,
-  "anyOf": [
-    {
-      "required": ["original_title"],
-      "properties": {
-        "original_title": {
-          "type": "string",
-          "minLength": 1
-        }
-      }
-    },
-    {
-      "required": ["proposed_title"],
-      "properties": {
-        "proposed_title": {
-          "type": "string",
-          "minLength": 1
-        }
-      }
-    }
-  ],
   "required": [
     "title",
     "slug",
