@@ -101,11 +101,13 @@
           }
         },
         "required": ["role"]
-      }
+      },
+      "minContains": 1,
+      "maxContains": 1
     },
     "provenance": {
       "type": "object",
-      "additionalProperties": true,
+      "additionalProperties": false,
       "properties": {
         "artwork_creation_date": {
           "type": ["string", "null"],
@@ -113,6 +115,13 @@
         },
         "notes": {
           "type": "string"
+        },
+        "source_records": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         }
       }
     }
