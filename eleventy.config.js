@@ -13,30 +13,81 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/posts/**/*.jpg");
   eleventyConfig.addPassthroughCopy("src/posts/**/*.png");
 
+  function isArtwork(item) {
+    const tags = item.data.tags || [];
+    return tags.includes("artwork") || tags.includes("sketch");
+  }
+
+  function normalizeDigitalAssets(item) {
+    const rawAssets = Array.isArray(item.data.digitalAssets) ? item.data.digitalAssets : [];
+    let assets = rawAssets
+      .map((asset) => (typeof asset === "string" ? { src: asset } : asset))
+      .filter((asset) => asset && typeof asset.src === "string" && asset.src.trim().length > 0)
+      .map((asset) => ({
+        src: asset.src,
+        alt: asset.alt,
+        primary: asset.primary === true,
+      }));
+
+    if (assets.length === 0 && typeof item.data.image === "string" && item.data.image.trim().length > 0) {
+      assets = [{ src: item.data.image, alt: item.data.description || item.data.title, primary: true }];
+    }
+
+    if (assets.length > 0 && !assets.some((asset) => asset.primary)) {
+      assets[0].primary = true;
+    }
+
+    const primaryAssetIndex = assets.findIndex((asset) => asset.primary);
+    const primaryAsset = primaryAssetIndex >= 0 ? assets[primaryAssetIndex] : null;
+
+    return Object.assign(Object.create(item), {
+      data: {
+        ...item.data,
+        digitalAssets: assets,
+        primaryAsset,
+        primaryAssetIndex,
+        image: primaryAsset ? primaryAsset.src : undefined,
+      },
+    });
+  }
+
+  const canonicalPostsCache = new WeakMap();
+
+  function getCanonicalPosts(collectionApi) {
+    if (canonicalPostsCache.has(collectionApi)) {
+      return canonicalPostsCache.get(collectionApi);
+    }
+
+    const sortedPosts = collectionApi.getFilteredByGlob("src/posts/**/*.md").sort((a, b) => b.date - a.date);
+    const seenArtworkIds = new Set();
+
+    const canonicalPosts = sortedPosts
+      .map((item) => normalizeDigitalAssets(item))
+      .filter((item) => {
+        if (!isArtwork(item)) return true;
+        const artworkId = item.data.artworkId || item.url;
+        if (seenArtworkIds.has(artworkId)) return false;
+        seenArtworkIds.add(artworkId);
+        return true;
+      });
+
+    canonicalPostsCache.set(collectionApi, canonicalPosts);
+    return canonicalPosts;
+  }
+
   // "posts" collection, newest first, mirrors Hugo's unified posts stream
   eleventyConfig.addCollection("posts", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("src/posts/**/*.md").sort((a, b) => {
-      return b.date - a.date;
-    });
+    return getCanonicalPosts(collectionApi);
   });
 
   // Collection filtered to poem-tagged pieces
   eleventyConfig.addCollection("poems", function (collectionApi) {
-    return collectionApi
-      .getFilteredByGlob("src/posts/**/*.md")
-      .filter((item) => item.data.tags && item.data.tags.includes("poem"))
-      .sort((a, b) => b.date - a.date);
+    return getCanonicalPosts(collectionApi).filter((item) => item.data.tags && item.data.tags.includes("poem"));
   });
 
   // Collection filtered to sketch/artwork pieces
   eleventyConfig.addCollection("sketches", function (collectionApi) {
-    return collectionApi
-      .getFilteredByGlob("src/posts/**/*.md")
-      .filter((item) => {
-        const tags = item.data.tags || [];
-        return tags.includes("artwork") || tags.includes("sketch");
-      })
-      .sort((a, b) => b.date - a.date);
+    return getCanonicalPosts(collectionApi).filter((item) => isArtwork(item));
   });
 
   // Tag list helper, mirrors Hugo's /tags/ pages
@@ -48,13 +99,17 @@ module.exports = function (eleventyConfig) {
     return [...tagSet].sort();
   });
 
+  eleventyConfig.addCollection("archiveCounts", function (collectionApi) {
+    const artworks = getCanonicalPosts(collectionApi).filter((item) => isArtwork(item));
+    const assetCount = artworks.reduce((count, item) => count + ((item.data.digitalAssets || []).length || 0), 0);
+    return [{ artworks: artworks.length, assets: assetCount }];
+  });
+
   // Shared homepage layout logic: figures out the hero, the next 3
   // "recent" posts, and one highlight per tag - making sure none of the
   // three sections repeat the same post.
   function computeHomepageLayout(collectionApi) {
-    const posts = collectionApi
-      .getFilteredByGlob("src/posts/**/*.md")
-      .sort((a, b) => b.date - a.date);
+    const posts = getCanonicalPosts(collectionApi);
     const hero = posts.find((p) => p.data.featured === true) || posts[0];
     const used = new Set(hero ? [hero.url] : []);
 
