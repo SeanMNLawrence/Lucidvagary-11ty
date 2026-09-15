@@ -86,6 +86,7 @@
     },
     "relationships": {
       "type": "array",
+      "uniqueItems": true,
       "items": {
         "$ref": "#/$defs/artworkRelationship"
       }
