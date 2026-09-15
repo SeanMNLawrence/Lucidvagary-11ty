@@ -1,0 +1,34 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: constellations
+  size: 1
+  alias: constellation
+permalink: "/constellations/{{ constellation.slug }}/"
+eleventyComputed:
+  title: "{{ constellation.title }} - lucid vagary"
+---
+<section class="posts-section">
+  <h1 class="posts-title">{{ constellation.title }}</h1>
+  <p class="post-excerpt">{{ constellation.introduction }}</p>
+  <div class="posts-list">
+    {%- for post in collections.posts %}
+      {%- if post.url in constellation.artworks %}
+      <a href="{{ post.url }}" class="post-card">
+        {% if post.data.image %}
+        <div class="listing-card-image">
+          <img src="{{ post.data.image }}" alt="{{ post.data.description or post.data.title }}" loading="lazy">
+        </div>
+        {% endif %}
+        <div class="post-card-body">
+          <h3>{{ post.data.title }}</h3>
+          <p class="post-date">{{ post.date | readableDate }}</p>
+          {% if post.data.description %}
+          <p class="post-excerpt">{{ post.data.description }}</p>
+          {% endif %}
+        </div>
+      </a>
+      {%- endif %}
+    {%- endfor %}
+  </div>
+</section>

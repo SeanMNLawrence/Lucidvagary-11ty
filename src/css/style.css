@@ -355,6 +355,16 @@ a {
   color: var(--text-heading);
 }
 
+.posts-intro {
+  max-width: 52rem;
+  color: var(--text-muted);
+  margin: -0.5rem 0 2rem;
+}
+
+.archive-link {
+  color: var(--accent);
+}
+
 .posts-list {
   display: flex;
   flex-direction: column;
@@ -408,12 +418,80 @@ a {
   font-size: 0.95rem;
 }
 
+.archive-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.archive-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: end;
+}
+
+.archive-intro,
+.archive-count {
+  color: var(--text-muted);
+}
+
+.archive-count {
+  white-space: nowrap;
+}
+
+.archive-filters {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.archive-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.archive-filter select {
+  width: 100%;
+  border: 1px solid var(--border-accent);
+  background: var(--card-bg);
+  color: var(--text-body);
+  padding: 0.65rem 0.75rem;
+  font: inherit;
+}
+
+.archive-list {
+  gap: 0;
+}
+
+.archive-card[hidden] {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .archive-header {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .archive-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 640px) {
   .post-card {
     flex-direction: column;
   }
   .listing-card-image {
     width: 100%;
+  }
+
+  .archive-filters {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -708,4 +786,67 @@ a {
 
 .search-toggle:hover {
   color: var(--accent);
+}
+
+/* Artwork pages */
+.artwork-page {
+  width: 100%;
+  margin: 0;
+  padding: 3rem clamp(1.5rem, 6vw, 240px);
+}
+
+.artwork-header h1 {
+  color: var(--text-heading);
+  margin-bottom: 1rem;
+}
+
+.artwork-primary-image {
+  margin-bottom: 2rem;
+}
+
+.artwork-primary-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.artwork-metadata h2 {
+  text-transform: lowercase;
+  margin-bottom: 0.75rem;
+}
+
+.artwork-meta-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.artwork-meta-list dt {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.artwork-meta-links a {
+  color: var(--accent);
+}
+
+.artwork-alt-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  list-style: none;
+  margin-top: 0.4rem;
+}
+
+.artwork-alt-list img {
+  width: 140px;
+  height: auto;
+  display: block;
+}
+
+.artwork-source-file {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
 }
