@@ -5,6 +5,17 @@
   padding: 0;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 :root {
   --bg-primary: #020617;
   --text-body: #e2e8f0;
@@ -226,7 +237,7 @@ a {
   display: block;
 }
 
-.recent-card h4 {
+.recent-card h3 {
   font-size: 1rem;
   color: var(--text-heading);
   margin: 0.35rem 0 0.15rem;
@@ -251,7 +262,7 @@ a {
   display: block;
 }
 
-.home-hero h2 {
+.home-hero h3 {
   font-size: 2rem;
   color: var(--text-heading);
   margin: 0.75rem 0;
@@ -491,10 +502,15 @@ a {
   object-fit: cover;
 }
 
-.sidebar-card-body h5 {
+.sidebar-card-body h3 {
   font-size: 0.9rem;
   color: var(--text-heading);
   margin-bottom: 0.15rem;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--text-heading);
+  outline-offset: 2px;
 }
 
 @media (max-width: 900px) {

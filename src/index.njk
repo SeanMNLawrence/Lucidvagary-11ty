@@ -3,16 +3,18 @@ layout: layouts/base.njk
 title: "lucid vagary"
 ---
 <div class="home-grid">
+  <h1 class="visually-hidden">lucid vagary archive</h1>
 
   {% set hero = collections.featuredPost | first %}
 
   {# LEFT: recent posts feed, hero already excluded in the collection itself #}
   <aside class="home-recent">
+    <h2 class="visually-hidden">Recent posts</h2>
     {% for post in collections.recentPosts %}
-    <a href="{{ post.url }}" class="recent-card">
+    <a href="{{ post.url }}" class="recent-card" aria-label="Read {{ post.data.title }}">
       {% if post.data.image %}
       <div class="recent-image">
-        <img src="{{ post.data.image }}" alt="{{ post.data.description or post.data.title }}" loading="lazy">
+        <img src="{{ post.data.image }}" alt="" aria-hidden="true" loading="lazy">
       </div>
       {% endif %}
       {% if post.data.tags %}
@@ -22,17 +24,18 @@ title: "lucid vagary"
         {% endfor %}
       </div>
       {% endif %}
-      <h4>{{ post.data.title }}</h4>
-      <p class="post-date">{{ post.date | readableDate }}</p>
+      <h3>{{ post.data.title }}</h3>
+      <p><time class="post-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time></p>
     </a>
     {% endfor %}
   </aside>
 
   {# CENTER: the single assigned/featured post - nothing else lives here #}
   <section class="home-hero">
+    <h2 class="visually-hidden">Featured post</h2>
     {% if hero.data.image %}
-    <a href="{{ hero.url }}" class="hero-featured-image">
-      <img src="{{ hero.data.image }}" alt="{{ hero.data.description or hero.data.title }}">
+    <a href="{{ hero.url }}" class="hero-featured-image" aria-label="Read {{ hero.data.title }}">
+      <img src="{{ hero.data.image }}" alt="" aria-hidden="true">
     </a>
     {% endif %}
     {% if hero.data.tags %}
@@ -42,7 +45,7 @@ title: "lucid vagary"
       {% endfor %}
     </div>
     {% endif %}
-    <h2><a href="{{ hero.url }}">{{ hero.data.title }}</a></h2>
+    <h3><a href="{{ hero.url }}">{{ hero.data.title }}</a></h3>
     {% if hero.data.description %}
     <p class="hero-featured-excerpt">{{ hero.data.description }}</p>
     {% endif %}
@@ -50,11 +53,12 @@ title: "lucid vagary"
 
   {# RIGHT: one highlight per tag, never repeating the hero or each other #}
   <aside class="home-bytag">
+    <h2 class="visually-hidden">Highlights by tag</h2>
     {% for item in collections.highlightsByTag %}
-    <a href="{{ item.post.url }}" class="bytag-card">
+    <a href="{{ item.post.url }}" class="bytag-card" aria-label="Read {{ item.post.data.title }}">
       {% if item.post.data.image %}
       <div class="bytag-image">
-        <img src="{{ item.post.data.image }}" alt="{{ item.post.data.description or item.post.data.title }}" loading="lazy">
+        <img src="{{ item.post.data.image }}" alt="" aria-hidden="true" loading="lazy">
       </div>
       {% endif %}
       <div class="bytag-body">

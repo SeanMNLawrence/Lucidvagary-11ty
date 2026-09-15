@@ -118,6 +118,10 @@ module.exports = function (eleventyConfig) {
     });
   });
 
+  eleventyConfig.addFilter("htmlDateString", (dateObj) => {
+    return new Date(dateObj).toISOString().slice(0, 10);
+  });
+
   // Slugify filter for tag URLs
   eleventyConfig.addFilter("slugify", (str) => {
     return String(str)
