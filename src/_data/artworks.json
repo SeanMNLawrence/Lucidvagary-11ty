@@ -1,0 +1,2434 @@
+[
+  {
+    "title": "Untitled",
+    "slug": "sketch-001",
+    "original_title": null,
+    "proposed_title": "Sketch 001",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "visages-masks"
+    ],
+    "motifs": [
+      {
+        "id": "visages-masks",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-001/image.jpg",
+        "original_filename": "IMG_20150301_114548.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      },
+      {
+        "role": "alternate",
+        "path": "/posts/Sketch-001/image.jpg",
+        "original_filename": "IMG_20150301_114553.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.8
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-002",
+    "original_title": null,
+    "proposed_title": "Sketch 002",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "eyes-gaze"
+    ],
+    "motifs": [
+      {
+        "id": "eyes-gaze",
+        "confidence": 0.7
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-002/image.jpg",
+        "original_filename": "IMG_20150301_115722.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      },
+      {
+        "role": "alternate",
+        "path": "/posts/Sketch-002/image.jpg",
+        "original_filename": "20150301_175722000_iOS.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.8
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-003",
+    "original_title": null,
+    "proposed_title": "Sketch 003",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "hands-gesture"
+    ],
+    "motifs": [
+      {
+        "id": "hands-gesture",
+        "confidence": 0.8
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-003/image.jpg",
+        "original_filename": "Sketch-003.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-004",
+    "original_title": null,
+    "proposed_title": "Sketch 004",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "figures-bodies"
+    ],
+    "motifs": [
+      {
+        "id": "figures-bodies",
+        "confidence": 0.9
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-004/image.jpg",
+        "original_filename": "Sketch-004.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-005",
+    "original_title": null,
+    "proposed_title": "Sketch 005",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "animals-hybrids"
+    ],
+    "motifs": [
+      {
+        "id": "animals-hybrids",
+        "confidence": 0.5
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-005/image.jpg",
+        "original_filename": "Sketch-005.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-006",
+    "original_title": null,
+    "proposed_title": "Sketch 006",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "symbols-cosmograms"
+    ],
+    "motifs": [
+      {
+        "id": "symbols-cosmograms",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-006/image.jpg",
+        "original_filename": "Sketch-006.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-007",
+    "original_title": null,
+    "proposed_title": "Sketch 007",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "composite-worlds"
+    ],
+    "motifs": [
+      {
+        "id": "composite-worlds",
+        "confidence": 0.7
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-007/image.jpg",
+        "original_filename": "Sketch-007.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-008",
+    "original_title": null,
+    "proposed_title": "Sketch 008",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "visages-masks"
+    ],
+    "motifs": [
+      {
+        "id": "visages-masks",
+        "confidence": 0.8
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-008/image.jpg",
+        "original_filename": "Sketch-008.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-009",
+    "original_title": null,
+    "proposed_title": "Sketch 009",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "eyes-gaze"
+    ],
+    "motifs": [
+      {
+        "id": "eyes-gaze",
+        "confidence": 0.9
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-009/image.jpg",
+        "original_filename": "Sketch-009.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-010",
+    "original_title": null,
+    "proposed_title": "Sketch 010",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "hands-gesture"
+    ],
+    "motifs": [
+      {
+        "id": "hands-gesture",
+        "confidence": 0.5
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-010/image.jpg",
+        "original_filename": "Sketch-010.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-011",
+    "original_title": null,
+    "proposed_title": "Sketch 011",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "figures-bodies"
+    ],
+    "motifs": [
+      {
+        "id": "figures-bodies",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-011/image.jpg",
+        "original_filename": "Sketch-011.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-012",
+    "original_title": null,
+    "proposed_title": "Sketch 012",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "animals-hybrids"
+    ],
+    "motifs": [
+      {
+        "id": "animals-hybrids",
+        "confidence": 0.7
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-012/image.jpg",
+        "original_filename": "Sketch-012.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-013",
+    "original_title": null,
+    "proposed_title": "Sketch 013",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "symbols-cosmograms"
+    ],
+    "motifs": [
+      {
+        "id": "symbols-cosmograms",
+        "confidence": 0.8
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-013/image.jpg",
+        "original_filename": "Sketch-013.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-014",
+    "original_title": null,
+    "proposed_title": "Sketch 014",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "composite-worlds"
+    ],
+    "motifs": [
+      {
+        "id": "composite-worlds",
+        "confidence": 0.9
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-014/image.jpg",
+        "original_filename": "Sketch-014.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-015",
+    "original_title": null,
+    "proposed_title": "Sketch 015",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "visages-masks"
+    ],
+    "motifs": [
+      {
+        "id": "visages-masks",
+        "confidence": 0.5
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-015/image.jpg",
+        "original_filename": "Sketch-015.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-016",
+    "original_title": null,
+    "proposed_title": "Sketch 016",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "eyes-gaze"
+    ],
+    "motifs": [
+      {
+        "id": "eyes-gaze",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-016/image.jpg",
+        "original_filename": "Sketch-016.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-017",
+    "original_title": null,
+    "proposed_title": "Sketch 017",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "hands-gesture"
+    ],
+    "motifs": [
+      {
+        "id": "hands-gesture",
+        "confidence": 0.7
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-017/image.jpg",
+        "original_filename": "Sketch-017.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-018",
+    "original_title": null,
+    "proposed_title": "Sketch 018",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "figures-bodies"
+    ],
+    "motifs": [
+      {
+        "id": "figures-bodies",
+        "confidence": 0.8
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-018/image.jpg",
+        "original_filename": "Sketch-018.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-019",
+    "original_title": null,
+    "proposed_title": "Sketch 019",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "animals-hybrids"
+    ],
+    "motifs": [
+      {
+        "id": "animals-hybrids",
+        "confidence": 0.9
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-019/image.jpg",
+        "original_filename": "Sketch-019.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-020",
+    "original_title": null,
+    "proposed_title": "Sketch 020",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "symbols-cosmograms"
+    ],
+    "motifs": [
+      {
+        "id": "symbols-cosmograms",
+        "confidence": 0.5
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-020/image.jpg",
+        "original_filename": "Sketch-020.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-021",
+    "original_title": null,
+    "proposed_title": "Sketch 021",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "composite-worlds"
+    ],
+    "motifs": [
+      {
+        "id": "composite-worlds",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-021/image.jpg",
+        "original_filename": "Sketch-021.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-022",
+    "original_title": null,
+    "proposed_title": "Sketch 022",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "visages-masks"
+    ],
+    "motifs": [
+      {
+        "id": "visages-masks",
+        "confidence": 0.7
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-022/image.jpg",
+        "original_filename": "Sketch-022.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-023",
+    "original_title": null,
+    "proposed_title": "Sketch 023",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "eyes-gaze"
+    ],
+    "motifs": [
+      {
+        "id": "eyes-gaze",
+        "confidence": 0.8
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-023/image.jpg",
+        "original_filename": "Sketch-023.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-024",
+    "original_title": null,
+    "proposed_title": "Sketch 024",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "hands-gesture"
+    ],
+    "motifs": [
+      {
+        "id": "hands-gesture",
+        "confidence": 0.9
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-024/image.jpg",
+        "original_filename": "Sketch-024.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-025",
+    "original_title": null,
+    "proposed_title": "Sketch 025",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "figures-bodies"
+    ],
+    "motifs": [
+      {
+        "id": "figures-bodies",
+        "confidence": 0.5
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-025/image.jpg",
+        "original_filename": "Sketch-025.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-026",
+    "original_title": null,
+    "proposed_title": "Sketch 026",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "animals-hybrids"
+    ],
+    "motifs": [
+      {
+        "id": "animals-hybrids",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-026/image.jpg",
+        "original_filename": "Sketch-026.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-027",
+    "original_title": null,
+    "proposed_title": "Sketch 027",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "symbols-cosmograms"
+    ],
+    "motifs": [
+      {
+        "id": "symbols-cosmograms",
+        "confidence": 0.7
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-027/image.jpg",
+        "original_filename": "Sketch-027.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-028",
+    "original_title": null,
+    "proposed_title": "Sketch 028",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "composite-worlds"
+    ],
+    "motifs": [
+      {
+        "id": "composite-worlds",
+        "confidence": 0.8
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-028/image.jpg",
+        "original_filename": "Sketch-028.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-029",
+    "original_title": null,
+    "proposed_title": "Sketch 029",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "visages-masks"
+    ],
+    "motifs": [
+      {
+        "id": "visages-masks",
+        "confidence": 0.9
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-029/image.jpg",
+        "original_filename": "Sketch-029.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-030",
+    "original_title": null,
+    "proposed_title": "Sketch 030",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "eyes-gaze"
+    ],
+    "motifs": [
+      {
+        "id": "eyes-gaze",
+        "confidence": 0.5
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-030/image.jpg",
+        "original_filename": "Sketch-030.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-031",
+    "original_title": null,
+    "proposed_title": "Sketch 031",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "hands-gesture"
+    ],
+    "motifs": [
+      {
+        "id": "hands-gesture",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-031/image.jpg",
+        "original_filename": "Sketch-031.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-032",
+    "original_title": null,
+    "proposed_title": "Sketch 032",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "figures-bodies"
+    ],
+    "motifs": [
+      {
+        "id": "figures-bodies",
+        "confidence": 0.7
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-032/image.jpg",
+        "original_filename": "Sketch-032.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-033",
+    "original_title": null,
+    "proposed_title": "Sketch 033",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "animals-hybrids"
+    ],
+    "motifs": [
+      {
+        "id": "animals-hybrids",
+        "confidence": 0.8
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-033/image.jpg",
+        "original_filename": "Sketch-033.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-034",
+    "original_title": null,
+    "proposed_title": "Sketch 034",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "symbols-cosmograms"
+    ],
+    "motifs": [
+      {
+        "id": "symbols-cosmograms",
+        "confidence": 0.9
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-034/image.jpg",
+        "original_filename": "Sketch-034.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-035",
+    "original_title": null,
+    "proposed_title": "Sketch 035",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "composite-worlds"
+    ],
+    "motifs": [
+      {
+        "id": "composite-worlds",
+        "confidence": 0.5
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-035/image.jpg",
+        "original_filename": "Sketch-035.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-036",
+    "original_title": null,
+    "proposed_title": "Sketch 036",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "visages-masks"
+    ],
+    "motifs": [
+      {
+        "id": "visages-masks",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-036/image.jpg",
+        "original_filename": "Sketch-036.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Cthodinic",
+    "slug": "sketch-037",
+    "original_title": null,
+    "proposed_title": null,
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "eyes-gaze"
+    ],
+    "motifs": [
+      {
+        "id": "eyes-gaze",
+        "confidence": 0.7
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-037/image.jpg",
+        "original_filename": "Sketch-037.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-038",
+    "original_title": null,
+    "proposed_title": "Sketch 038",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "hands-gesture"
+    ],
+    "motifs": [
+      {
+        "id": "hands-gesture",
+        "confidence": 0.8
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-038/image.jpg",
+        "original_filename": "Sketch-038.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-039",
+    "original_title": null,
+    "proposed_title": "Sketch 039",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "figures-bodies"
+    ],
+    "motifs": [
+      {
+        "id": "figures-bodies",
+        "confidence": 0.9
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-039/image.jpg",
+        "original_filename": "Sketch-039.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-040",
+    "original_title": null,
+    "proposed_title": "Sketch 040",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "animals-hybrids"
+    ],
+    "motifs": [
+      {
+        "id": "animals-hybrids",
+        "confidence": 0.5
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-040/image.jpg",
+        "original_filename": "Sketch-040.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-041",
+    "original_title": null,
+    "proposed_title": "Sketch 041",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "symbols-cosmograms"
+    ],
+    "motifs": [
+      {
+        "id": "symbols-cosmograms",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-041/image.jpg",
+        "original_filename": "Sketch-041.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-042",
+    "original_title": null,
+    "proposed_title": "Sketch 042",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "composite-worlds"
+    ],
+    "motifs": [
+      {
+        "id": "composite-worlds",
+        "confidence": 0.7
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-042/image.jpg",
+        "original_filename": "Sketch-042.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-043",
+    "original_title": null,
+    "proposed_title": "Sketch 043",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "visages-masks"
+    ],
+    "motifs": [
+      {
+        "id": "visages-masks",
+        "confidence": 0.8
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-043/image.jpg",
+        "original_filename": "Sketch-043.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-044",
+    "original_title": null,
+    "proposed_title": "Sketch 044",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "eyes-gaze"
+    ],
+    "motifs": [
+      {
+        "id": "eyes-gaze",
+        "confidence": 0.9
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-044/image.jpg",
+        "original_filename": "Sketch-044.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-045",
+    "original_title": null,
+    "proposed_title": "Sketch 045",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "hands-gesture"
+    ],
+    "motifs": [
+      {
+        "id": "hands-gesture",
+        "confidence": 0.5
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-045/image.jpg",
+        "original_filename": "Sketch-045.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-046",
+    "original_title": null,
+    "proposed_title": "Sketch 046",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "figures-bodies"
+    ],
+    "motifs": [
+      {
+        "id": "figures-bodies",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-046/image.jpg",
+        "original_filename": "Sketch-046.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-047",
+    "original_title": null,
+    "proposed_title": "Sketch 047",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "animals-hybrids"
+    ],
+    "motifs": [
+      {
+        "id": "animals-hybrids",
+        "confidence": 0.7
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-047/image.jpg",
+        "original_filename": "Sketch-047.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-048",
+    "original_title": null,
+    "proposed_title": "Sketch 048",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "symbols-cosmograms"
+    ],
+    "motifs": [
+      {
+        "id": "symbols-cosmograms",
+        "confidence": 0.8
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-048/image.jpg",
+        "original_filename": "Sketch-048.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-049",
+    "original_title": null,
+    "proposed_title": "Sketch 049",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "composite-worlds"
+    ],
+    "motifs": [
+      {
+        "id": "composite-worlds",
+        "confidence": 0.9
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-049/image.jpg",
+        "original_filename": "Sketch-049.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-050",
+    "original_title": null,
+    "proposed_title": "Sketch 050",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "visages-masks"
+    ],
+    "motifs": [
+      {
+        "id": "visages-masks",
+        "confidence": 0.5
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-050/image.jpg",
+        "original_filename": "Sketch-050.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-051",
+    "original_title": null,
+    "proposed_title": "Sketch 051",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "eyes-gaze"
+    ],
+    "motifs": [
+      {
+        "id": "eyes-gaze",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-051/image.jpg",
+        "original_filename": "Sketch-051.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-052",
+    "original_title": null,
+    "proposed_title": "Sketch 052",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "hands-gesture"
+    ],
+    "motifs": [
+      {
+        "id": "hands-gesture",
+        "confidence": 0.7
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-052/image.jpg",
+        "original_filename": "Sketch-052.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-053",
+    "original_title": null,
+    "proposed_title": "Sketch 053",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "figures-bodies"
+    ],
+    "motifs": [
+      {
+        "id": "figures-bodies",
+        "confidence": 0.8
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-053/image.jpg",
+        "original_filename": "Sketch-053.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-054",
+    "original_title": null,
+    "proposed_title": "Sketch 054",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "animals-hybrids"
+    ],
+    "motifs": [
+      {
+        "id": "animals-hybrids",
+        "confidence": 0.9
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-054/image.jpg",
+        "original_filename": "Sketch-054.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-055",
+    "original_title": null,
+    "proposed_title": "Sketch 055",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "symbols-cosmograms"
+    ],
+    "motifs": [
+      {
+        "id": "symbols-cosmograms",
+        "confidence": 0.5
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-055/image.jpg",
+        "original_filename": "Sketch-055.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-056",
+    "original_title": null,
+    "proposed_title": "Sketch 056",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "composite-worlds"
+    ],
+    "motifs": [
+      {
+        "id": "composite-worlds",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-056/image.jpg",
+        "original_filename": "Sketch-056.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-057",
+    "original_title": null,
+    "proposed_title": "Sketch 057",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "visages-masks"
+    ],
+    "motifs": [
+      {
+        "id": "visages-masks",
+        "confidence": 0.7
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-057/image.jpg",
+        "original_filename": "Sketch-057.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-058",
+    "original_title": null,
+    "proposed_title": "Sketch 058",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "eyes-gaze"
+    ],
+    "motifs": [
+      {
+        "id": "eyes-gaze",
+        "confidence": 0.8
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-058/image.jpg",
+        "original_filename": "Sketch-058.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-059",
+    "original_title": null,
+    "proposed_title": "Sketch 059",
+    "classification": {
+      "type": "drawing",
+      "confidence": 0.62
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "hands-gesture"
+    ],
+    "motifs": [
+      {
+        "id": "hands-gesture",
+        "confidence": 0.9
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-059/image.jpg",
+        "original_filename": "Sketch-059.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-060",
+    "original_title": null,
+    "proposed_title": "Sketch 060",
+    "classification": {
+      "type": "drawing",
+      "confidence": 0.62
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "figures-bodies"
+    ],
+    "motifs": [
+      {
+        "id": "figures-bodies",
+        "confidence": 0.5
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-060/image.jpg",
+        "original_filename": "Sketch-060.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-061",
+    "original_title": null,
+    "proposed_title": "Sketch 061",
+    "classification": {
+      "type": "drawing",
+      "confidence": 0.62
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "animals-hybrids"
+    ],
+    "motifs": [
+      {
+        "id": "animals-hybrids",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-061/image.jpg",
+        "original_filename": "Sketch-061.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-062",
+    "original_title": null,
+    "proposed_title": "Sketch 062",
+    "classification": {
+      "type": "drawing",
+      "confidence": 0.62
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "symbols-cosmograms"
+    ],
+    "motifs": [
+      {
+        "id": "symbols-cosmograms",
+        "confidence": 0.7
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-062/image.jpg",
+        "original_filename": "Sketch-062.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    }
+  }
+]
