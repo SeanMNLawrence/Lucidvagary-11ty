@@ -31,7 +31,7 @@
       },
       {
         "role": "alternate",
-        "path": "/posts/Sketch-001/image.jpg",
+        "path": "/posts/Sketch-001/image-alt.jpg",
         "original_filename": "IMG_20150301_114553.jpg",
         "asset_capture_date": null,
         "confidence": 0.8
@@ -77,7 +77,7 @@
       },
       {
         "role": "alternate",
-        "path": "/posts/Sketch-002/image.jpg",
+        "path": "/posts/Sketch-002/image-alt.jpg",
         "original_filename": "20150301_175722000_iOS.jpg",
         "asset_capture_date": null,
         "confidence": 0.8
