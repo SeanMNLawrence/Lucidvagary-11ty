@@ -17,10 +17,27 @@ layout: layouts/base.njk
       {% endif %}
     </header>
 
-    {% if image %}
+    {% set assets = digitalAssets or [] %}
+    {% set primary = primaryAsset or (assets | first) %}
+    {% if primary %}
     <div class="post-image">
-      <img src="{{ image }}" alt="{{ description or title }}">
+      <img src="{{ primary.src }}" alt="{{ primary.alt or description or title }}">
     </div>
+    {% endif %}
+
+    {% if assets.length > 1 %}
+    <section class="post-alternate-assets">
+      <h3>alternate photographs</h3>
+      <ul>
+        {% for asset in assets %}
+          {% if not primary or asset.src != primary.src %}
+          <li>
+            <a href="{{ asset.src }}">{{ asset.alt or title }}</a>
+          </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </section>
     {% endif %}
 
     <div class="post-content">
