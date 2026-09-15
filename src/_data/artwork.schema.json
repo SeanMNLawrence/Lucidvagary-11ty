@@ -1,0 +1,189 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lucidvagary.com/schema/artwork.schema.json",
+  "title": "Artwork",
+  "description": "Canonical model for an artwork and its one-or-more digital assets.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "title",
+    "slug",
+    "original_title",
+    "proposed_title",
+    "classification",
+    "curatorial_status",
+    "subjects",
+    "motifs",
+    "themes",
+    "constellations",
+    "relationships",
+    "assets",
+    "provenance"
+  ],
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "slug": {
+      "type": "string",
+      "minLength": 1
+    },
+    "original_title": {
+      "type": ["string", "null"]
+    },
+    "proposed_title": {
+      "type": ["string", "null"]
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "confidence"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["drawing", "sketch", "undecided"]
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "curatorial_status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "subjects": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "motifs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/tagReference"
+      }
+    },
+    "themes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/tagReference"
+      }
+    },
+    "constellations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/tagReference"
+      }
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/artworkRelationship"
+      }
+    },
+    "assets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/digitalAsset"
+      },
+      "contains": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "const": "primary"
+          }
+        },
+        "required": ["role"]
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "artwork_creation_date": {
+          "type": ["string", "null"],
+          "description": "Creation date of the artwork itself (if known)."
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "tagReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "confidence"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "artworkRelationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "target_slug", "confidence"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_slug": {
+          "type": "string",
+          "minLength": 1
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "digitalAsset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["role", "path", "original_filename"],
+      "properties": {
+        "role": {
+          "type": "string",
+          "enum": ["primary", "alternate"]
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "original_filename": {
+          "type": "string",
+          "minLength": 1
+        },
+        "asset_capture_date": {
+          "type": ["string", "null"],
+          "description": "Date this digital asset was captured; may differ from artwork_creation_date."
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    }
+  }
+}
