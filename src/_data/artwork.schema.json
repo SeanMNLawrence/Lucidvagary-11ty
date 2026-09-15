@@ -111,8 +111,15 @@
       "required": ["artwork_creation_date", "source_records"],
       "properties": {
         "artwork_creation_date": {
-          "type": ["string", "null"],
-          "format": "date",
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "null"
+            }
+          ],
           "description": "Creation date of the artwork itself (if known)."
         },
         "notes": {
@@ -192,8 +199,15 @@
           "minLength": 1
         },
         "asset_capture_date": {
-          "type": ["string", "null"],
-          "format": "date",
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "null"
+            }
+          ],
           "description": "Date this digital asset was captured; may differ from artwork_creation_date."
         },
         "confidence": {
