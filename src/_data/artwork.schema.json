@@ -7,6 +7,7 @@
   "additionalProperties": false,
   "anyOf": [
     {
+      "required": ["original_title"],
       "properties": {
         "original_title": {
           "type": "string",
@@ -15,6 +16,7 @@
       }
     },
     {
+      "required": ["proposed_title"],
       "properties": {
         "proposed_title": {
           "type": "string",
@@ -26,8 +28,6 @@
   "required": [
     "title",
     "slug",
-    "original_title",
-    "proposed_title",
     "classification",
     "curatorial_status",
     "subjects",
