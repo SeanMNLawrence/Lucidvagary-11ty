@@ -10,7 +10,7 @@ permalink: /posts/
     <a href="{{ post.url }}" class="post-card">
       {% if post.data.image %}
       <div class="listing-card-image">
-        <img src="{{ post.data.image }}" alt="{{ post.data.description or post.data.title }}" loading="lazy">
+        {% optimizedImage post.data.image, post.data.description or post.data.title, "card", "lazy" %}
       </div>
       {% endif %}
       <div class="post-card-body">

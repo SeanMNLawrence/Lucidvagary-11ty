@@ -1,4 +1,6 @@
 const markdownIt = require("markdown-it");
+const Image = require("@11ty/eleventy-img").default;
+const path = require("path");
 
 module.exports = function (eleventyConfig) {
   // Hard line breaks: a single newline becomes <br>, matching the poem
@@ -12,6 +14,56 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/posts/**/*.jpg");
   eleventyConfig.addPassthroughCopy("src/posts/**/*.png");
+
+  const imageVariants = {
+    thumbnail: {
+      widths: [180, 240, 320],
+      sizes: "(max-width: 767px) 40vw, 180px",
+    },
+    card: {
+      widths: [320, 480, 640],
+      sizes: "(max-width: 767px) 92vw, (max-width: 1279px) 45vw, 320px",
+    },
+    artwork: {
+      widths: [640, 960, 1280, 1920, 2560],
+      sizes: "(max-width: 767px) 92vw, (max-width: 1279px) 72vw, 960px",
+    },
+  };
+
+  eleventyConfig.addNunjucksAsyncShortcode(
+    "optimizedImage",
+    async function (src, alt, variant = "card", loading = "lazy") {
+      if (!src) return "";
+      const selectedVariant = imageVariants[variant] || imageVariants.card;
+      const normalizedSrc = src.startsWith("/") ? src.slice(1) : src;
+      const inputPath = path.join(process.cwd(), "src", normalizedSrc);
+      const extension = path.extname(normalizedSrc).toLowerCase();
+      const formats = extension === ".png" ? ["webp", "png"] : ["webp", "jpeg"];
+
+      const metadata = await Image(inputPath, {
+        widths: selectedVariant.widths,
+        formats,
+        outputDir: "./_site/img/optimized/",
+        urlPath: "/img/optimized/",
+        filenameFormat: function (id, src, width, format) {
+          const sourceName = path.basename(src, path.extname(src));
+          return `${sourceName}-${id}-${width}w.${format}`;
+        },
+        sharpJpegOptions: { quality: 76, mozjpeg: true },
+        sharpWebpOptions: { quality: 72 },
+        sharpPngOptions: { quality: 75, compressionLevel: 9 },
+      });
+
+      const imageAttributes = {
+        alt: alt || "",
+        sizes: selectedVariant.sizes,
+        loading,
+        decoding: "async",
+      };
+
+      return Image.generateHTML(metadata, imageAttributes);
+    }
+  );
 
   // "posts" collection, newest first, mirrors Hugo's unified posts stream
   eleventyConfig.addCollection("posts", function (collectionApi) {

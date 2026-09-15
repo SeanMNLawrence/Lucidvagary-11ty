@@ -19,7 +19,7 @@ layout: layouts/base.njk
 
     {% if image %}
     <div class="post-image">
-      <img src="{{ image }}" alt="{{ description or title }}">
+      {% optimizedImage image, description or title, "artwork", "eager" %}
     </div>
     {% endif %}
 
@@ -35,7 +35,7 @@ layout: layouts/base.njk
     <a href="{{ post.url }}" class="sidebar-card">
       {% if post.data.image %}
       <div class="sidebar-card-image">
-        <img src="{{ post.data.image }}" alt="{{ post.data.description or post.data.title }}" loading="lazy">
+        {% optimizedImage post.data.image, post.data.description or post.data.title, "thumbnail", "lazy" %}
       </div>
       {% endif %}
       <div class="sidebar-card-body">
