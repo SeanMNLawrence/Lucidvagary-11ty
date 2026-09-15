@@ -93,7 +93,7 @@ module.exports = function (eleventyConfig) {
   // Tag list helper, mirrors Hugo's /tags/ pages
   eleventyConfig.addCollection("tagList", function (collectionApi) {
     const tagSet = new Set();
-    getCanonicalPosts(collectionApi).forEach((item) => {
+    collectionApi.getFilteredByGlob("src/posts/**/*.md").forEach((item) => {
       (item.data.tags || []).forEach((tag) => tagSet.add(tag));
     });
     return [...tagSet].sort();

@@ -19,8 +19,8 @@ layout: layouts/base.njk
 
     {% set assets = digitalAssets or [] %}
     {% set primary = primaryAsset or (assets | first) %}
-    {% set primaryIndex = primaryAssetIndex %}
-    {% if primary and (primaryIndex == null or primaryIndex < 0) %}
+    {% set primaryIndex = primaryAssetIndex if primaryAssetIndex != null and primaryAssetIndex >= 0 else null %}
+    {% if primary and primaryIndex == null %}
       {% set primaryIndex = 0 %}
     {% endif %}
     {% if primary %}
