@@ -85,9 +85,130 @@ module.exports = function (eleventyConfig) {
     return getCanonicalPosts(collectionApi).filter((item) => item.data.tags && item.data.tags.includes("poem"));
   });
 
-  // Collection filtered to sketch/artwork pieces
+  const ARTWORK_ALT_STATUSES = new Set([
+    "alternate",
+    "alternate-asset",
+    "alternate_asset",
+    "alt",
+    "variant",
+  ]);
+
+  function toArray(value) {
+    if (Array.isArray(value)) return value;
+    if (value === undefined || value === null) return [];
+    return [value];
+  }
+
+  function normalizeFacetValue(value) {
+    return String(value).trim().toLowerCase();
+  }
+
+  function getArtworkFacetValues(item, facet) {
+    const data = item.data || {};
+    const artwork = data.artwork || {};
+    const keys = {
+      classification: ["classification"],
+      motif: ["motif", "motifs"],
+      theme: ["theme", "themes"],
+      constellation: ["constellation", "constellations"],
+      subject: ["subject", "subjects"],
+    };
+
+    function getValues(source, fieldNames) {
+      return fieldNames.flatMap((fieldName) => {
+        const value = source[fieldName];
+        if (
+          fieldName === "classification" &&
+          value &&
+          typeof value === "object" &&
+          typeof value.type === "string"
+        ) {
+          return value.type;
+        }
+        return toArray(value);
+      });
+    }
+
+    if (facet === "curatorialStatus") {
+      return toArray(
+        data.curatorialStatus ||
+          (data.curatorial && data.curatorial.status) ||
+          artwork.curatorialStatus ||
+          (artwork.curatorial && artwork.curatorial.status)
+      );
+    }
+    const fieldNames = keys[facet] || [facet];
+    return getValues(data, fieldNames).concat(getValues(artwork, fieldNames));
+  }
+
+  function isCanonicalArtworkEntry(item) {
+    const data = item.data || {};
+    const artwork = data.artwork || {};
+    const curatorialStatus = getArtworkFacetValues(item, "curatorialStatus")
+      .map(normalizeFacetValue)
+      .find(Boolean);
+
+    if (curatorialStatus && ARTWORK_ALT_STATUSES.has(curatorialStatus)) return false;
+    if (data.isAlternateAsset === true || artwork.isAlternateAsset === true) return false;
+    if (data.alternateOf || artwork.alternateOf) return false;
+    if (data.variantOf || artwork.variantOf) return false;
+    return true;
+  }
+
+  function buildArtworkCollection(collectionApi) {
+    const seen = new Set();
+    return [
+      ...collectionApi.getFilteredByGlob("src/artwork/**/*.md").map((item) => normalizeDigitalAssets(item)),
+      ...getCanonicalPosts(collectionApi).filter((item) => isArtwork(item)),
+    ]
+      .filter((item) => {
+        const key = item.data.artworkId || item.data.slug || item.fileSlug || item.url || item.inputPath;
+        if (seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      })
+      .filter(isCanonicalArtworkEntry)
+      .sort((a, b) => b.date - a.date);
+  }
+
+  function filterArtworksByFacet(artworks, facet, expectedValues) {
+    const values = toArray(expectedValues).map(normalizeFacetValue).filter(Boolean);
+    if (!values.length) return artworks;
+    return artworks.filter((item) => {
+      const facets = getArtworkFacetValues(item, facet)
+        .map(normalizeFacetValue)
+        .filter(Boolean);
+      return values.some((value) => facets.includes(value));
+    });
+  }
+
+  // Canonical artwork collection, excluding alternate assets.
+  eleventyConfig.addCollection("artworks", function (collectionApi) {
+    return buildArtworkCollection(collectionApi);
+  });
+
+  // Backward-compatible alias for the sketches index page.
   eleventyConfig.addCollection("sketches", function (collectionApi) {
-    return getCanonicalPosts(collectionApi).filter((item) => isArtwork(item));
+    return buildArtworkCollection(collectionApi);
+  });
+
+  eleventyConfig.addFilter("artworksBy", (artworks, facet, value) => {
+    return filterArtworksByFacet(artworks || [], facet, value);
+  });
+  eleventyConfig.addFilter("artworksByClassification", (artworks, value) => {
+    return filterArtworksByFacet(artworks || [], "classification", value);
+  });
+  eleventyConfig.addFilter("artworksByMotif", (artworks, value) => {
+    return filterArtworksByFacet(artworks || [], "motif", value);
+  });
+  eleventyConfig.addFilter("artworksByTheme", (artworks, value) => {
+    return filterArtworksByFacet(artworks || [], "theme", value);
+  });
+  eleventyConfig.addFilter("artworksByConstellation", (artworks, value) => {
+    return filterArtworksByFacet(artworks || [], "constellation", value);
+  });
+  eleventyConfig.addFilter("artworksByCuratorialStatus", (artworks, value) => {
+    return filterArtworksByFacet(artworks || [], "curatorialStatus", value);
   });
 
   // Tag list helper, mirrors Hugo's /tags/ pages
