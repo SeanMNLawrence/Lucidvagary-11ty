@@ -2,6 +2,8 @@
 layout: layouts/post.njk
 title: "The Pentaptych of Growth"
 date: 2026-09-08
+anchorWork: true
+anchorOrder: 1
 tags: ["artwork", "drawings"]
 image: "/posts/Sketch-059/image.jpg"
 ---

@@ -211,6 +211,22 @@ module.exports = function (eleventyConfig) {
     return filterArtworksByFacet(artworks || [], "curatorialStatus", value);
   });
 
+  // Curated collection landing page: works explicitly marked as anchors
+  // in front matter, ordered by metadata first and date second.
+  eleventyConfig.addCollection("anchorWorks", function (collectionApi) {
+    return collectionApi
+      .getFilteredByGlob("src/posts/**/*.md")
+      .filter((item) => item.data.anchorWork === true)
+      .sort((a, b) => {
+        const aOrder = a.data.anchorOrder ?? Number.MAX_SAFE_INTEGER;
+        const bOrder = b.data.anchorOrder ?? Number.MAX_SAFE_INTEGER;
+        if (aOrder !== bOrder) {
+          return aOrder - bOrder;
+        }
+        return b.date - a.date;
+      });
+  });
+
   // Tag list helper, mirrors Hugo's /tags/ pages
   eleventyConfig.addCollection("tagList", function (collectionApi) {
     const tagSet = new Set();
