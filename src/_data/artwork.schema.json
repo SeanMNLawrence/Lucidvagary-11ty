@@ -5,6 +5,24 @@
   "description": "Canonical model for an artwork and its one-or-more digital assets.",
   "type": "object",
   "additionalProperties": false,
+  "anyOf": [
+    {
+      "properties": {
+        "original_title": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    {
+      "properties": {
+        "proposed_title": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  ],
   "required": [
     "title",
     "slug",
@@ -86,7 +104,6 @@
     },
     "relationships": {
       "type": "array",
-      "uniqueItems": true,
       "items": {
         "$ref": "#/$defs/artworkRelationship"
       }
@@ -157,7 +174,6 @@
     "artworkRelationship": {
       "type": "object",
       "additionalProperties": false,
-      "description": "Unique by the object key pair of type + target_slug.",
       "required": ["type", "target_slug"],
       "properties": {
         "type": {
