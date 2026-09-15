@@ -98,7 +98,20 @@
       "type": "array",
       "minItems": 1,
       "items": {
-        "$ref": "#/$defs/digitalAsset"
+        "allOf": [
+          {
+            "$ref": "#/$defs/digitalAsset"
+          },
+          {
+            "type": "object",
+            "required": ["role"],
+            "properties": {
+              "role": {
+                "enum": ["primary", "alternate"]
+              }
+            }
+          }
+        ]
       },
       "contains": {
         "type": "object",
