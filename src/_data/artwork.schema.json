@@ -93,15 +93,7 @@
       "minItems": 1,
       "uniqueItems": true,
       "items": {
-        "allOf": [
-          {
-            "$ref": "#/$defs/digitalAsset"
-          },
-          {
-            "type": "object",
-            "required": ["role"]
-          }
-        ]
+        "$ref": "#/$defs/digitalAsset"
       },
       "contains": {
         "type": "object",
