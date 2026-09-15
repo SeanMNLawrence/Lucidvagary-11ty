@@ -19,6 +19,10 @@ layout: layouts/base.njk
 
     {% set assets = digitalAssets or [] %}
     {% set primary = primaryAsset or (assets | first) %}
+    {% set primaryIndex = primaryAssetIndex %}
+    {% if primary and (primaryIndex == null or primaryIndex < 0) %}
+      {% set primaryIndex = 0 %}
+    {% endif %}
     {% if primary %}
     <div class="post-image">
       <img src="{{ primary.src }}" alt="{{ primary.alt or description or title }}">
@@ -30,7 +34,7 @@ layout: layouts/base.njk
       <h3>alternate photographs</h3>
       <ul>
         {% for asset in assets %}
-          {% if primaryAssetIndex == null or loop.index0 != primaryAssetIndex %}
+          {% if primaryIndex == null or loop.index0 != primaryIndex %}
           <li>
             <a href="{{ asset.src }}">{{ asset.alt or title }}</a>
           </li>

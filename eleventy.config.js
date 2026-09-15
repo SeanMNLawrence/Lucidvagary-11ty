@@ -51,11 +51,17 @@ module.exports = function (eleventyConfig) {
     });
   }
 
+  const canonicalPostsCache = new WeakMap();
+
   function getCanonicalPosts(collectionApi) {
+    if (canonicalPostsCache.has(collectionApi)) {
+      return canonicalPostsCache.get(collectionApi);
+    }
+
     const sortedPosts = collectionApi.getFilteredByGlob("src/posts/**/*.md").sort((a, b) => b.date - a.date);
     const seenArtworkIds = new Set();
 
-    return sortedPosts
+    const canonicalPosts = sortedPosts
       .map((item) => normalizeDigitalAssets(item))
       .filter((item) => {
         if (!isArtwork(item)) return true;
@@ -64,6 +70,9 @@ module.exports = function (eleventyConfig) {
         seenArtworkIds.add(artworkId);
         return true;
       });
+
+    canonicalPostsCache.set(collectionApi, canonicalPosts);
+    return canonicalPosts;
   }
 
   // "posts" collection, newest first, mirrors Hugo's unified posts stream
