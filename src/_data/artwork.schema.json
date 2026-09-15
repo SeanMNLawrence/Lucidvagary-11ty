@@ -108,9 +108,11 @@
     "provenance": {
       "type": "object",
       "additionalProperties": false,
+      "required": ["artwork_creation_date", "source_records"],
       "properties": {
         "artwork_creation_date": {
           "type": ["string", "null"],
+          "format": "date",
           "description": "Creation date of the artwork itself (if known)."
         },
         "notes": {
@@ -150,7 +152,13 @@
       "properties": {
         "type": {
           "type": "string",
-          "minLength": 1
+          "enum": [
+            "variant_of",
+            "study_for",
+            "part_of_series",
+            "inspired_by",
+            "related_to"
+          ]
         },
         "target_slug": {
           "type": "string",
@@ -185,6 +193,7 @@
         },
         "asset_capture_date": {
           "type": ["string", "null"],
+          "format": "date",
           "description": "Date this digital asset was captured; may differ from artwork_creation_date."
         },
         "confidence": {
