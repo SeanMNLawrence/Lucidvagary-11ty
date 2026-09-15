@@ -29,20 +29,89 @@ layout: layouts/base.njk
   </article>
 
   <aside class="post-sidebar">
-    <h4 class="sidebar-title">more from lucid vagary</h4>
-    {% set related = collections.posts | relatedPosts(page.url, tags, 4) %}
-    {% for post in related %}
-    <a href="{{ post.url }}" class="sidebar-card">
-      {% if post.data.image %}
-      <div class="sidebar-card-image">
-        <img src="{{ post.data.image }}" alt="{{ post.data.description or post.data.title }}" loading="lazy">
-      </div>
+    {% set isArtwork = tags and "artwork" in tags %}
+    {% if isArtwork %}
+      {% set relatedArtworkGroups = collections.artworks | relatedArtworks(page.url, artworkRelationships, motifs, themes, 4, 4) %}
+      {% if relatedArtworkGroups.explicit.length or relatedArtworkGroups.semantic.length %}
+        <h4 class="sidebar-title">related artworks</h4>
+
+        {% if relatedArtworkGroups.explicit.length %}
+        <div class="sidebar-section">
+          <h5 class="sidebar-section-title">explicit relationships</h5>
+          {% for relation in relatedArtworkGroups.explicit %}
+          <a href="{{ relation.post.url }}" class="sidebar-card">
+            {% if relation.post.data.image %}
+            <div class="sidebar-card-image">
+              <img src="{{ relation.post.data.image }}" alt="{{ relation.post.data.description or relation.post.data.title }}" loading="lazy">
+            </div>
+            {% endif %}
+            <div class="sidebar-card-body">
+              <p class="sidebar-relation-label">{{ relation.relationshipType }}</p>
+              <h5>{{ relation.post.data.title }}</h5>
+              <p class="post-date">{{ relation.post.date | readableDate }}</p>
+            </div>
+          </a>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if relatedArtworkGroups.semantic.length %}
+        <div class="sidebar-section">
+          <h5 class="sidebar-section-title">shared motifs &amp; themes</h5>
+          {% for relation in relatedArtworkGroups.semantic %}
+          <a href="{{ relation.post.url }}" class="sidebar-card">
+            {% if relation.post.data.image %}
+            <div class="sidebar-card-image">
+              <img src="{{ relation.post.data.image }}" alt="{{ relation.post.data.description or relation.post.data.title }}" loading="lazy">
+            </div>
+            {% endif %}
+            <div class="sidebar-card-body">
+              <p class="sidebar-relation-label">semantic similarity</p>
+              <h5>{{ relation.post.data.title }}</h5>
+              {% if relation.sharedMotifs.length %}
+              <p class="sidebar-relation-meta">motifs: {{ relation.sharedMotifs | join(", ") }}</p>
+              {% endif %}
+              {% if relation.sharedThemes.length %}
+              <p class="sidebar-relation-meta">themes: {{ relation.sharedThemes | join(", ") }}</p>
+              {% endif %}
+            </div>
+          </a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      {% else %}
+        <h4 class="sidebar-title">more from lucid vagary</h4>
+        {% set related = collections.posts | relatedPosts(page.url, tags, 4) %}
+        {% for post in related %}
+        <a href="{{ post.url }}" class="sidebar-card">
+          {% if post.data.image %}
+          <div class="sidebar-card-image">
+            <img src="{{ post.data.image }}" alt="{{ post.data.description or post.data.title }}" loading="lazy">
+          </div>
+          {% endif %}
+          <div class="sidebar-card-body">
+            <h5>{{ post.data.title }}</h5>
+            <p class="post-date">{{ post.date | readableDate }}</p>
+          </div>
+        </a>
+        {% endfor %}
       {% endif %}
-      <div class="sidebar-card-body">
-        <h5>{{ post.data.title }}</h5>
-        <p class="post-date">{{ post.date | readableDate }}</p>
-      </div>
-    </a>
-    {% endfor %}
+    {% else %}
+      <h4 class="sidebar-title">more from lucid vagary</h4>
+      {% set related = collections.posts | relatedPosts(page.url, tags, 4) %}
+      {% for post in related %}
+      <a href="{{ post.url }}" class="sidebar-card">
+        {% if post.data.image %}
+        <div class="sidebar-card-image">
+          <img src="{{ post.data.image }}" alt="{{ post.data.description or post.data.title }}" loading="lazy">
+        </div>
+        {% endif %}
+        <div class="sidebar-card-body">
+          <h5>{{ post.data.title }}</h5>
+          <p class="post-date">{{ post.date | readableDate }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    {% endif %}
   </aside>
 </div>
