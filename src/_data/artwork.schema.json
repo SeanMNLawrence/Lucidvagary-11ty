@@ -118,12 +118,7 @@
           },
           {
             "type": "object",
-            "required": ["role"],
-            "properties": {
-              "role": {
-                "enum": ["primary", "alternate"]
-              }
-            }
+            "required": ["role"]
           }
         ]
       },
