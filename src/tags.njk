@@ -5,9 +5,9 @@ permalink: /tags/
 ---
 <section class="posts-section">
   <h1 class="posts-title">tags</h1>
-  <div class="tag-list">
+  <nav class="tag-list" aria-label="Browse posts by tag">
     {% for tag in collections.tagList %}
-    <a href="/tags/{{ tag | slugify }}/" class="post-tag">{{ tag }}</a>
+    <a href="/tags/{{ tag | slugify }}/" class="post-tag" rel="tag">Posts tagged {{ tag }}</a>
     {% endfor %}
-  </div>
+  </nav>
 </section>

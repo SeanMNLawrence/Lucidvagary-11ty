@@ -1,0 +1,32 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: collections.taxonomyBrowsePages
+  size: 1
+  alias: taxonomyPage
+permalink: "/{{ taxonomyPage.group }}/{{ taxonomyPage.slug }}/"
+eleventyComputed:
+  title: "{{ taxonomyPage.label }} ({{ taxonomyPage.count }}) - artwork - lucid vagary"
+  description: "Browse {{ taxonomyPage.count }} artworks in {{ taxonomyPage.label }}."
+---
+<section class="posts-section" aria-labelledby="taxonomy-title">
+  <h1 class="posts-title" id="taxonomy-title">{{ taxonomyPage.label }}</h1>
+  <p class="post-date">{{ taxonomyPage.count }} artwork{% if taxonomyPage.count != 1 %}s{% endif %}</p>
+  <div class="posts-list">
+    {% for artwork in taxonomyPage.artworks %}
+    <article class="post-card">
+      <a href="{{ artwork.url }}" aria-label="View artwork: {{ artwork.displayTitle }}">
+        {% if artwork.primaryAsset.available %}
+        <div class="listing-card-image">
+          {% optimizedImage artwork.primaryAsset.path, artwork.primaryAsset.alt, "card", "lazy" %}
+        </div>
+        {% endif %}
+        <div class="post-card-body">
+          <h2>{{ artwork.displayTitle }}</h2>
+          {% if artwork.titleIsProposed %}<p class="artwork-title-status">Proposed title</p>{% endif %}
+        </div>
+      </a>
+    </article>
+    {% endfor %}
+  </div>
+</section>

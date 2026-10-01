@@ -4,14 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "eleventy",
-    "serve": "eleventy --serve"
+    "build": "npm run clean && eleventy",
+    "clean": "node scripts/clean-site.js",
+    "serve": "eleventy --serve",
+    "test": "node --test",
+    "validate:artwork": "node scripts/validate-artworks.js",
+    "check:site": "node scripts/check-built-site.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@11ty/eleventy": "^3.1.6",
+    "@11ty/eleventy-img": "^7.0.0",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "htmlparser2": "^10.1.0",
     "markdown-it": "^15.0.0"
   }
 }
