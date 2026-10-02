@@ -30,11 +30,9 @@ title: "lucid vagary"
 
   {# CENTER: the single assigned/featured post - nothing else lives here #}
   <section class="home-hero">
-    {% if hero.data.image %}
-    <a href="{{ hero.url }}" class="hero-featured-image">
-      <img src="{{ hero.data.image }}" alt="{{ hero.data.description or hero.data.title }}">
+    <a href="/posts/Sketch-037/" class="hero-featured-image">
+      <img src="/posts/Sketch-037/image.jpg" alt="Sketch 037">
     </a>
-    {% endif %}
     {% if hero.data.tags %}
     <div class="post-tags-mini">
       {% for tag in hero.data.tags %}
