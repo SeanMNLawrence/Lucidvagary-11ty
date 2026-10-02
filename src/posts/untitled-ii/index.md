@@ -6,4 +6,6 @@ anchorWork: true
 anchorOrder: 7
 tags: ["artwork", "1993"]
 image: "/posts/untitled-ii/image.jpg"
+motifs: ["growth", "body"]
+themes: ["becoming"]
 ---

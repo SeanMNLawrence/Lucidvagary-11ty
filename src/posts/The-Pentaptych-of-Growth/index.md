@@ -6,6 +6,17 @@ anchorWork: true
 anchorOrder: 1
 tags: ["artwork", "drawings"]
 image: "/posts/Sketch-059/image.jpg"
+artworkRelationships:
+  - slug: "Sketch-057"
+    type: "developed-from"
+  - slug: "Sketch-058"
+    type: "developed-from"
+  - slug: "Sketch-059"
+    type: "developed-from"
+  - slug: "Sketch-060"
+    type: "developed-from"
+motifs: ["growth", "metamorphosis", "body"]
+themes: ["becoming", "renewal"]
 ---
 
 <div class="pentaptych-grid">
