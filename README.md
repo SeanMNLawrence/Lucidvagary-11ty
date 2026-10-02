@@ -7,3 +7,5 @@
 Canonical artwork schema: `/src/_data/artwork.schema.json`.
 Use this schema to validate artwork records and their nested digital assets before adding or transforming artwork content.
 The schema uses JSON Schema draft 2020-12.
+
+Artwork metadata is validated at build time from `eleventy.config.js`, using controlled values defined in `src/_data/artworkVocabulary.js`.

@@ -6,6 +6,4 @@ anchorWork: true
 anchorOrder: 5
 tags: ["artwork", "1993"]
 image: "/posts/untitled-iv/image.jpg"
-motifs: ["growth", "metamorphosis"]
-themes: ["becoming", "renewal"]
 ---
