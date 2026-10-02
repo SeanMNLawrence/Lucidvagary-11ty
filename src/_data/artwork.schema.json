@@ -75,8 +75,7 @@
     "subjects": {
       "type": "array",
       "items": {
-        "type": "string",
-        "minLength": 1
+        "$ref": "#/$defs/taxonomyId"
       },
       "uniqueItems": true
     },
@@ -84,14 +83,14 @@
       "type": "array",
       "uniqueItems": true,
       "items": {
-        "$ref": "#/$defs/taxonomyId"
+        "$ref": "#/$defs/taxonomyTerm"
       }
     },
     "themes": {
       "type": "array",
       "uniqueItems": true,
       "items": {
-        "$ref": "#/$defs/taxonomyId"
+        "$ref": "#/$defs/taxonomyTerm"
       }
     },
     "constellations": {
@@ -186,6 +185,28 @@
       "type": "string",
       "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
     },
+    "taxonomyTerm": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/taxonomyId"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id"],
+          "properties": {
+            "id": {
+              "$ref": "#/$defs/taxonomyId"
+            },
+            "confidence": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        }
+      ]
+    },
     "digitalAsset": {
       "type": "object",
       "additionalProperties": false,
@@ -202,6 +223,10 @@
         "original_filename": {
           "type": "string",
           "minLength": 1
+        },
+        "availability": {
+          "const": "missing-from-repository",
+          "description": "The source is catalogued but is not present in this repository checkout."
         },
         "asset_capture_date": {
           "anyOf": [
