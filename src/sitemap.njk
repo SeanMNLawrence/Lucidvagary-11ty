@@ -14,7 +14,7 @@ eleventyExcludeFromCollections: true
   <url><loc>{{ "/collection/" | absoluteUrl(site.url) }}</loc></url>
   <url><loc>{{ "/constellations/" | absoluteUrl(site.url) }}</loc></url>
   <url><loc>{{ "/tags/" | absoluteUrl(site.url) }}</loc></url>
-{%- for artwork in collections.sketches -%}
+{%- for artwork in collections.artworks -%}
   {%- set artworkSlug = artwork.data.slug or ((artwork.url and artwork.url.split("/").slice(-2, -1)[0]) or artwork.fileSlug) -%}
   <url><loc>{{ ("/artwork/" + artworkSlug + "/") | absoluteUrl(site.url) }}</loc></url>
 {%- endfor -%}

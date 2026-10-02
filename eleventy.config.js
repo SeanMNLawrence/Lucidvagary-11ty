@@ -250,6 +250,8 @@ module.exports = function (eleventyConfig) {
     const assetPaths = new Set();
     let assetCount = 0;
     let missingSourceCount = 0;
+    const expectedArtworkCount = 62;
+    const expectedAssetCount = 64;
 
     if (!Array.isArray(artworkCatalog) || artworkCatalog.length === 0) {
       throw new Error("The canonical artwork catalogue must be a non-empty array.");
@@ -275,6 +277,12 @@ module.exports = function (eleventyConfig) {
       }
       if (!Object.hasOwn(record, "original_title") || !Object.hasOwn(record, "proposed_title")) {
         errors.push(`${recordLabel} (${slug}): original_title and proposed_title keys are required`);
+      }
+      if (
+        (record.original_title !== null && typeof record.original_title !== "string") ||
+        (record.proposed_title !== null && typeof record.proposed_title !== "string")
+      ) {
+        errors.push(`${recordLabel} (${slug}): original_title and proposed_title must be strings or null`);
       }
 
       const classification = record.classification || {};
@@ -335,9 +343,17 @@ module.exports = function (eleventyConfig) {
       if (!Object.hasOwn(provenance, "artwork_creation_date") || !Array.isArray(provenance.source_records) ||
         provenance.source_records.length === 0) {
         errors.push(`${recordLabel} (${slug}): provenance requires artwork_creation_date and source_records`);
+      } else if (
+        provenance.artwork_creation_date !== null &&
+        (typeof provenance.artwork_creation_date !== "string" ||
+          !/^\d{4}-\d{2}-\d{2}$/.test(provenance.artwork_creation_date) ||
+          Number.isNaN(Date.parse(`${provenance.artwork_creation_date}T00:00:00Z`)))
+      ) {
+        errors.push(`${recordLabel} (${slug}): artwork_creation_date must be an ISO date or null`);
       }
 
       let primaryCount = 0;
+      const recordAssetPaths = new Set();
       (record.assets || []).forEach((asset) => {
         assetCount += 1;
         if (!asset || typeof asset !== "object" || !["primary", "alternate"].includes(asset.role) ||
@@ -346,16 +362,29 @@ module.exports = function (eleventyConfig) {
           return;
         }
         if (asset.role === "primary") primaryCount += 1;
+        if (recordAssetPaths.has(asset.path)) {
+          errors.push(`${recordLabel} (${slug}): duplicate asset path "${asset.path}"`);
+        }
+        recordAssetPaths.add(asset.path);
         if (assetPaths.has(asset.path)) {
           errors.push(`${recordLabel} (${slug}): duplicate asset path "${asset.path}"`);
         }
         assetPaths.add(asset.path);
+        if (
+          asset.confidence !== undefined &&
+          (typeof asset.confidence !== "number" || asset.confidence < 0 || asset.confidence > 1)
+        ) {
+          errors.push(`${recordLabel} (${slug}): asset confidence must be between 0 and 1`);
+        }
 
         const resolvedPath = resolveAssetPath(path.join(repoRoot, "src", "_data", "artworks.json"), asset.path);
         const exists = Boolean(resolvedPath && resolvedPath.startsWith(path.join(repoRoot, "src") + path.sep) &&
           fs.existsSync(resolvedPath));
         if (asset.availability === "missing-from-repository") {
           missingSourceCount += 1;
+          if (asset.role === "primary") {
+            errors.push(`${recordLabel} (${slug}): the primary asset cannot be missing from the repository`);
+          }
           if (exists) errors.push(`${recordLabel} (${slug}): asset is marked missing but exists at "${asset.path}"`);
         } else if (asset.availability !== undefined) {
           errors.push(`${recordLabel} (${slug}): invalid asset availability "${asset.availability}"`);
@@ -370,6 +399,7 @@ module.exports = function (eleventyConfig) {
 
     artworkCatalog.forEach((record) => {
       const slug = normalizeSlug(record && record.slug);
+      const seenRelationships = new Set();
       (record && record.relationships || []).forEach((relationship) => {
         if (!artworkRelationshipTypeSet.has(normalizeValue(relationship && relationship.type))) {
           errors.push(`src/_data/artworks.json (${slug}): unknown relationship type "${relationship && relationship.type}"`);
@@ -378,11 +408,26 @@ module.exports = function (eleventyConfig) {
         if (!target || !catalogSlugs.has(target)) {
           errors.push(`src/_data/artworks.json (${slug}): relationship target "${target}" is not a catalogue slug`);
         }
+        if (target === slug) {
+          errors.push(`src/_data/artworks.json (${slug}): self-referential artwork relationship`);
+        }
+        const relationshipKey = `${relationship && relationship.type}:${target}`;
+        if (seenRelationships.has(relationshipKey)) {
+          errors.push(`src/_data/artworks.json (${slug}): duplicate relationship "${relationshipKey}"`);
+        }
+        seenRelationships.add(relationshipKey);
       });
       if (!postSlugs.has(slug)) {
         errors.push(`src/_data/artworks.json (${slug}): no matching artwork post exists`);
       }
     });
+
+    if (artworkCatalog.length !== expectedArtworkCount) {
+      errors.push(`expected ${expectedArtworkCount} catalogue records, found ${artworkCatalog.length}`);
+    }
+    if (assetCount !== expectedAssetCount) {
+      errors.push(`expected ${expectedAssetCount} catalogue assets, found ${assetCount}`);
+    }
 
     if (errors.length) {
       throw new Error(["Canonical artwork catalogue validation failed.", ...errors.map((error) => `- ${error}`)].join("\n"));
@@ -743,9 +788,9 @@ module.exports = function (eleventyConfig) {
     return buildArtworkCollection(collectionApi);
   });
 
-  // Backward-compatible alias for the sketches index page.
+  // Sketch browse surface contains only canonical records classified as sketches.
   eleventyConfig.addCollection("sketches", function (collectionApi) {
-    return buildArtworkCollection(collectionApi);
+    return buildArtworkCollection(collectionApi).filter((item) => item.data.classification === "sketch");
   });
 
   eleventyConfig.addCollection("uncataloguedArtworks", function (collectionApi) {

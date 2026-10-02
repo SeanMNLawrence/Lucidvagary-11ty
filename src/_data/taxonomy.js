@@ -1,12 +1,16 @@
 module.exports = {
   collection: [
-    { value: "drawings", label: "drawings", field: "tags" },
-    { value: "sketches", label: "sketches", field: "tags", match: ["sketches", "sketch"] },
+    { value: "drawings", label: "Drawings", field: "classification", match: ["drawing"] },
+    { value: "sketches", label: "Sketches", field: "classification", match: ["sketch"] },
+    { value: "undecided", label: "Undecided", field: "classification", match: ["undecided"] },
   ],
   subjects: [
-    { value: "eyes-and-gaze", label: "eyes and gaze" },
-    { value: "hands-and-gesture", label: "hands and gesture" },
-    { value: "visages-and-masks", label: "visages and masks" },
-    { value: "animals-and-hybrids", label: "animals and hybrids" },
+    { value: "visages-masks", label: "Visages & Masks" },
+    { value: "eyes-gaze", label: "Eyes & Gaze" },
+    { value: "hands-gesture", label: "Hands & Gesture" },
+    { value: "figures-bodies", label: "Figures & Bodies" },
+    { value: "animals-hybrids", label: "Animals & Hybrids" },
+    { value: "symbols-cosmograms", label: "Symbols & Cosmograms" },
+    { value: "composite-worlds", label: "Composite Worlds" },
   ],
 };

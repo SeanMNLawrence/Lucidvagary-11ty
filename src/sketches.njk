@@ -12,7 +12,7 @@ robots: "noindex,follow"
   <p class="post-excerpt">{{ archive.artworks }} artworks · {{ archive.assets }} digital assets</p>
   {% endif %}
   <div class="posts-list">
-    {% for sketch in collections.artworks %}
+    {% for sketch in collections.sketches %}
     <a href="{{ sketch.url }}" class="post-card" aria-label="Read {{ sketch.data.title }}">
       {% if sketch.data.image %}
       <div class="listing-card-image">

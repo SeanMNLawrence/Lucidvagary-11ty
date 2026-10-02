@@ -1,7 +1,7 @@
 ---
 layout: layouts/base.njk
 pagination:
-  data: collections.sketches
+  data: collections.artworks
   size: 1
   alias: artwork
 permalink: "/artwork/{{ artwork.data.slug or ((artwork.url and artwork.url.split('/').slice(-2, -1)[0]) or artwork.fileSlug) }}/"
@@ -11,6 +11,7 @@ eleventyComputed:
 {% set tags = artwork.data.tags or [] %}
 {% set related = collections.sketches | relatedPosts(artwork.url, tags, 4) %}
 {% set sourceFilename = artwork.data.original_filename or (artwork.data.image and artwork.data.image.split("/").pop()) %}
+{% set artworkRecord = artwork.data.artworkRecord %}
 {% set motifs = artwork.data.motifs or [] %}
 {% set themes = artwork.data.themes or [] %}
 {% set concepts = motifs.concat(themes) %}
@@ -39,6 +40,26 @@ eleventyComputed:
       <div>
         <dt>curatorial status</dt>
         <dd>{{ artwork.data.curatorial_status }}</dd>
+      </div>
+      {% endif %}
+
+      {% if artworkRecord.subjects.length %}
+      <div>
+        <dt>subject families</dt>
+        <dd class="artwork-meta-links">
+          <ul class="artwork-inline-list">
+            {% for subject in artworkRecord.subjects %}
+            <li><a href="/subjects/{{ subject }}/">{{ subject | replace("-", " ") }}</a></li>
+            {% endfor %}
+          </ul>
+        </dd>
+      </div>
+      {% endif %}
+
+      {% if artworkRecord.proposed_title %}
+      <div>
+        <dt>proposed title</dt>
+        <dd>{{ artworkRecord.proposed_title }}</dd>
       </div>
       {% endif %}
 
