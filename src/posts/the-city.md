@@ -2,6 +2,8 @@
 layout: layouts/post.njk
 title: "The City"
 date: 2025-11-01
+anchorWork: true
+anchorOrder: 3
 tags: ["poem", "image-poem", "miller park", "chicago"]
 description: "An image-poem written at the site of the author's hemorrhagic stroke, paired with a photograph of Lake Michigan facing the Chicago skyline."
 image: "/images/the-city.png"

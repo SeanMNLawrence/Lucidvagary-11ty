@@ -1,0 +1,133 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: collections.sketches
+  size: 1
+  alias: artwork
+permalink: "/artwork/{{ (artwork.data.slug or artwork.fileSlug) }}/"
+eleventyComputed:
+  title: "{{ artwork.data.title }} - artwork - lucid vagary"
+---
+{% set tags = artwork.data.tags or [] %}
+{% set related = collections.sketches | relatedPosts(artwork.url, tags, 4) %}
+{% set sourceFilename = artwork.data.original_filename or (artwork.data.image and artwork.data.image.split("/").pop()) %}
+
+<article class="artwork-page">
+  <header class="artwork-header">
+    <h1>{{ artwork.data.title }}</h1>
+  </header>
+
+  {% if artwork.data.image %}
+  <div class="artwork-primary-image">
+    <img src="{{ artwork.data.image }}" alt="{{ artwork.data.artwork_alt or artwork.data.description or artwork.data.title ~ ' artwork' }}">
+  </div>
+  {% endif %}
+
+  <section class="artwork-metadata">
+    <h2>metadata</h2>
+
+    <dl class="artwork-meta-list">
+      <div>
+        <dt>classification</dt>
+        <dd>{{ artwork.data.classification or ("Sketch" if "sketch" in tags else "Artwork") }}</dd>
+      </div>
+
+      {% if artwork.data.curatorial_status %}
+      <div>
+        <dt>curatorial status</dt>
+        <dd>{{ artwork.data.curatorial_status }}</dd>
+      </div>
+      {% endif %}
+
+      {% if artwork.data.motifs or artwork.data.themes or tags %}
+      <div>
+        <dt>motifs/themes</dt>
+        <dd class="artwork-meta-links">
+          {% if artwork.data.motifs or artwork.data.themes %}
+            {% for concept in (artwork.data.motifs or artwork.data.themes) %}
+              <a href="/tags/{{ concept | slugify }}/">{{ concept }}</a>{% if not loop.last %}, {% endif %}
+            {% endfor %}
+          {% else %}
+            {% for tag in tags %}
+              <a href="/tags/{{ tag | slugify }}/">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+            {% endfor %}
+          {% endif %}
+        </dd>
+      </div>
+      {% endif %}
+
+      {% if artwork.data.constellations %}
+      <div>
+        <dt>constellation links</dt>
+        <dd class="artwork-meta-links">
+          {% for constellation in artwork.data.constellations %}
+            {% if constellation.url %}
+              <a href="{{ constellation.url }}">{{ constellation.title or constellation.url }}</a>
+            {% else %}
+              <a href="/tags/{{ constellation | slugify }}/">{{ constellation }}</a>
+            {% endif %}
+            {% if not loop.last %}, {% endif %}
+          {% endfor %}
+        </dd>
+      </div>
+      {% endif %}
+
+      {% if artwork.data.related_works or related.length %}
+      <div>
+        <dt>related works</dt>
+        <dd class="artwork-meta-links">
+          {% if artwork.data.related_works %}
+            {% for relatedWork in artwork.data.related_works %}
+              {% if relatedWork.url %}
+                <a href="{{ relatedWork.url }}">{{ relatedWork.title or relatedWork.url }}</a>
+              {% else %}
+                <a href="/artwork/{{ relatedWork | slugify }}/">{{ relatedWork }}</a>
+              {% endif %}
+              {% if not loop.last %}, {% endif %}
+            {% endfor %}
+          {% else %}
+            {% for item in related %}
+              <a href="/artwork/{{ item.data.slug or item.fileSlug }}/">{{ item.data.title }}</a>{% if not loop.last %}, {% endif %}
+            {% endfor %}
+          {% endif %}
+        </dd>
+      </div>
+      {% endif %}
+
+      {% if artwork.data.alternate_views %}
+      <div>
+        <dt>alternate views/images</dt>
+        <dd>
+          <ul class="artwork-alt-list">
+            {% for alternate in artwork.data.alternate_views %}
+            <li>
+              {% if alternate.src %}
+                <a href="{{ alternate.src }}">
+                  <img src="{{ alternate.src }}" alt="{{ alternate.alt or artwork.data.title ~ ' alternate view ' ~ loop.index }}">
+                </a>
+              {% else %}
+                <a href="{{ alternate }}">
+                  <img src="{{ alternate }}" alt="{{ artwork.data.title ~ ' alternate view ' ~ loop.index }}">
+                </a>
+              {% endif %}
+            </li>
+            {% endfor %}
+          </ul>
+        </dd>
+      </div>
+      {% endif %}
+
+      {% if artwork.data.provenance or sourceFilename %}
+      <div>
+        <dt>provenance</dt>
+        <dd>
+          {% if artwork.data.provenance %}{{ artwork.data.provenance }}{% endif %}
+          {% if sourceFilename %}
+            <div class="artwork-source-file">original filename: {{ sourceFilename }}</div>
+          {% endif %}
+        </dd>
+      </div>
+      {% endif %}
+    </dl>
+  </section>
+</article>

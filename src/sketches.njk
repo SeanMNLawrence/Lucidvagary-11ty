@@ -5,8 +5,12 @@ permalink: /sketches/
 ---
 <section class="posts-section">
   <h1 class="posts-title">sketches</h1>
+  {% set archive = collections.archiveCounts | first %}
+  {% if archive %}
+  <p class="post-excerpt">{{ archive.artworks }} artworks · {{ archive.assets }} digital assets</p>
+  {% endif %}
   <div class="posts-list">
-    {% for sketch in collections.sketches %}
+    {% for sketch in collections.artworks %}
     <a href="{{ sketch.url }}" class="post-card">
       {% if sketch.data.image %}
       <div class="listing-card-image">

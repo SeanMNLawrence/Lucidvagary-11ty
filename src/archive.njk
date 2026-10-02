@@ -1,0 +1,162 @@
+---
+layout: layouts/base.njk
+title: "archive - lucid vagary"
+permalink: /archive/
+---
+<section class="posts-section archive-section">
+  <div class="archive-header">
+    <div>
+      <h1 class="posts-title">archive</h1>
+      <p class="archive-intro">A complete, shareable view of the artwork archive. Every work in this sequence remains visible here, including studies and sketches.</p>
+    </div>
+    <p class="archive-count"><span id="archive-visible-count">{{ artworkArchive.count }}</span> of {{ artworkArchive.count }} artworks</p>
+  </div>
+
+  <form class="archive-filters" id="archive-filters">
+    <label class="archive-filter">
+      <span>Classification</span>
+      <select name="classification" id="archive-classification">
+        <option value="">All classifications</option>
+        {% for option in artworkArchive.filters.classifications %}
+        <option value="{{ option.value }}">{{ option.label }}</option>
+        {% endfor %}
+      </select>
+    </label>
+
+    <label class="archive-filter">
+      <span>Subject</span>
+      <select name="subject" id="archive-subject">
+        <option value="">All subjects</option>
+        {% for subject in artworkArchive.filters.subjects %}
+        <option value="{{ subject }}">{{ subject }}</option>
+        {% endfor %}
+      </select>
+    </label>
+
+    <label class="archive-filter">
+      <span>Motif</span>
+      <select name="motif" id="archive-motif">
+        <option value="">All motifs</option>
+        {% for motif in artworkArchive.filters.motifs %}
+        <option value="{{ motif }}">{{ motif }}</option>
+        {% endfor %}
+      </select>
+    </label>
+
+    <label class="archive-filter">
+      <span>Theme</span>
+      <select name="theme" id="archive-theme">
+        <option value="">All themes</option>
+        {% for theme in artworkArchive.filters.themes %}
+        <option value="{{ theme }}">{{ theme }}</option>
+        {% endfor %}
+      </select>
+    </label>
+
+    <label class="archive-filter">
+      <span>Constellation</span>
+      <select name="constellation" id="archive-constellation">
+        <option value="">All constellations</option>
+        {% for constellation in artworkArchive.filters.constellations %}
+        <option value="{{ constellation }}">{{ constellation }}</option>
+        {% endfor %}
+      </select>
+    </label>
+  </form>
+
+  <div class="posts-list archive-list" id="archive-list">
+    {% for artwork in artworkArchive.items %}
+    <a
+      href="{{ artwork.url }}"
+      class="post-card archive-card"
+      data-classification="{{ artwork.classification.type }}"
+      data-subjects="{{ artwork.subjects | join('|') }}"
+      data-motifs="{{ artwork.motifs | join('|') }}"
+      data-themes="{{ artwork.themes | join('|') }}"
+      data-constellations="{{ artwork.constellations | join('|') }}"
+    >
+      <div class="listing-card-image">
+        <img src="{{ artwork.assets[0].path }}" alt="{{ artwork.title }}" loading="lazy">
+      </div>
+      <div class="post-card-body">
+        <div class="post-tags-mini">
+          <span class="post-tag-mini">{{ artwork.classification.type }}</span>
+          {% for subject in artwork.subjects %}
+          <span class="post-tag-mini">{{ subject }}</span>
+          {% endfor %}
+          {% for motif in artwork.motifs %}
+          <span class="post-tag-mini">{{ motif }}</span>
+          {% endfor %}
+          {% for theme in artwork.themes %}
+          <span class="post-tag-mini">{{ theme }}</span>
+          {% endfor %}
+          {% for constellation in artwork.constellations %}
+          <span class="post-tag-mini">{{ constellation }}</span>
+          {% endfor %}
+        </div>
+        <h3>{{ artwork.title }}</h3>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<script>
+  (function () {
+    var form = document.getElementById("archive-filters");
+    var cards = Array.prototype.slice.call(document.querySelectorAll(".archive-card"));
+    var count = document.getElementById("archive-visible-count");
+    var params = new URLSearchParams(window.location.search);
+    var filterKeys = ["classification", "subject", "motif", "theme", "constellation"];
+
+    function cardMatches(card, key, value) {
+      if (!value) return true;
+      if (key === "classification") {
+        return card.dataset.classification === value;
+      }
+
+      var attributeName = key === "constellation" ? "constellations" : key + "s";
+      var values = (card.dataset[attributeName] || "").split("|").filter(Boolean);
+      return values.indexOf(value) !== -1;
+    }
+
+    function syncInputsFromUrl() {
+      filterKeys.forEach(function (key) {
+        var field = form.elements[key];
+        if (field && params.has(key)) {
+          field.value = params.get(key);
+        }
+      });
+    }
+
+    function applyFilters() {
+      var visible = 0;
+
+      filterKeys.forEach(function (key) {
+        var value = form.elements[key].value;
+        if (value) {
+          params.set(key, value);
+        } else {
+          params.delete(key);
+        }
+      });
+
+      cards.forEach(function (card) {
+        var matches = filterKeys.every(function (key) {
+          return cardMatches(card, key, form.elements[key].value);
+        });
+
+        card.hidden = !matches;
+        if (matches) visible += 1;
+      });
+
+      count.textContent = String(visible);
+      var nextUrl = window.location.pathname + (params.toString() ? "?" + params.toString() : "");
+      window.history.replaceState({}, "", nextUrl);
+    }
+
+    syncInputsFromUrl();
+    form.addEventListener("change", applyFilters);
+    applyFilters();
+  })();
+</script>

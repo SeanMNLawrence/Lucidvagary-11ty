@@ -1,0 +1,32 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: collections.taxonomyBrowsePages
+  size: 1
+  alias: taxonomyPage
+permalink: "/{{ taxonomyPage.group }}/{{ taxonomyPage.slug }}/"
+eleventyComputed:
+  title: "{{ taxonomyPage.label }} - lucid vagary"
+---
+<section class="posts-section">
+  <h1 class="posts-title">{{ taxonomyPage.label }}</h1>
+  <p class="post-date">{{ taxonomyPage.count }} artwork{% if taxonomyPage.count != 1 %}s{% endif %}</p>
+  <div class="posts-list">
+    {% for post in taxonomyPage.posts %}
+    <a href="{{ post.url }}" class="post-card">
+      {% if post.data.image %}
+      <div class="listing-card-image">
+        <img src="{{ post.data.image }}" alt="{{ post.data.description or post.data.title }}" loading="lazy">
+      </div>
+      {% endif %}
+      <div class="post-card-body">
+        <h3>{{ post.data.title }}</h3>
+        <p class="post-date">{{ post.date | readableDate }}</p>
+        {% if post.data.description %}
+        <p class="post-excerpt">{{ post.data.description }}</p>
+        {% endif %}
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
