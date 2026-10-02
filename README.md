@@ -2,78 +2,57 @@
 
 <img width="1194" height="834" alt="image" src="https://github.com/user-attachments/assets/d96d1911-18c4-4c90-b603-8787fca4c0f5" />
 
-Here’s the most concrete Lucid Vagary taxonomy/ontology model we had reached around September 15, 2026. I’m separating what was effectively settled from what was still being refined.
+Lucid Vagary
 
-Layer	Purpose	Working vocabulary / structure	Status
-Artwork	The intellectual/curatorial work	One canonical artwork record, regardless of how many files represent it	Core model
-Digital Asset	The actual image/file	JPG/PNG/etc. connected to an Artwork; alternates and variants can point back to the same work	Core model
-Subject Family	Primary visual/formal classification	Visages & Masks · Eyes & Gaze · Hands & Gesture · Figures & Bodies · Animals & Hybrids · Symbols & Cosmograms · Composite Worlds	Working controlled vocabulary
-Making State	What kind of artifact it is developmentally	Drawing · Sketch · Indeterminate	Controlled vocabulary
-Curatorial Status	Importance/function within the archive	Anchor · Supporting · Study · Variant · Fragment	Controlled vocabulary
-Motifs	Repeated visual elements	Smaller-grain recurring things within works—eyes, masks, horns, hands, glyphs, etc.	Open vocabulary / still developing
-Themes	Conceptual/psychological concerns	Higher-order ideas cutting across subjects and motifs	Separate semantic layer; vocabulary still developing
-Constellations	Curated many-to-many groupings	Candidates included Eyes & Gaze, Visages & Masks, Hands & Gesture, Hybrid Bestiary, Inner Cosmologies, Chromatic Visions	Model established; names still somewhat fluid
-Relationships	Explicit links among works	Typed artwork-to-artwork relationships rather than relying only on tags	Model established; exact relationship vocabulary not fully recoverable
-Provenance	Record history	Origin, asset source, alternates, lineage, and related catalog information	Part of canonical schema
+A digital art archive for exploring images, recurring motifs, and the relationships between works.
 
-The important distinction
+Lucid Vagary organizes an evolving artwork collection through a shared taxonomy and a lightweight ontology. The taxonomy supports consistent classification; the ontology describes connections among artworks, digital assets, themes, and curated groupings.
 
-The system was deliberately becoming more than a tag taxonomy.
+The project brings together structured cataloging and interpretive exploration. Visitors can browse by visual subject, follow recurring motifs, or encounter works in constellations—overlapping collections that reveal connections through deliberate juxtaposition.
 
-The architecture was roughly:
+Purpose
 
-Artwork
-→ classified by Subject Family
-→ described by Making State + Curatorial Status
-→ contains Motifs
-→ participates in Themes
-→ belongs to one or more Constellations
-→ relates explicitly to other Artworks
-→ is represented by one or more Digital Assets
+* Maintain a canonical record for each artwork, independently of its image files.
+* Make the collection discoverable through consistent metadata and navigation.
+* Preserve provenance and distinguish alternate assets from distinct works.
+* Support curatorial interpretation without reducing images to fixed meanings.
+* Provide an extensible foundation for future artwork, writing, and exhibitions.
 
-That distinction between Artwork and Digital Asset was important because the working inventory appeared to contain 64 source assets representing about 62 artworks. In other words, duplicate files, alternates, or versions were not supposed to inflate the intellectual collection.
+Data Model
 
-Taxonomy versus constellation
+Layer	Purpose	Vocabulary or structure
+Artwork	The work being cataloged	One canonical record per artwork
+Digital Asset	A file representing an artwork	Images, alternate exports, and other associated files
+Subject Family	Broad visual classification	Visages & Masks; Eyes & Gaze; Hands & Gesture; Figures & Bodies; Animals & Hybrids; Symbols & Cosmograms; Composite Worlds
+Making State	Developmental classification	Drawing; Sketch; Indeterminate
+Curatorial Status	Role within the collection	Anchor; Supporting; Study; Variant; Fragment
+Motif	A recurring visual element	Eyes, masks, horns, hands, glyphs, and other evolving terms
+Theme	A conceptual or psychological concern	Transformation, fragmentation, gaze, liminality, and other developing concepts
+Constellation	An overlapping, curated grouping	Hybrid Bestiary; Inner Cosmologies; Chromatic Visions; other groupings
+Relationship	An explicit connection between artworks	Typed links using a developing relationship vocabulary
+Provenance	Origin and record history	Sources, lineage, asset history, and catalog information
 
-This was probably the most important conceptual move we made.
+An artwork can contain multiple motifs, participate in multiple themes, and belong to multiple constellations. It can also connect directly to other artworks and be represented by more than one digital asset.
 
-A Subject Family answers:
+Classification and Curation
 
-What kind of visual thing is this?
+Each layer answers a different question:
 
-For example:
+* Subject: What is depicted?
+* Motif: What visual elements recur?
+* Theme: What conceptual territory does the work explore?
+* Constellation: What becomes visible when these works are viewed together?
+* Relationship: How is this work connected to another?
 
-Animals & Hybrids
+For example, Animals & Hybrids classifies visual subject matter. Hybrid Bestiary can gather creatures, masks, bodily fragments, and symbolic compositions into a broader curatorial exploration.
 
-A Motif answers:
+Constellations overlap by design. Classification provides orientation while leaving room for ambiguity, reinterpretation, and new associations.
 
-What recurs inside it?
+Website Architecture
 
-For example:
+The proposed website uses Eleventy, with source control in GitHub and deployment through Cloudflare Pages.
 
-horns · eyes · teeth · smoke · glyphs
-
-A Theme answers:
-
-What psychological or conceptual territory does it inhabit?
-
-For example:
-
-transformation · fragmentation · gaze · liminality
-
-A Constellation answers:
-
-Which works become interesting when deliberately viewed together?
-
-So Hybrid Bestiary isn’t simply another folder containing Animals & Hybrids. It can gather creatures, masks, bodily fragments, symbols, and composite scenes into a curatorial argument.
-
-That is the more archetypalist part of the system: constellations are allowed to overlap.
-
-⸻
-
-The website architecture that followed from it
-
-We had translated the taxonomy into an Eleventy structure roughly like this:
+Planned routes include:
 
 /artwork/{slug}/
 /archive/
@@ -84,20 +63,20 @@ We had translated the taxonomy into an Eleventy structure roughly like this:
 /constellations/{slug}/
 /themes/{slug}/
 
-With the controlled data living centrally rather than being recreated in every artwork record:
+Shared vocabulary and relationship definitions are maintained centrally:
 
 _data/
-    artwork-taxonomy.json
-    artwork-ontology.json
+  artwork-taxonomy.json
+  artwork-ontology.json
 
-Artwork records would then use structured Markdown front matter or JSON/YAML, while Eleventy generated the browse surfaces from those canonical values.
+Artwork records use structured Markdown front matter or JSON/YAML. These records provide the basis for generating artwork pages, collection views, subject and theme indexes, constellation pages, and links between related works.
 
-The implementation work subsequently included a canonical artwork schema, catalog records, provenance, uniqueness rules for taxonomy/relationship keys, artwork detail pages, archive pages, taxonomy browse pages, constellation pages, and a curated collection landing page.
+Visitor Experience
 
-The model in one line
+The public interface makes the collection approachable through images, concise descriptions, and meaningful connections. Structured metadata supports navigation, while curatorial text gives each constellation context.
 
-If I compress the whole thing, Lucid Vagary had evolved from a gallery organized by folders into a small knowledge graph for visual imagination:
+The goal is a navigable visual archive in which an artwork can acquire new meaning through the company it keeps.
 
-Asset → Artwork → Subject → Motif → Theme → Constellation ↔ Related Artwork
+Development Status
 
-And I think that final arrow—Constellation ↔ Related Artwork—is where it became distinctively yours rather than another conventional portfolio taxonomy. It lets a work acquire different meanings depending on the symbolic company in which it is placed.
+This document describes the working model and intended architecture. Vocabulary, relationship types, curatorial groupings, and public presentation remain subject to refinement. It does not establish which features are currently implemented or deployed.
