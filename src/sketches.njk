@@ -16,7 +16,7 @@ robots: "noindex,follow"
     <a href="{{ sketch.url }}" class="post-card" aria-label="Read {{ sketch.data.title }}">
       {% if sketch.data.image %}
       <div class="listing-card-image">
-        <img src="{{ sketch.data.image }}" alt="" aria-hidden="true" loading="lazy">
+        {% optimizedImage sketch.data.image, "", "card", "lazy" %}
       </div>
       {% endif %}
       <div class="post-card-body">

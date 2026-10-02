@@ -22,7 +22,7 @@ eleventyComputed:
 
   {% if artwork.data.image %}
   <div class="artwork-primary-image">
-    <img src="{{ artwork.data.image }}" alt="{{ artwork.data.artwork_alt or artwork.data.description or artwork.data.title ~ ' artwork' }}">
+    {% optimizedImage artwork.data.image, artwork.data.artwork_alt or artwork.data.description or artwork.data.title ~ " artwork", "artwork", "eager" %}
   </div>
   {% endif %}
 
@@ -136,7 +136,7 @@ eleventyComputed:
               {% if alternateSrc %}
               <li>
                 <a href="{{ alternateSrc }}">
-                  <img src="{{ alternateSrc }}" alt="{{ alternateAlt }}">
+                  {% optimizedImage alternateSrc, alternateAlt, "artwork", "lazy" %}
                   <span class="artwork-alt-caption">{{ alternateLabel }}</span>
                 </a>
               </li>

@@ -14,7 +14,7 @@ title: "lucid vagary"
     <a href="{{ post.url }}" class="recent-card" aria-label="Read {{ post.data.title }}">
       {% if post.data.image %}
       <div class="recent-image">
-        <img src="{{ post.data.image }}" alt="" aria-hidden="true" loading="lazy">
+        {% optimizedImage post.data.image, "", "thumbnail", "lazy" %}
       </div>
       {% endif %}
       {% if post.data.tags %}
@@ -35,7 +35,7 @@ title: "lucid vagary"
     <h2 class="visually-hidden">Featured post</h2>
     {% if hero.data.image %}
     <a href="{{ hero.url }}" class="hero-featured-image" aria-label="Read {{ hero.data.title }}">
-      <img src="{{ hero.data.image }}" alt="" aria-hidden="true">
+      {% optimizedImage hero.data.image, "", "artwork", "eager" %}
     </a>
     {% endif %}
     {% if hero.data.tags %}
@@ -58,7 +58,7 @@ title: "lucid vagary"
     <a href="{{ item.post.url }}" class="bytag-card" aria-label="Read {{ item.post.data.title }}">
       {% if item.post.data.image %}
       <div class="bytag-image">
-        <img src="{{ item.post.data.image }}" alt="" aria-hidden="true" loading="lazy">
+        {% optimizedImage item.post.data.image, "", "thumbnail", "lazy" %}
       </div>
       {% endif %}
       <div class="bytag-body">

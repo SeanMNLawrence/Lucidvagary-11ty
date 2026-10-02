@@ -12,7 +12,7 @@ robots: "noindex,follow"
     <a href="{{ post.url }}" class="post-card" aria-label="Read {{ post.data.title }}">
       {% if post.data.image %}
       <div class="listing-card-image">
-        <img src="{{ post.data.image }}" alt="" aria-hidden="true" loading="lazy">
+        {% optimizedImage post.data.image, "", "card", "lazy" %}
       </div>
       {% endif %}
       <div class="post-card-body">

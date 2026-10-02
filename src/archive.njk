@@ -76,7 +76,7 @@ permalink: /archive/
       data-constellations="{{ artwork.constellations | join('|') }}"
     >
       <div class="listing-card-image">
-        <img src="{{ artwork.assets[0].path }}" alt="{{ artwork.title }}" loading="lazy">
+        {% optimizedImage artwork.assets[0].path, artwork.title, "thumbnail", "lazy" %}
       </div>
       <div class="post-card-body">
         <div class="post-tags-mini">

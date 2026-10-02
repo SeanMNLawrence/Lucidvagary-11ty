@@ -11,22 +11,22 @@ image: "/posts/Sketch-059/image.jpg"
 <section class="pentaptych-grid" aria-label="The Pentaptych of Growth image gallery">
   <div class="pentaptych-row-top">
     <figure class="pentaptych-item">
-      <img src="/posts/Sketch-057/image.jpg" alt="Top-left panel from The Pentaptych of Growth">
+      {% optimizedImage "/posts/Sketch-057/image.jpg", "Top-left panel from The Pentaptych of Growth", "artwork", "lazy" %}
     </figure>
     <figure class="pentaptych-item">
-      <img src="/posts/Sketch-058/image.jpg" alt="Top-right panel from The Pentaptych of Growth">
+      {% optimizedImage "/posts/Sketch-058/image.jpg", "Top-right panel from The Pentaptych of Growth", "artwork", "lazy" %}
     </figure>
   </div>
   
   <div class="pentaptych-row-middle">
     <figure class="pentaptych-item">
-      <img src="/posts/Sketch-059/image.jpg" alt="Center panel from The Pentaptych of Growth">
+      {% optimizedImage "/posts/Sketch-059/image.jpg", "Center panel from The Pentaptych of Growth", "artwork", "lazy" %}
     </figure>
   </div>
   
   <div class="pentaptych-row-bottom">
     <figure class="pentaptych-item">
-      <img src="/posts/Sketch-060/image.jpg" alt="Bottom panel from The Pentaptych of Growth">
+      {% optimizedImage "/posts/Sketch-060/image.jpg", "Bottom panel from The Pentaptych of Growth", "artwork", "lazy" %}
     </figure>
   </div>
 </section>

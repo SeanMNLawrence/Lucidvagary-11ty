@@ -1,6 +1,7 @@
 const path = require("path");
 const fs = require("node:fs");
 const markdownIt = require("markdown-it");
+const Image = require("@11ty/eleventy-img").default;
 const taxonomy = require("./src/_data/taxonomy");
 const artworkVocabulary = require("./src/_data/artworkVocabulary");
 const repoRoot = __dirname;
@@ -55,6 +56,59 @@ function normalizeRelationships(relationships) {
 }
 
 module.exports = function (eleventyConfig) {
+  const imageVariants = {
+    thumbnail: {
+      widths: [180, 240, 320],
+      sizes: "(max-width: 767px) 40vw, 180px",
+    },
+    card: {
+      widths: [320, 480, 640],
+      sizes: "(max-width: 767px) 92vw, (max-width: 1279px) 45vw, 320px",
+    },
+    artwork: {
+      widths: [640, 960, 1280, 1920, 2560],
+      sizes: "(max-width: 767px) 92vw, (max-width: 1279px) 72vw, 960px",
+    },
+  };
+
+  eleventyConfig.addNunjucksAsyncShortcode(
+    "optimizedImage",
+    async function (src, alt, variant = "card", loading = "lazy") {
+      if (!src) return "";
+
+      const selectedVariant = imageVariants[variant] || imageVariants.card;
+      const normalizedSrc = String(src).replace(/^\/+/, "");
+      const inputPath = path.resolve(repoRoot, "src", normalizedSrc);
+      const srcRoot = path.resolve(repoRoot, "src") + path.sep;
+      if (!inputPath.startsWith(srcRoot)) {
+        throw new Error(`Image path must be inside src/: ${src}`);
+      }
+
+      const extension = path.extname(normalizedSrc).toLowerCase();
+      const formats = extension === ".png" ? ["webp", "png"] : ["webp", "jpeg"];
+      const metadata = await Image(inputPath, {
+        widths: selectedVariant.widths,
+        formats,
+        outputDir: "./_site/img/optimized/",
+        urlPath: "/img/optimized/",
+        filenameFormat(id, sourcePath, width, format) {
+          const sourceName = path.basename(sourcePath, path.extname(sourcePath));
+          return `${sourceName}-${id}-${width}w.${format}`;
+        },
+        sharpJpegOptions: { quality: 76, mozjpeg: true },
+        sharpWebpOptions: { quality: 72 },
+        sharpPngOptions: { quality: 75, compressionLevel: 9 },
+      });
+
+      return Image.generateHTML(metadata, {
+        alt: alt || "",
+        sizes: selectedVariant.sizes,
+        loading,
+        decoding: "async",
+      });
+    }
+  );
+
   function toArray(value) {
     if (Array.isArray(value)) return value;
     if (value === undefined || value === null || value === "") return [];
