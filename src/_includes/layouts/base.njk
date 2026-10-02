@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   {% set featuredPost = collections.featuredPost | first %}
-  {% set isArtworkPage = tags and ("artwork" in tags or "sketch" in tags) %}
+  {% set isArtworkPage = page.url and page.url.startsWith("/artwork/") %}
   {% set pageTitle = title or site.name %}
   {% set pageDescription = description or site.description %}
   {% if isArtworkPage and not description %}

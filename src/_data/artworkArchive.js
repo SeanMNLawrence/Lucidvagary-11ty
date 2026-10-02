@@ -29,7 +29,6 @@ function buildArtwork(number) {
       }
     ],
     provenance: {
-      artwork_creation_date: "2015-03-01",
       source_records: [`src/posts/${slug}/index.md`]
     }
   };

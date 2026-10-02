@@ -5,10 +5,26 @@ eleventyExcludeFromCollections: true
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {%- for entry in collections.all -%}
-  {%- if entry.url and entry.url != "/search-index.json" and entry.url != "/sitemap.xml" -%}
+  {%- if entry.url and entry.url != "/search-index.json" and entry.url != "/sitemap.xml" and not entry.url.startsWith("/artwork/") and not entry.url.startsWith("/constellations/") and not entry.url.startsWith("/tags/") and not entry.url.startsWith("/collection/") -%}
   <url>
     <loc>{{ entry.url | absoluteUrl(site.url) }}</loc>
   </url>
   {%- endif -%}
+{%- endfor -%}
+  <url><loc>{{ "/collection/" | absoluteUrl(site.url) }}</loc></url>
+  <url><loc>{{ "/constellations/" | absoluteUrl(site.url) }}</loc></url>
+  <url><loc>{{ "/tags/" | absoluteUrl(site.url) }}</loc></url>
+{%- for artwork in collections.sketches -%}
+  {%- set artworkSlug = artwork.data.slug or ((artwork.url and artwork.url.split("/").slice(-2, -1)[0]) or artwork.fileSlug) -%}
+  <url><loc>{{ ("/artwork/" + artworkSlug + "/") | absoluteUrl(site.url) }}</loc></url>
+{%- endfor -%}
+{%- for taxonomyPage in collections.taxonomyBrowsePages -%}
+  <url><loc>{{ ("/" + taxonomyPage.group + "/" + taxonomyPage.slug + "/") | absoluteUrl(site.url) }}</loc></url>
+{%- endfor -%}
+{%- for constellation in constellationCatalog -%}
+  <url><loc>{{ ("/constellations/" + constellation.slug + "/") | absoluteUrl(site.url) }}</loc></url>
+{%- endfor -%}
+{%- for tag in collections.tagList -%}
+  <url><loc>{{ ("/tags/" + (tag | slugify) + "/") | absoluteUrl(site.url) }}</loc></url>
 {%- endfor -%}
 </urlset>
