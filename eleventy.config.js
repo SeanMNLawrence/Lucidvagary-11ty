@@ -3,13 +3,16 @@ const fs = require("node:fs");
 const markdownIt = require("markdown-it");
 const Image = require("@11ty/eleventy-img").default;
 const taxonomy = require("./src/_data/taxonomy");
+const artworkCatalog = require("./src/_data/artworks.json");
 const artworkVocabulary = require("./src/_data/artworkVocabulary");
 const repoRoot = __dirname;
 const artworkClassificationSet = new Set(artworkVocabulary.classifications);
 const artworkCuratorialStatusSet = new Set(artworkVocabulary.curatorialStatuses);
 const artworkRelationshipTypeSet = new Set(artworkVocabulary.relationshipTypes);
 const artworkTaxonomySets = Object.fromEntries(
-  Object.entries(artworkVocabulary.taxonomy).map(([group, values]) => [group, new Set(values)])
+  Object.entries(artworkVocabulary.taxonomy)
+    .filter(([group]) => group === "subjects" || group === "constellations")
+    .map(([group, values]) => [group, new Set(values)])
 );
 
 function normalizeTerms(values) {
@@ -238,6 +241,161 @@ module.exports = function (eleventyConfig) {
     return assetPaths.filter(Boolean);
   }
 
+  function validateArtworkCatalog(posts) {
+    const errors = [];
+    const catalogSlugs = new Set();
+    const postSlugs = new Set(
+      posts.filter(isArtwork).map((item) => normalizeSlug(getArtworkSlug(item)))
+    );
+    const assetPaths = new Set();
+    let assetCount = 0;
+    let missingSourceCount = 0;
+
+    if (!Array.isArray(artworkCatalog) || artworkCatalog.length === 0) {
+      throw new Error("The canonical artwork catalogue must be a non-empty array.");
+    }
+
+    artworkCatalog.forEach((record, index) => {
+      const recordLabel = `src/_data/artworks.json record ${index + 1}`;
+      if (!record || typeof record !== "object" || Array.isArray(record)) {
+        errors.push(`${recordLabel}: expected an artwork object`);
+        return;
+      }
+
+      const slug = normalizeSlug(record.slug);
+      if (!slug || slug !== record.slug) {
+        errors.push(`${recordLabel}: slug must be a lowercase URL-safe identifier`);
+      } else if (catalogSlugs.has(slug)) {
+        errors.push(`${recordLabel}: duplicate artwork slug "${slug}"`);
+      }
+      catalogSlugs.add(slug);
+
+      if (!record.title || typeof record.title !== "string") {
+        errors.push(`${recordLabel} (${slug}): missing title`);
+      }
+      if (!Object.hasOwn(record, "original_title") || !Object.hasOwn(record, "proposed_title")) {
+        errors.push(`${recordLabel} (${slug}): original_title and proposed_title keys are required`);
+      }
+
+      const classification = record.classification || {};
+      if (!artworkClassificationSet.has(normalizeValue(classification.type))) {
+        errors.push(`${recordLabel} (${slug}): unknown making state "${classification.type}"`);
+      }
+      if (
+        typeof classification.confidence !== "number" ||
+        classification.confidence < 0 ||
+        classification.confidence > 1
+      ) {
+        errors.push(`${recordLabel} (${slug}): classification confidence must be between 0 and 1`);
+      }
+      if (!artworkCuratorialStatusSet.has(normalizeValue(record.curatorial_status))) {
+        errors.push(`${recordLabel} (${slug}): unknown curatorial status "${record.curatorial_status}"`);
+      }
+
+      ["subjects", "motifs", "themes", "constellations", "relationships", "assets"].forEach((field) => {
+        if (!Array.isArray(record[field])) {
+          errors.push(`${recordLabel} (${slug}): ${field} must be an array`);
+        }
+      });
+
+      ["subjects", "constellations"].forEach((field) => {
+        const values = record[field] || [];
+        const seenTerms = new Set();
+        values.forEach((value) => {
+          const termId = getTaxonomyValueId(value);
+          if (!termId || !artworkTaxonomySets[field].has(termId)) {
+            errors.push(`${recordLabel} (${slug}): unknown ${field.slice(0, -1)} "${termId || value}"`);
+          }
+          if (seenTerms.has(termId)) {
+            errors.push(`${recordLabel} (${slug}): duplicate ${field.slice(0, -1)} "${termId}"`);
+          }
+          seenTerms.add(termId);
+        });
+      });
+
+      ["motifs", "themes"].forEach((field) => {
+        const seenTerms = new Set();
+        (record[field] || []).forEach((value) => {
+          const termId = getTaxonomyValueId(value);
+          if (!termId || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(termId)) {
+            errors.push(`${recordLabel} (${slug}): ${field.slice(0, -1)} must have a URL-safe id`);
+          }
+          if (value && typeof value === "object" && value.confidence !== undefined &&
+            (typeof value.confidence !== "number" || value.confidence < 0 || value.confidence > 1)) {
+            errors.push(`${recordLabel} (${slug}): ${field.slice(0, -1)} confidence must be between 0 and 1`);
+          }
+          if (seenTerms.has(termId)) {
+            errors.push(`${recordLabel} (${slug}): duplicate ${field.slice(0, -1)} "${termId}"`);
+          }
+          seenTerms.add(termId);
+        });
+      });
+
+      const provenance = record.provenance || {};
+      if (!Object.hasOwn(provenance, "artwork_creation_date") || !Array.isArray(provenance.source_records) ||
+        provenance.source_records.length === 0) {
+        errors.push(`${recordLabel} (${slug}): provenance requires artwork_creation_date and source_records`);
+      }
+
+      let primaryCount = 0;
+      (record.assets || []).forEach((asset) => {
+        assetCount += 1;
+        if (!asset || typeof asset !== "object" || !["primary", "alternate"].includes(asset.role) ||
+          typeof asset.path !== "string" || !asset.original_filename) {
+          errors.push(`${recordLabel} (${slug}): each asset needs a role, path, and original_filename`);
+          return;
+        }
+        if (asset.role === "primary") primaryCount += 1;
+        if (assetPaths.has(asset.path)) {
+          errors.push(`${recordLabel} (${slug}): duplicate asset path "${asset.path}"`);
+        }
+        assetPaths.add(asset.path);
+
+        const resolvedPath = resolveAssetPath(path.join(repoRoot, "src", "_data", "artworks.json"), asset.path);
+        const exists = Boolean(resolvedPath && resolvedPath.startsWith(path.join(repoRoot, "src") + path.sep) &&
+          fs.existsSync(resolvedPath));
+        if (asset.availability === "missing-from-repository") {
+          missingSourceCount += 1;
+          if (exists) errors.push(`${recordLabel} (${slug}): asset is marked missing but exists at "${asset.path}"`);
+        } else if (asset.availability !== undefined) {
+          errors.push(`${recordLabel} (${slug}): invalid asset availability "${asset.availability}"`);
+        } else if (!exists) {
+          errors.push(`${recordLabel} (${slug}): source asset "${asset.path}" is missing or outside src/`);
+        }
+      });
+      if (primaryCount !== 1) {
+        errors.push(`${recordLabel} (${slug}): expected exactly one primary digital asset, found ${primaryCount}`);
+      }
+    });
+
+    artworkCatalog.forEach((record) => {
+      const slug = normalizeSlug(record && record.slug);
+      (record && record.relationships || []).forEach((relationship) => {
+        if (!artworkRelationshipTypeSet.has(normalizeValue(relationship && relationship.type))) {
+          errors.push(`src/_data/artworks.json (${slug}): unknown relationship type "${relationship && relationship.type}"`);
+        }
+        const target = normalizeSlug(relationship && relationship.target_slug);
+        if (!target || !catalogSlugs.has(target)) {
+          errors.push(`src/_data/artworks.json (${slug}): relationship target "${target}" is not a catalogue slug`);
+        }
+      });
+      if (!postSlugs.has(slug)) {
+        errors.push(`src/_data/artworks.json (${slug}): no matching artwork post exists`);
+      }
+    });
+
+    if (errors.length) {
+      throw new Error(["Canonical artwork catalogue validation failed.", ...errors.map((error) => `- ${error}`)].join("\n"));
+    }
+
+    return {
+      artworkCount: artworkCatalog.length,
+      assetCount,
+      missingSourceCount,
+      uncataloguedPostCount: [...postSlugs].filter((slug) => !catalogSlugs.has(slug)).length,
+    };
+  }
+
   function validateArtworkMetadata(posts) {
     const artworkPosts = posts.filter((item) => isArtwork(item));
     const errors = [];
@@ -356,6 +514,7 @@ module.exports = function (eleventyConfig) {
   }
 
   let validatedPostsCache;
+  let artworkCatalogQa;
 
   function getValidatedPosts(collectionApi) {
     if (validatedPostsCache) return validatedPostsCache;
@@ -365,7 +524,8 @@ module.exports = function (eleventyConfig) {
     });
 
     validateArtworkMetadata(validatedPostsCache);
-    return validatedPostsCache;
+  artworkCatalogQa = validateArtworkCatalog(validatedPostsCache);
+  return validatedPostsCache;
 }
 
   // Hard line breaks: a single newline becomes <br>, matching the poem
@@ -517,18 +677,53 @@ module.exports = function (eleventyConfig) {
   }
 
   function buildArtworkCollection(collectionApi) {
-    const seen = new Set();
-    return [
-      ...collectionApi.getFilteredByGlob("src/artwork/**/*.md").map((item) => normalizeDigitalAssets(item)),
-      ...getCanonicalPosts(collectionApi).filter((item) => isArtwork(item)),
-    ]
-      .filter((item) => {
-        const key = item.data.artworkId || item.data.slug || item.fileSlug || item.url || item.inputPath;
-        if (seen.has(key)) return false;
-        seen.add(key);
-        return true;
+    const postsBySlug = new Map(
+      getCanonicalPosts(collectionApi)
+        .filter((item) => isArtwork(item) && isCanonicalArtworkEntry(item))
+        .map((item) => [normalizeSlug(getArtworkSlug(item)), item])
+    );
+
+    return artworkCatalog
+      .map((record) => {
+        const post = postsBySlug.get(record.slug);
+        if (!post) return null;
+
+        const availableAssets = record.assets
+          .filter((asset) => asset.availability !== "missing-from-repository")
+          .map((asset) => ({
+            src: asset.path,
+            alt: asset.role === "primary"
+              ? post.data.artwork_alt || post.data.imageAlt || post.data.description || post.data.title
+              : "",
+            primary: asset.role === "primary",
+          }));
+        const primaryAssetIndex = availableAssets.findIndex((asset) => asset.primary);
+        const primaryAsset = primaryAssetIndex >= 0 ? availableAssets[primaryAssetIndex] : null;
+        const data = {
+          ...post.data,
+          artworkId: record.slug,
+          slug: record.slug,
+          artworkRecord: record,
+          classification: record.classification.type,
+          curatorial_status: record.curatorial_status,
+          subjects: record.subjects,
+          motifs: record.motifs.map(getTaxonomyValueId),
+          themes: record.themes.map(getTaxonomyValueId),
+          constellations: record.constellations,
+          artworkRelationships: record.relationships.map((relationship) => ({
+            slug: relationship.target_slug,
+            type: relationship.type,
+          })),
+          related_works: record.relationships,
+          digitalAssets: availableAssets,
+          primaryAsset,
+          primaryAssetIndex,
+          image: primaryAsset ? primaryAsset.src : undefined,
+        };
+
+        return Object.assign(Object.create(post), { data });
       })
-      .filter(isCanonicalArtworkEntry)
+      .filter(Boolean)
       .sort((a, b) => b.date - a.date);
   }
 
@@ -551,6 +746,18 @@ module.exports = function (eleventyConfig) {
   // Backward-compatible alias for the sketches index page.
   eleventyConfig.addCollection("sketches", function (collectionApi) {
     return buildArtworkCollection(collectionApi);
+  });
+
+  eleventyConfig.addCollection("uncataloguedArtworks", function (collectionApi) {
+    const catalogSlugs = new Set(artworkCatalog.map((record) => record.slug));
+    return getCanonicalPosts(collectionApi).filter((item) =>
+      isArtwork(item) && !catalogSlugs.has(normalizeSlug(getArtworkSlug(item)))
+    );
+  });
+
+  eleventyConfig.addCollection("artworkCatalogQa", function (collectionApi) {
+    getValidatedPosts(collectionApi);
+    return [artworkCatalogQa];
   });
 
   eleventyConfig.addFilter("artworksBy", (artworks, facet, value) => {
@@ -598,9 +805,8 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addCollection("archiveCounts", function (collectionApi) {
-    const artworks = buildArtworkCollection(collectionApi);
-    const assetCount = artworks.reduce((count, item) => count + ((item.data.digitalAssets || []).length || 0), 0);
-    return [{ artworks: artworks.length, assets: assetCount }];
+    buildArtworkCollection(collectionApi);
+    return [artworkCatalogQa];
   });
 
   eleventyConfig.addCollection("taxonomyBrowsePages", function (collectionApi) {

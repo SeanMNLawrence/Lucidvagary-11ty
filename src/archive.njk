@@ -7,9 +7,9 @@ permalink: /archive/
   <div class="archive-header">
     <div>
       <h1 class="posts-title">archive</h1>
-      <p class="archive-intro">A complete, shareable view of the artwork archive. Every work in this sequence remains visible here, including studies and sketches.</p>
+      <p class="archive-intro">The canonical catalogue contains {{ artworkArchive.count }} artworks and {{ artworkArchive.assetCount }} digital assets. {{ artworkArchive.unavailableAssetCount }} alternate assets are catalogued but missing from this repository. {{ collections.uncataloguedArtworks | length }} additional artwork posts are not yet represented in the catalogue and remain available in <a href="/posts/">Posts</a>.</p>
     </div>
-    <p class="archive-count"><span id="archive-visible-count">{{ artworkArchive.count }}</span> of {{ artworkArchive.count }} artworks</p>
+    <p class="archive-count"><span id="archive-visible-count">{{ artworkArchive.count }}</span> of {{ artworkArchive.count }} catalogued artworks</p>
   </div>
 
   <form class="archive-filters" id="archive-filters">
@@ -76,7 +76,7 @@ permalink: /archive/
       data-constellations="{{ artwork.constellations | join('|') }}"
     >
       <div class="listing-card-image">
-        {% optimizedImage artwork.assets[0].path, artwork.title, "thumbnail", "lazy" %}
+        {% optimizedImage artwork.primaryAsset.path, artwork.displayTitle, "thumbnail", "lazy" %}
       </div>
       <div class="post-card-body">
         <div class="post-tags-mini">
@@ -94,7 +94,10 @@ permalink: /archive/
           <span class="post-tag-mini">{{ constellation }}</span>
           {% endfor %}
         </div>
-        <h3>{{ artwork.title }}</h3>
+        <h3>{{ artwork.displayTitle }}</h3>
+        {% if artwork.displayTitleIsProposed %}
+        <p class="post-date">proposed title</p>
+        {% endif %}
       </div>
     </a>
     {% endfor %}
