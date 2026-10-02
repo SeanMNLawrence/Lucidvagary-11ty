@@ -69,7 +69,8 @@ eleventyComputed:
         <dd class="artwork-meta-links">
           <ul class="artwork-inline-list">
             {% for concept in concepts %}
-            <li><a href="/tags/{{ concept | slugify }}/">{{ concept }}</a></li>
+            {% set conceptSlug = concept | slugify %}
+            <li><a href="{% if conceptSlug in artworkRecord.subjects %}/subjects/{{ conceptSlug }}/{% else %}/tags/{{ conceptSlug }}/{% endif %}">{{ concept }}</a></li>
             {% endfor %}
           </ul>
         </dd>
