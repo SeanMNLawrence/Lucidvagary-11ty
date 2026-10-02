@@ -6,6 +6,13 @@ module.exports = {
     subjects: ["animals-hybrids", "eyes-gaze", "hands-gesture", "visages-masks"],
     motifs: ["animals-hybrids", "eyes-gaze", "hands-gesture", "visages-masks"],
     themes: [],
-    constellations: [],
+    constellations: [
+      "eyes-and-gaze",
+      "visages-and-masks",
+      "hands-and-gesture",
+      "hybrid-bestiary",
+      "inner-cosmologies",
+      "chromatic-visions",
+    ],
   },
 };
