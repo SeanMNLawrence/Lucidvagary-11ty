@@ -5,22 +5,25 @@ layout: layouts/base.njk
   <article class="post-single">
     <header class="post-header">
       <h1>{{ title }}</h1>
-      <p class="post-date">{{ page.date | readableDate }}</p>
+      <p><time class="post-date" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></p>
       {% if tags %}
-      <div class="post-tags">
+      <nav class="post-tags" aria-label="Tags for {{ title }}">
         {% for tag in tags %}
           {% if tag != "poem" and tag != "fragment" and tag != "artwork" %}
-            <a href="/tags/{{ tag | slugify }}/" class="post-tag">{{ tag }}</a>
+            <a href="/tags/{{ tag | slugify }}/" class="post-tag" rel="tag" aria-label="View more posts tagged {{ tag }}">{{ tag }}</a>
           {% endif %}
         {% endfor %}
-      </div>
+      </nav>
       {% endif %}
     </header>
 
     {% if image %}
-    <div class="post-image">
-      <img src="{{ image }}" alt="{{ description or title }}">
-    </div>
+    <figure class="post-image">
+      <img src="{{ image }}" alt="{{ imageAlt or description or title }}">
+      {% if imageCaption %}
+      <figcaption>{{ imageCaption }}</figcaption>
+      {% endif %}
+    </figure>
     {% endif %}
 
     <div class="post-content">
@@ -28,19 +31,19 @@ layout: layouts/base.njk
     </div>
   </article>
 
-  <aside class="post-sidebar">
-    <h4 class="sidebar-title">more from lucid vagary</h4>
+  <aside class="post-sidebar" aria-labelledby="related-posts-heading">
+    <h2 class="sidebar-title" id="related-posts-heading">more from lucid vagary</h2>
     {% set related = collections.posts | relatedPosts(page.url, tags, 4) %}
     {% for post in related %}
     <a href="{{ post.url }}" class="sidebar-card">
       {% if post.data.image %}
       <div class="sidebar-card-image">
-        <img src="{{ post.data.image }}" alt="{{ post.data.description or post.data.title }}" loading="lazy">
+        <img src="{{ post.data.image }}" alt="" aria-hidden="true" loading="lazy">
       </div>
       {% endif %}
       <div class="sidebar-card-body">
-        <h5>{{ post.data.title }}</h5>
-        <p class="post-date">{{ post.date | readableDate }}</p>
+        <h3>{{ post.data.title }}</h3>
+        <p><time class="post-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time></p>
       </div>
     </a>
     {% endfor %}

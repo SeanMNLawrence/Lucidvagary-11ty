@@ -7,15 +7,15 @@ permalink: /posts/
   <h1 class="posts-title">posts</h1>
   <div class="posts-list">
     {% for post in collections.posts %}
-    <a href="{{ post.url }}" class="post-card">
+    <a href="{{ post.url }}" class="post-card" aria-label="Read {{ post.data.title }}">
       {% if post.data.image %}
       <div class="listing-card-image">
-        <img src="{{ post.data.image }}" alt="{{ post.data.description or post.data.title }}" loading="lazy">
+        <img src="{{ post.data.image }}" alt="" aria-hidden="true" loading="lazy">
       </div>
       {% endif %}
       <div class="post-card-body">
         <h3>{{ post.data.title }}</h3>
-        <p class="post-date">{{ post.date | readableDate }}</p>
+        <p><time class="post-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time></p>
         {% if post.data.description %}
         <p class="post-excerpt">{{ post.data.description }}</p>
         {% endif %}
