@@ -10,7 +10,7 @@ permalink: /sketches/
     <a href="{{ sketch.url }}" class="post-card">
       {% if sketch.data.image %}
       <div class="listing-card-image">
-        <img src="{{ sketch.data.image }}" alt="{{ sketch.data.description or sketch.data.title }}" loading="lazy">
+        {% optimizedImage sketch.data.image, sketch.data.description or sketch.data.title, "card", "lazy" %}
       </div>
       {% endif %}
       <div class="post-card-body">
