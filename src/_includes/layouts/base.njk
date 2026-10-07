@@ -1,10 +1,57 @@
 <!doctype html>
 <html lang="en">
 <head>
+  {% set featuredPost = collections.featuredPost | first %}
+  {% set isArtworkPage = tags and ("artwork" in tags or "sketch" in tags) %}
+  {% set pageTitle = title or site.name %}
+  {% set pageDescription = description or site.description %}
+  {% if isArtworkPage and not description %}
+    {% set pageDescription = "Artwork detail page for " + pageTitle + " on " + site.name + "." %}
+  {% endif %}
+  {% set pageCanonical = page.url | absoluteUrl(site.url) %}
+  {% set primaryImage = image or (content | firstImageSrc) or (featuredPost.data.image if featuredPost and featuredPost.data.image else "") %}
+  {% set socialImage = primaryImage | absoluteUrl(site.url) if primaryImage else "" %}
+  {% set pageRobots = robots or "" %}
+  {% set ogType = "article" if isArtworkPage else "website" %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ title or "lucid vagary" }}</title>
-  <meta name="description" content="{{ description or 'whims, clearly seen' }}">
+  <title>{{ pageTitle }}</title>
+  <meta name="description" content="{{ pageDescription }}">
+  <link rel="canonical" href="{{ pageCanonical }}">
+  {% if pageRobots %}
+  <meta name="robots" content="{{ pageRobots }}">
+  {% endif %}
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:title" content="{{ pageTitle }}">
+  <meta property="og:description" content="{{ pageDescription }}">
+  <meta property="og:type" content="{{ ogType }}">
+  <meta property="og:url" content="{{ pageCanonical }}">
+  {% if socialImage %}
+  <meta property="og:image" content="{{ socialImage }}">
+  {% endif %}
+  <meta name="twitter:card" content="{{ 'summary_large_image' if socialImage else 'summary' }}">
+  <meta name="twitter:title" content="{{ pageTitle }}">
+  <meta name="twitter:description" content="{{ pageDescription }}">
+  {% if socialImage %}
+  <meta name="twitter:image" content="{{ socialImage }}">
+  {% endif %}
+  {% if isArtworkPage %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VisualArtwork",
+      "name": {{ pageTitle | dump | safe }},
+      "description": {{ pageDescription | dump | safe }},
+      "url": {{ pageCanonical | dump | safe }},
+      "image": {{ socialImage | dump | safe }},
+      "datePublished": {{ page.date | date("yyyy-MM-dd") | dump | safe }},
+      "creator": {
+        "@type": "Person",
+        "name": "Sean M. N. Lawrence"
+      }
+    }
+  </script>
+  {% endif %}
   <link rel="stylesheet" href="/css/style.css">
   <script>
     // Apply saved theme before paint, to avoid a flash of the wrong theme

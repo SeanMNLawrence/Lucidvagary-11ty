@@ -7,6 +7,8 @@ pagination:
 permalink: "/tags/{{ tag | slugify }}/"
 eleventyComputed:
   title: "{{ tag }} - lucid vagary"
+  description: "Browse posts tagged {{ tag }} on lucid vagary."
+robots: "noindex,follow"
 ---
 <section class="posts-section">
   <h1 class="posts-title">{{ tag }}</h1>

@@ -127,6 +127,20 @@ module.exports = function (eleventyConfig) {
       .replace(/(^-|-$)/g, "");
   });
 
+  eleventyConfig.addFilter("absoluteUrl", (url, base) => {
+    if (!url) return "";
+    try {
+      return new URL(url, base).toString();
+    } catch {
+      return url;
+    }
+  });
+
+  eleventyConfig.addFilter("firstImageSrc", (content) => {
+    const match = String(content || "").match(/<img[^>]+src=["']([^"']+)["']/i);
+    return match ? match[1] : "";
+  });
+
   // Related posts for the single-post sidebar: posts sharing at least one
   // tag with the current post, newest first, excluding the post itself.
   // Backfills with the most recent other posts if there aren't enough.
