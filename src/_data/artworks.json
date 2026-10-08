@@ -45,7 +45,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-001"
   },
   {
     "title": "Untitled",
@@ -93,47 +94,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
-  },
-  {
-    "title": "Untitled",
-    "slug": "sketch-003",
-    "original_title": null,
-    "proposed_title": "Sketch 003",
-    "classification": {
-      "type": "sketch",
-      "confidence": 0.74
     },
-    "curatorial_status": "curatorial-review",
-    "subjects": [
-      "hands-gesture"
-    ],
-    "motifs": [
-      {
-        "id": "hands-gesture",
-        "confidence": 0.8
-      }
-    ],
-    "themes": [],
-    "constellations": [],
-    "relationships": [],
-    "assets": [
-      {
-        "role": "primary",
-        "path": "/posts/Sketch-003/image.jpg",
-        "original_filename": "Sketch-003.jpg",
-        "asset_capture_date": null,
-        "confidence": 0.95,
-        "alt": "Small blue concentric-circle form with a narrow stem and a green, flower-like motif below."
-      }
-    ],
-    "provenance": {
-      "artwork_creation_date": null,
-      "notes": "Creation date not inferred from photograph metadata.",
-      "source_records": [
-        "curatorial-review-v1"
-      ]
-    }
+    "artwork_id": "lv-artwork-sketch-002"
   },
   {
     "title": "Untitled",
@@ -173,7 +135,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-004"
   },
   {
     "title": "Untitled",
@@ -213,7 +176,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-005"
   },
   {
     "title": "Untitled",
@@ -253,7 +217,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-006"
   },
   {
     "title": "Untitled",
@@ -293,7 +258,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-007"
   },
   {
     "title": "Untitled",
@@ -333,7 +299,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-008"
   },
   {
     "title": "Untitled",
@@ -373,7 +340,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-009"
   },
   {
     "title": "Untitled",
@@ -413,7 +381,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-010"
   },
   {
     "title": "Untitled",
@@ -453,7 +422,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-011"
   },
   {
     "title": "Untitled",
@@ -493,7 +463,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-012"
   },
   {
     "title": "Untitled",
@@ -533,7 +504,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-013"
   },
   {
     "title": "Untitled",
@@ -573,7 +545,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-014"
   },
   {
     "title": "Untitled",
@@ -613,7 +586,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-015"
   },
   {
     "title": "Untitled",
@@ -653,7 +627,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-016"
   },
   {
     "title": "Untitled",
@@ -693,7 +668,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-017"
   },
   {
     "title": "Untitled",
@@ -733,7 +709,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-018"
   },
   {
     "title": "Untitled",
@@ -773,7 +750,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-019"
   },
   {
     "title": "Untitled",
@@ -813,7 +791,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-020"
   },
   {
     "title": "Untitled",
@@ -853,7 +832,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-021"
   },
   {
     "title": "Untitled",
@@ -893,7 +873,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-022"
   },
   {
     "title": "Untitled",
@@ -933,7 +914,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-023"
   },
   {
     "title": "Untitled",
@@ -973,7 +955,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-024"
   },
   {
     "title": "Untitled",
@@ -1013,7 +996,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-025"
   },
   {
     "title": "Untitled",
@@ -1053,7 +1037,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-026"
   },
   {
     "title": "Untitled",
@@ -1093,7 +1078,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-027"
   },
   {
     "title": "Untitled",
@@ -1133,7 +1119,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-028"
   },
   {
     "title": "Untitled",
@@ -1173,7 +1160,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-029"
   },
   {
     "title": "Untitled",
@@ -1213,7 +1201,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-030"
   },
   {
     "title": "Untitled",
@@ -1253,7 +1242,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-031"
   },
   {
     "title": "Untitled",
@@ -1293,7 +1283,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-032"
   },
   {
     "title": "Untitled",
@@ -1333,7 +1324,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-033"
   },
   {
     "title": "Untitled",
@@ -1373,7 +1365,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-034"
   },
   {
     "title": "Untitled",
@@ -1413,7 +1406,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-035"
   },
   {
     "title": "Untitled",
@@ -1453,7 +1447,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-036"
   },
   {
     "title": "Cthodinic",
@@ -1493,7 +1488,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-037"
   },
   {
     "title": "Untitled",
@@ -1533,7 +1529,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-038"
   },
   {
     "title": "Untitled",
@@ -1573,7 +1570,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-039"
   },
   {
     "title": "Untitled",
@@ -1613,7 +1611,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-040"
   },
   {
     "title": "Untitled",
@@ -1653,7 +1652,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-041"
   },
   {
     "title": "Untitled",
@@ -1693,7 +1693,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-042"
   },
   {
     "title": "Untitled",
@@ -1733,7 +1734,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-043"
   },
   {
     "title": "Untitled",
@@ -1773,7 +1775,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-044"
   },
   {
     "title": "Untitled",
@@ -1813,7 +1816,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-045"
   },
   {
     "title": "Untitled",
@@ -1853,7 +1857,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-046"
   },
   {
     "title": "Untitled",
@@ -1893,7 +1898,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-047"
   },
   {
     "title": "Untitled",
@@ -1933,7 +1939,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-048"
   },
   {
     "title": "Untitled",
@@ -1973,7 +1980,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-049"
   },
   {
     "title": "Untitled",
@@ -2013,7 +2021,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-050"
   },
   {
     "title": "Untitled",
@@ -2053,7 +2062,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-051"
   },
   {
     "title": "Untitled",
@@ -2093,7 +2103,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-052"
   },
   {
     "title": "Untitled",
@@ -2133,7 +2144,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-053"
   },
   {
     "title": "Untitled",
@@ -2173,7 +2185,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-054"
   },
   {
     "title": "Untitled",
@@ -2213,7 +2226,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-055"
   },
   {
     "title": "Untitled",
@@ -2253,7 +2267,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-056"
   },
   {
     "title": "Untitled",
@@ -2293,7 +2308,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-057"
   },
   {
     "title": "Untitled",
@@ -2333,7 +2349,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-058"
   },
   {
     "title": "Untitled",
@@ -2373,7 +2390,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-059"
   },
   {
     "title": "Untitled",
@@ -2413,7 +2431,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-060"
   },
   {
     "title": "Untitled",
@@ -2453,7 +2472,8 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-061"
   },
   {
     "title": "Untitled",
@@ -2493,6 +2513,7 @@
       "source_records": [
         "curatorial-review-v1"
       ]
-    }
+    },
+    "artwork_id": "lv-artwork-sketch-062"
   }
 ]

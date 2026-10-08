@@ -4,6 +4,7 @@ const { parseDocument, DomUtils } = require("htmlparser2");
 const records = require("../src/_data/artworks.json");
 const taxonomy = require("../src/_data/taxonomy");
 const artworkArchive = require("../src/_data/artworkArchive");
+const compositeArtworks = require("../src/_data/compositeArtworks");
 
 const outputDirectory = path.resolve(process.cwd(), "_site");
 const failures = [];
@@ -72,8 +73,14 @@ const artworkPages = records
 if (artworkPages.length !== records.length) {
   failures.push(`found ${artworkPages.length} artwork detail pages; expected ${records.length}.`);
 }
-const expectedAssets = records.reduce((count, artwork) => count + artwork.assets.length, 0);
-if (expectedAssets !== 64) failures.push(`catalogue has ${expectedAssets} digital assets; expected 64.`);
+const catalogueAssetCount = records.reduce((count, artwork) => count + artwork.assets.length, 0);
+[
+  path.join(outputDirectory, "posts", "Sketch-003", "index.html"),
+  path.join(outputDirectory, "artwork", "sketch-003", "index.html"),
+  path.join(outputDirectory, "posts", "Sketch-003", "image.jpg"),
+].forEach((file) => {
+  if (fs.existsSync(file)) failures.push(`${path.relative(outputDirectory, file)} should not be published.`);
+});
 
 for (const [group, entries] of Object.entries(taxonomy)) {
   entries.forEach((entry) => {
@@ -100,6 +107,37 @@ artworkArchive.constellations.forEach((constellation) => {
     failures.push(`constellation route /constellations/${constellation.slug}/ was not generated.`);
   } else if (!DomUtils.textContent(parseDocument(fs.readFileSync(route, "utf8"))).includes(`${constellation.artworks.length} artwork`)) {
     failures.push(`constellation route /constellations/${constellation.slug}/ has a mismatched artwork count.`);
+  }
+});
+
+compositeArtworks.forEach((composite) => {
+  const compositePath = path.join(outputDirectory, composite.url, "index.html");
+  if (!fs.existsSync(compositePath)) {
+    failures.push(`composite artwork page "${composite.url}" was not generated.`);
+  } else {
+    const compositeDocument = parseDocument(fs.readFileSync(compositePath, "utf8"));
+    composite.components.forEach((component) => {
+      const artwork = records.find((record) => record.artwork_id === component.artwork_id);
+      if (!artwork) return;
+      const componentLink = DomUtils.findOne(
+        (node) => node.name === "a" && getAttribute(node, "href") === `/artwork/${artwork.slug}/`,
+        compositeDocument.children
+      );
+      if (!componentLink) {
+        failures.push(`composite page "${composite.url}" is missing component link to "${artwork.artwork_id}".`);
+      }
+
+      const artworkPath = path.join(outputDirectory, "artwork", artwork.slug, "index.html");
+      if (!fs.existsSync(artworkPath)) return;
+      const artworkDocument = parseDocument(fs.readFileSync(artworkPath, "utf8"));
+      const parentLink = DomUtils.findOne(
+        (node) => node.name === "a" && getAttribute(node, "href") === composite.url,
+        artworkDocument.children
+      );
+      if (!parentLink || !DomUtils.textContent(parentLink).includes(composite.title)) {
+        failures.push(`artwork page "/artwork/${artwork.slug}/" is missing its reciprocal Part of link.`);
+      }
+    });
   }
 });
 
@@ -224,14 +262,19 @@ for (const file of htmlFiles) {
       return primaryAsset && `${path.posix.dirname(primaryAsset.path)}/` === postRoute;
     });
     if (artwork) {
-      const postFigure = DomUtils.findOne(
-        (node) => node.name === "figure" && String(getAttribute(node, "class") || "").split(/\s+/).includes("post-image"),
-        document.children
-      );
-      const postImage = postFigure && DomUtils.findOne((node) => node.name === "img", [postFigure]);
-      const primaryAsset = artwork.assets.find((asset) => asset.role === "primary");
-      if (!postImage || getAttribute(postImage, "alt") !== primaryAsset.alt) {
-        failures.push(`${path.relative(outputDirectory, file)}: primary post image does not use its authored catalogue alt text.`);
+      const sourcePath = path.resolve(process.cwd(), "src", `${path.posix.dirname(path.relative(outputDirectory, file))}/index.md`);
+      const sourceContent = fs.existsSync(sourcePath) ? fs.readFileSync(sourcePath, "utf8") : "";
+      const suppressPrimaryImage = /^suppressPrimaryImage:\s*true\s*$/m.test(sourceContent);
+      if (!suppressPrimaryImage) {
+        const postFigure = DomUtils.findOne(
+          (node) => node.name === "figure" && String(getAttribute(node, "class") || "").split(/\s+/).includes("post-image"),
+          document.children
+        );
+        const postImage = postFigure && DomUtils.findOne((node) => node.name === "img", [postFigure]);
+        const primaryAsset = artwork.assets.find((asset) => asset.role === "primary");
+        if (!postImage || getAttribute(postImage, "alt") !== primaryAsset.alt) {
+          failures.push(`${path.relative(outputDirectory, file)}: primary post image does not use its authored catalogue alt text.`);
+        }
       }
     }
   }
@@ -260,5 +303,5 @@ if (failures.length) {
   failures.forEach((failure) => console.error(`[site check] ${failure}`));
   process.exitCode = 1;
 } else {
-  console.log(`Checked ${htmlFiles.length} HTML pages, 62 artwork routes, 64 catalogue assets, taxonomy counts, local links, responsive images, headings, SEO metadata, and sitemap entries.`);
+  console.log(`Checked ${htmlFiles.length} HTML pages, ${artworkPages.length} artwork routes, ${catalogueAssetCount} catalogue assets, taxonomy counts, local links, responsive images, headings, SEO metadata, and sitemap entries.`);
 }

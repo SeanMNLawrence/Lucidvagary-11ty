@@ -132,6 +132,20 @@ eleventyComputed:
     </dl>
   </section>
 
+  {% if artwork.partOf.length %}
+  <section class="part-of-composite" aria-labelledby="part-of-composite-title">
+    <h2 id="part-of-composite-title">Part of</h2>
+    <ul>
+      {% for composite in artwork.partOf %}
+      <li>
+        <a href="{{ composite.url }}">{{ composite.title }}</a>
+        {% if composite.order %}<span>(component {{ composite.order }})</span>{% else %}<span>(component order to be confirmed)</span>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
   {% if relatedGroups.explicit.length %}
   <section class="related-artworks" aria-labelledby="explicit-relationships-title">
     <h2 id="explicit-relationships-title">Related works</h2>

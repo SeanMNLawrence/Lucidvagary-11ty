@@ -51,6 +51,28 @@ layout: layouts/base.njk
     <div class="post-content">
       {{ content | safe }}
     </div>
+
+    {% set composite = collections.compositeArtworks | compositeByUrl(page.url) %}
+    {% if composite %}
+    <section class="composite-components" aria-labelledby="composite-components-title">
+      <h2 id="composite-components-title">Constituent artworks</h2>
+      <ul>
+        {% for component in composite.components %}
+        <li>
+          {% if component.order %}
+          Component {{ component.order }}:
+          {% else %}
+          Component order to be confirmed:
+          {% endif %}
+            {% set componentArtwork = collections.artworks | artworkById(component.artwork_id) %}
+            {% if componentArtwork %}
+            <a href="{{ componentArtwork.url }}">{{ componentArtwork.displayTitle }}</a>
+            {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endif %}
   </article>
 
   <aside class="post-sidebar" aria-labelledby="related-posts-heading">

@@ -7,7 +7,9 @@ const artworkArchive = require("./src/_data/artworkArchive");
 const artworkVocabulary = require("./src/_data/artworkVocabulary");
 const taxonomy = require("./src/_data/taxonomy");
 const constellations = require("./src/_data/constellations");
+const compositeArtworks = require("./src/_data/compositeArtworks");
 const { validateArtworkData, validateConstellationGroups } = require("./src/_data/artworkValidation");
+const { validateCompositeArtworks } = require("./src/_data/compositeArtworkValidation");
 const { relatedArtworks } = require("./src/_data/artworkRelations");
 
 module.exports = function (eleventyConfig) {
@@ -26,6 +28,10 @@ module.exports = function (eleventyConfig) {
   );
   if (constellationErrors.length) {
     throw new Error(`Constellation validation failed:\n- ${constellationErrors.join("\n- ")}`);
+  }
+  const compositeErrors = validateCompositeArtworks(compositeArtworks, require("./src/_data/artworks.json"));
+  if (compositeErrors.length) {
+    throw new Error(`Composite artwork validation failed:\n- ${compositeErrors.join("\n- ")}`);
   }
   validation.warnings.forEach((warning) => console.warn(`[artwork validation] ${warning}`));
 
@@ -226,6 +232,10 @@ module.exports = function (eleventyConfig) {
     return artworkArchive.items;
   });
 
+  eleventyConfig.addCollection("compositeArtworks", function () {
+    return artworkArchive.compositeArtworks;
+  });
+
   // Preserve the existing post-based sketches page independently of the catalogue.
   eleventyConfig.addCollection("sketches", function (collectionApi) {
     return getCanonicalPosts(collectionApi).filter(isArtwork);
@@ -259,7 +269,13 @@ module.exports = function (eleventyConfig) {
     return term ? term.label : id;
   });
   eleventyConfig.addFilter("artworkAltForImage", (src, fallback) => artworkAltByImagePath.get(src) || fallback || "");
+  eleventyConfig.addFilter("compositeByUrl", (composites, url) =>
+    (composites || []).find((composite) => composite.url === url)
+  );
   eleventyConfig.addFilter("artworkBySlug", (artworks, slug) => (artworks || []).find((item) => item.slug === slug));
+  eleventyConfig.addFilter("artworkById", (artworks, artworkId) =>
+    (artworks || []).find((item) => item.artwork_id === artworkId)
+  );
   eleventyConfig.addFilter("relatedArtworks", (artworks, current, explicitLimit = 4, semanticLimit = 4) =>
     relatedArtworks(artworks || [], current, explicitLimit, semanticLimit)
   );
