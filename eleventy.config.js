@@ -1,6 +1,21 @@
 const markdownIt = require("markdown-it");
+const taxonomy = require("./src/_data/taxonomy");
 
 module.exports = function (eleventyConfig) {
+  function slugify(str) {
+    return String(str)
+      .toLowerCase()
+      .trim()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
+  }
+
+  function toArray(value) {
+    if (Array.isArray(value)) return value;
+    if (value === undefined || value === null || value === "") return [];
+    return [value];
+  }
+
   // Hard line breaks: a single newline becomes <br>, matching the poem
   // formatting fix from the Hugo site (single line breaks were being
   // silently swallowed by standard Markdown rules).
@@ -46,6 +61,36 @@ module.exports = function (eleventyConfig) {
       (item.data.tags || []).forEach((tag) => tagSet.add(tag));
     });
     return [...tagSet].sort();
+  });
+
+  eleventyConfig.addCollection("taxonomyBrowsePages", function (collectionApi) {
+    const posts = collectionApi
+      .getFilteredByGlob("src/posts/**/*.md")
+      .sort((a, b) => b.date - a.date);
+    const pages = [];
+
+    Object.entries(taxonomy).forEach(([group, entries]) => {
+      entries.forEach((entry) => {
+        const field = entry.field || group;
+        const matchValues = toArray(entry.match || entry.value).map((value) => slugify(value));
+        const matchingPosts = posts.filter((post) => {
+          const postValues = toArray(post.data[field]).map((value) => slugify(value));
+          return postValues.some((value) => matchValues.includes(value));
+        });
+
+        if (matchingPosts.length === 0) return;
+
+        pages.push({
+          group,
+          slug: slugify(entry.value),
+          label: entry.label || entry.value,
+          count: matchingPosts.length,
+          posts: matchingPosts,
+        });
+      });
+    });
+
+    return pages;
   });
 
   // Shared homepage layout logic: figures out the hero, the next 3
@@ -119,13 +164,7 @@ module.exports = function (eleventyConfig) {
   });
 
   // Slugify filter for tag URLs
-  eleventyConfig.addFilter("slugify", (str) => {
-    return String(str)
-      .toLowerCase()
-      .trim()
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/(^-|-$)/g, "");
-  });
+  eleventyConfig.addFilter("slugify", slugify);
 
   // Related posts for the single-post sidebar: posts sharing at least one
   // tag with the current post, newest first, excluding the post itself.
