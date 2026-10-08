@@ -1,4 +1,48 @@
+const path = require("path");
 const markdownIt = require("markdown-it");
+
+function normalizeTerms(values) {
+  if (!Array.isArray(values)) return [];
+  return values
+    .map((value) => String(value || "").trim())
+    .filter(Boolean);
+}
+
+function getItemSlug(item) {
+  if (!item) return "";
+  if (item.fileSlug) return item.fileSlug;
+  if (item.page && item.page.fileSlug) return item.page.fileSlug;
+  if (item.data && item.data.page && item.data.page.fileSlug) {
+    return item.data.page.fileSlug;
+  }
+
+  const inputPath =
+    item.inputPath ||
+    (item.page && item.page.inputPath) ||
+    (item.data && item.data.page && item.data.page.inputPath);
+
+  if (!inputPath) return "";
+
+  const parsed = path.parse(inputPath);
+  return parsed.name === "index" ? path.basename(parsed.dir) : parsed.name;
+}
+
+function normalizeRelationships(relationships) {
+  if (!Array.isArray(relationships)) return [];
+
+  return relationships
+    .map((relationship) => {
+      if (!relationship || typeof relationship !== "object") return null;
+
+      const slug = String(relationship.slug || "").trim();
+      const type = String(relationship.type || "related").trim();
+
+      if (!slug) return null;
+
+      return { slug, type };
+    })
+    .filter(Boolean);
+}
 
 module.exports = function (eleventyConfig) {
   // Hard line breaks: a single newline becomes <br>, matching the poem
@@ -35,6 +79,17 @@ module.exports = function (eleventyConfig) {
       .filter((item) => {
         const tags = item.data.tags || [];
         return tags.includes("artwork") || tags.includes("sketch");
+      })
+      .sort((a, b) => b.date - a.date);
+  });
+
+  // Collection filtered to artwork pages for semantic navigation.
+  eleventyConfig.addCollection("artworks", function (collectionApi) {
+    return collectionApi
+      .getFilteredByGlob("src/posts/**/*.md")
+      .filter((item) => {
+        const tags = item.data.tags || [];
+        return tags.includes("artwork");
       })
       .sort((a, b) => b.date - a.date);
   });
@@ -144,6 +199,72 @@ module.exports = function (eleventyConfig) {
     }
     return result.slice(0, limit);
   });
+
+  // Artwork-aware related navigation: explicit relationships first, then
+  // motif/theme similarity as a secondary recommendation layer.
+  eleventyConfig.addFilter(
+    "relatedArtworks",
+    (
+      artworks,
+      currentUrl,
+      currentRelationships,
+      currentMotifs,
+      currentThemes,
+      explicitLimit,
+      semanticLimit
+    ) => {
+      const items = Array.isArray(artworks) ? artworks : [];
+      const relationshipList = normalizeRelationships(currentRelationships);
+      const motifs = new Set(normalizeTerms(currentMotifs));
+      const themes = new Set(normalizeTerms(currentThemes));
+      const itemsBySlug = new Map(items.map((item) => [getItemSlug(item), item]));
+      const seenUrls = new Set([currentUrl]);
+
+      const explicit = [];
+      relationshipList.forEach((relationship) => {
+        if ((explicitLimit || 4) <= explicit.length) return;
+
+        const item = itemsBySlug.get(relationship.slug);
+        if (!item || seenUrls.has(item.url)) return;
+
+        explicit.push({
+          post: item,
+          relationshipType: relationship.type,
+        });
+        seenUrls.add(item.url);
+      });
+
+      const semantic = items
+        .map((item) => {
+          if (!item || seenUrls.has(item.url)) return null;
+
+          const sharedMotifs = normalizeTerms(item.data.motifs).filter((motif) =>
+            motifs.has(motif)
+          );
+          const sharedThemes = normalizeTerms(item.data.themes).filter((theme) =>
+            themes.has(theme)
+          );
+
+          if (!sharedMotifs.length && !sharedThemes.length) return null;
+
+          return {
+            post: item,
+            relationshipType: "similar",
+            sharedMotifs,
+            sharedThemes,
+            score: sharedMotifs.length * 2 + sharedThemes.length,
+          };
+        })
+        .filter(Boolean)
+        .sort((a, b) => {
+          if (b.score !== a.score) return b.score - a.score;
+          return b.post.date - a.post.date;
+        })
+        .slice(0, semanticLimit || 4);
+
+      return { explicit, semantic };
+    }
+  );
 
   return {
     dir: {

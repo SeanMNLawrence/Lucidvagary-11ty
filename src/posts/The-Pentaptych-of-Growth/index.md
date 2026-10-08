@@ -3,6 +3,17 @@ layout: layouts/post.njk
 title: "The Pentaptych of Growth"
 date: 2026-09-08
 tags: ["artwork", "drawings"]
+artworkRelationships:
+  - slug: "Sketch-057"
+    type: "developed-from"
+  - slug: "Sketch-058"
+    type: "developed-from"
+  - slug: "Sketch-059"
+    type: "developed-from"
+  - slug: "Sketch-060"
+    type: "developed-from"
+motifs: ["growth", "metamorphosis", "body"]
+themes: ["becoming", "renewal"]
 ---
 
 <div class="pentaptych-grid">
