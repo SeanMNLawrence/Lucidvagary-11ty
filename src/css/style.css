@@ -914,3 +914,10 @@ a {
   font-size: 0.9rem;
   margin-top: 0.25rem;
 }
+
+.bytag-archive-link {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  text-decoration: underline;
+}
