@@ -54,7 +54,7 @@ title: "lucid vagary"
   {# RIGHT: one highlight per tag, never repeating the hero or each other #}
   <aside class="home-bytag">
     <h2 class="visually-hidden">Highlights by tag</h2>
-    {% for item in collections.highlightsByTag %}
+    {% for item in collections.highlightsByTag | batch(4) | first %}
     <a href="{{ item.post.url }}" class="bytag-card" aria-label="Read {{ item.post.data.title }}">
       {% if item.post.data.image %}
       <div class="bytag-image">
@@ -67,6 +67,7 @@ title: "lucid vagary"
       </div>
     </a>
     {% endfor %}
+    <a href="/archive/" class="bytag-archive-link">Browse the archive &rarr;</a>
   </aside>
 
 </div>
