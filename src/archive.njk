@@ -28,7 +28,12 @@ permalink: /archive/
 
     <label class="archive-filter" for="archive-year">
       <span>Year</span>
-      <input type="number" name="year" id="archive-year" min="1" max="{{ currentYear }}" step="1" inputmode="numeric" placeholder="Any year">
+      <select name="year" id="archive-year">
+        <option value="">All years</option>
+        {% for year in collections.archiveYears %}
+        <option value="{{ year }}">{{ year }}</option>
+        {% endfor %}
+      </select>
     </label>
 
     {% for facet in ["subject", "motif", "theme", "constellation"] %}
@@ -139,6 +144,12 @@ permalink: /archive/
       constellation: "constellations",
       tag: "tags"
     };
+
+    var yearField = form.elements.year;
+    var yearsInUse = cards.map(function (card) { return card.dataset.year; });
+    Array.prototype.slice.call(yearField.options).forEach(function (option) {
+      if (option.value && yearsInUse.indexOf(option.value) === -1) option.remove();
+    });
 
     function syncInputsFromUrl() {
       var params = new URLSearchParams(window.location.search);
