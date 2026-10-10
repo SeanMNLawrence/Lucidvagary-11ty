@@ -145,6 +145,12 @@ permalink: /archive/
       tag: "tags"
     };
 
+    var yearField = form.elements.year;
+    var yearsInUse = cards.map(function (card) { return card.dataset.year; });
+    Array.prototype.slice.call(yearField.options).forEach(function (option) {
+      if (option.value && yearsInUse.indexOf(option.value) === -1) option.remove();
+    });
+
     function syncInputsFromUrl() {
       var params = new URLSearchParams(window.location.search);
       filterKeys.forEach(function (key) {
