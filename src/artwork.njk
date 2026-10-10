@@ -1,0 +1,173 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: artworkArchive.items
+  size: 1
+  alias: artwork
+permalink: "/artwork/{{ artwork.slug }}/"
+eleventyComputed:
+  title: "{{ artwork.displayTitle }} - artwork - lucid vagary"
+  description: "{{ artwork.displayTitle }}: a {{ artwork.classification.type }} in the Lucid Vagary artwork archive."
+---
+{% set relatedGroups = collections.artworks | relatedArtworks(artwork, 4, 4) %}
+
+<article class="artwork-page" aria-labelledby="artwork-title">
+  <header class="artwork-header">
+    <h1 id="artwork-title">{{ artwork.displayTitle }}</h1>
+    {% if artwork.titleIsProposed %}
+    <p class="artwork-title-status">Proposed title; the original title has not been formally adopted.</p>
+    {% endif %}
+  </header>
+
+  {% if artwork.primaryAsset and artwork.primaryAsset.available %}
+  <figure class="artwork-primary-image">
+    {% optimizedImage artwork.primaryAsset.path, artwork.primaryAsset.alt or ("Artwork image for " + artwork.displayTitle), "artwork", "eager" %}
+    <figcaption>{{ artwork.displayTitle }}{% if artwork.titleIsProposed %} (proposed title){% endif %}</figcaption>
+  </figure>
+  {% endif %}
+
+  <section class="artwork-metadata" aria-labelledby="artwork-metadata-title">
+    <h2 id="artwork-metadata-title">Artwork metadata</h2>
+    <dl class="artwork-meta-list">
+      <div>
+        <dt>Classification</dt>
+        <dd>{{ artwork.classification.type | capitalize }} (confidence {{ artwork.classification.confidence }})</dd>
+      </div>
+      <div>
+        <dt>Curatorial status</dt>
+        <dd>{{ artwork.curatorial_status | replace("-", " ") | capitalize }}</dd>
+      </div>
+      {% if artwork.subjects.length %}
+      <div>
+        <dt>Subjects</dt>
+        <dd class="artwork-meta-links">
+          {% for subject in artwork.subjects %}
+          <a href="/subjects/{{ subject }}/">{{ subject | artworkTermLabel("subjects") }}</a>{% if not loop.last %}, {% endif %}
+          {% endfor %}
+        </dd>
+      </div>
+      {% endif %}
+      {% if artwork.motifs.length %}
+      <div>
+        <dt>Motifs</dt>
+        <dd class="artwork-meta-links">
+          {% for motif in artwork.motifs %}
+          <a href="/motifs/{{ motif.id }}/">{{ motif.id | artworkTermLabel("motifs") }}</a> (confidence {{ motif.confidence }}){% if not loop.last %}, {% endif %}
+          {% endfor %}
+        </dd>
+      </div>
+      {% endif %}
+      {% if artwork.themes.length %}
+      <div>
+        <dt>Themes</dt>
+        <dd class="artwork-meta-links">
+          {% for theme in artwork.themes %}
+          <a href="/themes/{{ theme }}/">{{ theme | artworkTermLabel("themes") }}</a>{% if not loop.last %}, {% endif %}
+          {% endfor %}
+        </dd>
+      </div>
+      {% endif %}
+      {% if artwork.constellations.length %}
+      <div>
+        <dt>Constellations</dt>
+        <dd class="artwork-meta-links">
+          {% for constellation in artwork.constellations %}
+          <a href="/constellations/{{ constellation }}/">{{ constellation | artworkTermLabel("constellations") }}</a>{% if not loop.last %}, {% endif %}
+          {% endfor %}
+        </dd>
+      </div>
+      {% endif %}
+      {% if artwork.relationships.length %}
+      <div>
+        <dt>Explicit relationships</dt>
+        <dd>
+          <ul>
+          {% for relationship in artwork.relationships %}
+            {% set target = collections.artworks | artworkBySlug(relationship.target_slug) %}
+            {% if target %}
+            <li><span>{{ relationship.type | replace("-", " ") }}</span>: <a href="{{ target.url }}">{{ target.displayTitle }}</a></li>
+            {% endif %}
+          {% endfor %}
+          </ul>
+        </dd>
+      </div>
+      {% endif %}
+      {% if artwork.assets.length > 1 %}
+      <div>
+        <dt>Alternate photographs</dt>
+        <dd>
+          <ul class="artwork-alt-list">
+          {% for asset in artwork.assets %}
+            {% if asset.role == "alternate" and asset.available %}
+            <li>
+              <a href="{{ asset.path }}">
+                {% optimizedImage asset.path, asset.alt or (artwork.displayTitle + " alternate view " + loop.index), "thumbnail", "lazy" %}
+                <span>{{ asset.original_filename }}</span>
+              </a>
+            </li>
+            {% elif asset.role == "alternate" %}
+            <li>{{ asset.original_filename }} — source image unavailable in this repository.</li>
+            {% endif %}
+          {% endfor %}
+          </ul>
+        </dd>
+      </div>
+      {% endif %}
+      <div>
+        <dt>Original filename</dt>
+        <dd>{{ artwork.primaryAsset.original_filename }}</dd>
+      </div>
+      {% if artwork.provenance.artwork_creation_date %}
+      <div>
+        <dt>Artwork creation date</dt>
+        <dd><time datetime="{{ artwork.provenance.artwork_creation_date }}">{{ artwork.provenance.artwork_creation_date }}</time></dd>
+      </div>
+      {% endif %}
+      {% if artwork.provenance.notes %}
+      <div>
+        <dt>Provenance</dt>
+        <dd>{{ artwork.provenance.notes }}</dd>
+      </div>
+      {% endif %}
+    </dl>
+  </section>
+
+  {% if artwork.partOf.length %}
+  <section class="part-of-composite" aria-labelledby="part-of-composite-title">
+    <h2 id="part-of-composite-title">Part of</h2>
+    <ul>
+      {% for composite in artwork.partOf %}
+      <li>
+        <a href="{{ composite.url }}">{{ composite.title }}</a>
+        {% if composite.order %}<span>(component {{ composite.order }})</span>{% else %}<span>(component order to be confirmed)</span>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if relatedGroups.explicit.length %}
+  <section class="related-artworks" aria-labelledby="explicit-relationships-title">
+    <h2 id="explicit-relationships-title">Related works</h2>
+    <ul>
+    {% for relation in relatedGroups.explicit %}
+      <li><span>{{ relation.relationshipType | replace("-", " ") }}</span>: <a href="{{ relation.artwork.url }}">{{ relation.artwork.displayTitle }}</a></li>
+    {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if relatedGroups.semantic.length %}
+  <section class="related-artworks" aria-labelledby="shared-concepts-title">
+    <h2 id="shared-concepts-title">Works sharing motifs or themes</h2>
+    <ul>
+    {% for relation in relatedGroups.semantic %}
+      <li>
+        <a href="{{ relation.artwork.url }}">{{ relation.artwork.displayTitle }}</a>
+        <span>— shared {{ relation.sharedTerms | join(", ") }}</span>
+      </li>
+    {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</article>

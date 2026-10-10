@@ -9,19 +9,19 @@ eleventyComputed:
   title: "{{ tag }} - lucid vagary"
 ---
 <section class="posts-section">
-  <h1 class="posts-title">{{ tag }}</h1>
+  <h1 class="posts-title">Posts tagged {{ tag }}</h1>
   <div class="posts-list">
     {% for post in collections.posts %}
       {% if tag in post.data.tags %}
-      <a href="{{ post.url }}" class="post-card">
+      <a href="{{ post.url }}" class="post-card" aria-label="Read {{ post.data.title }}">
         {% if post.data.image %}
         <div class="post-image">
-          <img src="{{ post.data.image }}" alt="{{ post.data.description or post.data.title }}" loading="lazy">
+          {% optimizedImage post.data.image, "", "card", "lazy" %}
         </div>
         {% endif %}
         <div class="post-card-body">
-          <h3>{{ post.data.title }}</h3>
-          <p class="post-date">{{ post.date | readableDate }}</p>
+          <h2>{{ post.data.title }}</h2>
+          <p><time class="post-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time></p>
         </div>
       </a>
       {% endif %}

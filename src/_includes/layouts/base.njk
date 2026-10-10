@@ -1,10 +1,50 @@
 <!doctype html>
 <html lang="en">
 <head>
+  {% set isArtworkPage = artwork and artwork.slug %}
+  {% set pageTitle = artwork.displayTitle + " - artwork - " + site.name if isArtworkPage else (title or site.name) %}
+  {% set pageDescription = description or site.description %}
+  {% if isArtworkPage %}
+    {% set pageDescription = artwork.displayTitle + " is catalogued as a " + artwork.classification.type + " in the Lucid Vagary artwork archive." %}
+  {% endif %}
+  {% set pageImage = artwork.primaryAsset.path if isArtworkPage and artwork.primaryAsset else (image or "") %}
+  {% set canonicalUrl = page.url | absoluteUrl(site.url) %}
+  {% set socialImage = pageImage | absoluteUrl(site.url) if pageImage else "" %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ title or "lucid vagary" }}</title>
-  <meta name="description" content="{{ description or 'whims, clearly seen' }}">
+  <title>{{ pageTitle }}</title>
+  <meta name="description" content="{{ pageDescription }}">
+  <link rel="canonical" href="{{ canonicalUrl }}">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:title" content="{{ pageTitle }}">
+  <meta property="og:description" content="{{ pageDescription }}">
+  <meta property="og:type" content="{{ 'article' if isArtworkPage else 'website' }}">
+  <meta property="og:url" content="{{ canonicalUrl }}">
+  {% if socialImage %}<meta property="og:image" content="{{ socialImage }}">{% endif %}
+  <meta name="twitter:card" content="{{ 'summary_large_image' if socialImage else 'summary' }}">
+  <meta name="twitter:title" content="{{ pageTitle }}">
+  <meta name="twitter:description" content="{{ pageDescription }}">
+  {% if socialImage %}<meta name="twitter:image" content="{{ socialImage }}">{% endif %}
+  {% if isArtworkPage %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VisualArtwork",
+      "name": {{ artwork.displayTitle | dump | safe }},
+      "description": {{ pageDescription | dump | safe }},
+      "url": {{ canonicalUrl | dump | safe }},
+      "image": {{ socialImage | dump | safe }},
+      "artform": {{ artwork.classification.type | dump | safe }},
+      "creator": {
+        "@type": "Person",
+        "name": "Sean M. N. Lawrence"
+      }
+      {% if artwork.provenance.artwork_creation_date %},
+      "dateCreated": {{ artwork.provenance.artwork_creation_date | dump | safe }}
+      {% endif %}
+    }
+  </script>
+  {% endif %}
   <link rel="stylesheet" href="/css/style.css">
   <script>
     // Apply saved theme before paint, to avoid a flash of the wrong theme
@@ -20,11 +60,14 @@
   <header class="site-header">
     <div class="header-inner">
       <a href="/" class="logo-link">lucid vagary</a>
-      <nav class="site-nav">
+      <nav class="site-nav" aria-label="Main navigation">
         <div class="site-nav-links" id="site-nav-links">
           <a href="/">home</a>
+          <a href="/collection/">collection</a>
           <a href="/posts/">posts</a>
           <a href="/sketches/">sketches</a>
+          <a href="/archive/">archive</a>
+          <a href="/constellations/">constellations</a>
           <a href="/tags/">tags</a>
           <a href="/about/">about</a>
         </div>
@@ -53,7 +96,8 @@
 
   <div class="search-modal-backdrop" id="search-backdrop" style="display: none;"></div>
   <div class="search-modal" id="search-modal" style="display: none;">
-    <input type="text" class="search-input" id="search-input" placeholder="Search posts...">
+    <label class="visually-hidden" for="search-input">Search posts</label>
+    <input type="search" class="search-input" id="search-input" placeholder="Search posts...">
     <div class="search-results" id="search-results"></div>
   </div>
 

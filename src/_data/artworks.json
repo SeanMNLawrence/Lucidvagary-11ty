@@ -1,0 +1,2519 @@
+[
+  {
+    "title": "Untitled",
+    "slug": "sketch-001",
+    "original_title": null,
+    "proposed_title": "Sketch 001",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "visages-masks"
+    ],
+    "motifs": [
+      {
+        "id": "visages-masks",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-001/image.jpg",
+        "original_filename": "IMG_20150301_114548.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Dense black-ink drawing of overlapping faces, eyes, and curling organic forms."
+      },
+      {
+        "role": "alternate",
+        "path": null,
+        "availability": "source-unavailable",
+        "original_filename": "IMG_20150301_114553.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.8
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-001"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-002",
+    "original_title": null,
+    "proposed_title": "Sketch 002",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "eyes-gaze"
+    ],
+    "motifs": [
+      {
+        "id": "eyes-gaze",
+        "confidence": 0.7
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-002/image.jpg",
+        "original_filename": "IMG_20150301_115722.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Faint pencil drawing of a tall, narrow abstract form above two rounded, eye-like shapes."
+      },
+      {
+        "role": "alternate",
+        "path": null,
+        "availability": "source-unavailable",
+        "original_filename": "20150301_175722000_iOS.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.8
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-002"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-004",
+    "original_title": null,
+    "proposed_title": "Sketch 004",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "figures-bodies"
+    ],
+    "motifs": [
+      {
+        "id": "figures-bodies",
+        "confidence": 0.9
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-004/image.jpg",
+        "original_filename": "Sketch-004.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Blue concentric circles with a smaller green circular motif beneath, inside loose oval outlines."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-004"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-005",
+    "original_title": null,
+    "proposed_title": "Sketch 005",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "animals-hybrids"
+    ],
+    "motifs": [
+      {
+        "id": "animals-hybrids",
+        "confidence": 0.5
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-005/image.jpg",
+        "original_filename": "Sketch-005.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Vertical arrangement of colored circles and eyes linked by fine lines."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-005"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-006",
+    "original_title": null,
+    "proposed_title": "Sketch 006",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "symbols-cosmograms"
+    ],
+    "motifs": [
+      {
+        "id": "symbols-cosmograms",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-006/image.jpg",
+        "original_filename": "Sketch-006.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Monochrome close-up portrait of a bearded man, shaded from the shoulders up."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-006"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-007",
+    "original_title": null,
+    "proposed_title": "Sketch 007",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "composite-worlds"
+    ],
+    "motifs": [
+      {
+        "id": "composite-worlds",
+        "confidence": 0.7
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-007/image.jpg",
+        "original_filename": "Sketch-007.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Loose pencil studies of a mask-like face and a four-legged animal."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-007"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-008",
+    "original_title": null,
+    "proposed_title": "Sketch 008",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "visages-masks"
+    ],
+    "motifs": [
+      {
+        "id": "visages-masks",
+        "confidence": 0.8
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-008/image.jpg",
+        "original_filename": "Sketch-008.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Black-ink frontal portrait with elongated facial features and dark, pointed strokes around the head."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-008"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-009",
+    "original_title": null,
+    "proposed_title": "Sketch 009",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "eyes-gaze"
+    ],
+    "motifs": [
+      {
+        "id": "eyes-gaze",
+        "confidence": 0.9
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-009/image.jpg",
+        "original_filename": "Sketch-009.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Pencil drawing of an upright hand with an eye above the fingertips."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-009"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-010",
+    "original_title": null,
+    "proposed_title": "Sketch 010",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "hands-gesture"
+    ],
+    "motifs": [
+      {
+        "id": "hands-gesture",
+        "confidence": 0.5
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-010/image.jpg",
+        "original_filename": "Sketch-010.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Loose figure drawing with a raised arm and a broad, rounded lower body."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-010"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-011",
+    "original_title": null,
+    "proposed_title": "Sketch 011",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "figures-bodies"
+    ],
+    "motifs": [
+      {
+        "id": "figures-bodies",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-011/image.jpg",
+        "original_filename": "Sketch-011.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Layered pencil and ink study of faces and eyes above a pair of hands."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-011"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-012",
+    "original_title": null,
+    "proposed_title": "Sketch 012",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "animals-hybrids"
+    ],
+    "motifs": [
+      {
+        "id": "animals-hybrids",
+        "confidence": 0.7
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-012/image.jpg",
+        "original_filename": "Sketch-012.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Portrait drawing of a face with long hair and a rounded lower face."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-012"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-013",
+    "original_title": null,
+    "proposed_title": "Sketch 013",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "symbols-cosmograms"
+    ],
+    "motifs": [
+      {
+        "id": "symbols-cosmograms",
+        "confidence": 0.8
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-013/image.jpg",
+        "original_filename": "Sketch-013.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Pencil drawing of a small human-like figure with long, flowing forms below it."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-013"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-014",
+    "original_title": null,
+    "proposed_title": "Sketch 014",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "composite-worlds"
+    ],
+    "motifs": [
+      {
+        "id": "composite-worlds",
+        "confidence": 0.9
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-014/image.jpg",
+        "original_filename": "Sketch-014.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Close-up of a single eye drawn within a rough circular outline."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-014"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-015",
+    "original_title": null,
+    "proposed_title": "Sketch 015",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "visages-masks"
+    ],
+    "motifs": [
+      {
+        "id": "visages-masks",
+        "confidence": 0.5
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-015/image.jpg",
+        "original_filename": "Sketch-015.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Two detailed eyes drawn side by side on pale paper."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-015"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-016",
+    "original_title": null,
+    "proposed_title": "Sketch 016",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "eyes-gaze"
+    ],
+    "motifs": [
+      {
+        "id": "eyes-gaze",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-016/image.jpg",
+        "original_filename": "Sketch-016.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Horizontal black-ink study of a face partly obscured by curved strokes."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-016"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-017",
+    "original_title": null,
+    "proposed_title": "Sketch 017",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "hands-gesture"
+    ],
+    "motifs": [
+      {
+        "id": "hands-gesture",
+        "confidence": 0.7
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-017/image.jpg",
+        "original_filename": "Sketch-017.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Faint pencil study of a hand-like form near the upper edge, with a small hanging shape below."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-017"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-018",
+    "original_title": null,
+    "proposed_title": "Sketch 018",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "figures-bodies"
+    ],
+    "motifs": [
+      {
+        "id": "figures-bodies",
+        "confidence": 0.8
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-018/image.jpg",
+        "original_filename": "Sketch-018.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Dark shaded abstract profile form with wispy lines extending to the right."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-018"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-019",
+    "original_title": null,
+    "proposed_title": "Sketch 019",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "animals-hybrids"
+    ],
+    "motifs": [
+      {
+        "id": "animals-hybrids",
+        "confidence": 0.9
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-019/image.jpg",
+        "original_filename": "Sketch-019.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Pencil studies of overlapping hands, with a small standing figure above them."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-019"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-020",
+    "original_title": null,
+    "proposed_title": "Sketch 020",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "symbols-cosmograms"
+    ],
+    "motifs": [
+      {
+        "id": "symbols-cosmograms",
+        "confidence": 0.5
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-020/image.jpg",
+        "original_filename": "Sketch-020.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Surreal line drawing combining a profile face, an eye, and sweeping hair-like contours."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-020"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-021",
+    "original_title": null,
+    "proposed_title": "Sketch 021",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "composite-worlds"
+    ],
+    "motifs": [
+      {
+        "id": "composite-worlds",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-021/image.jpg",
+        "original_filename": "Sketch-021.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Light pencil study of a nude figure with arms held near the torso."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-021"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-022",
+    "original_title": null,
+    "proposed_title": "Sketch 022",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "visages-masks"
+    ],
+    "motifs": [
+      {
+        "id": "visages-masks",
+        "confidence": 0.7
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-022/image.jpg",
+        "original_filename": "Sketch-022.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Red, black, and gray geometric composition with crossed linear forms and triangular outlines."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-022"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-023",
+    "original_title": null,
+    "proposed_title": "Sketch 023",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "eyes-gaze"
+    ],
+    "motifs": [
+      {
+        "id": "eyes-gaze",
+        "confidence": 0.8
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-023/image.jpg",
+        "original_filename": "Sketch-023.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Shaded profile portrait with a prominent nose and an open, downturned mouth."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-023"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-024",
+    "original_title": null,
+    "proposed_title": "Sketch 024",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "hands-gesture"
+    ],
+    "motifs": [
+      {
+        "id": "hands-gesture",
+        "confidence": 0.9
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-024/image.jpg",
+        "original_filename": "Sketch-024.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Dense surreal arrangement of eyes and faces interwoven with rounded organic shapes."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-024"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-025",
+    "original_title": null,
+    "proposed_title": "Sketch 025",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "figures-bodies"
+    ],
+    "motifs": [
+      {
+        "id": "figures-bodies",
+        "confidence": 0.5
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-025/image.jpg",
+        "original_filename": "Sketch-025.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Frontal, symmetrical face drawing with several eyes and heavy brow lines."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-025"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-026",
+    "original_title": null,
+    "proposed_title": "Sketch 026",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "animals-hybrids"
+    ],
+    "motifs": [
+      {
+        "id": "animals-hybrids",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-026/image.jpg",
+        "original_filename": "Sketch-026.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Black-and-gray profile portrait looking upward, with textured strokes trailing from the head."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-026"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-027",
+    "original_title": null,
+    "proposed_title": "Sketch 027",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "symbols-cosmograms"
+    ],
+    "motifs": [
+      {
+        "id": "symbols-cosmograms",
+        "confidence": 0.7
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-027/image.jpg",
+        "original_filename": "Sketch-027.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Ink portrait in profile looking upward, with dark textured forms around the head."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-027"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-028",
+    "original_title": null,
+    "proposed_title": "Sketch 028",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "composite-worlds"
+    ],
+    "motifs": [
+      {
+        "id": "composite-worlds",
+        "confidence": 0.8
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-028/image.jpg",
+        "original_filename": "Sketch-028.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Very faint pencil sketch of a side-facing head among soft, cloud-like lines."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-028"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-029",
+    "original_title": null,
+    "proposed_title": "Sketch 029",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "visages-masks"
+    ],
+    "motifs": [
+      {
+        "id": "visages-masks",
+        "confidence": 0.9
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-029/image.jpg",
+        "original_filename": "Sketch-029.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Pencil study of two gesturing hands, one raised and one open below."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-029"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-030",
+    "original_title": null,
+    "proposed_title": "Sketch 030",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "eyes-gaze"
+    ],
+    "motifs": [
+      {
+        "id": "eyes-gaze",
+        "confidence": 0.5
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-030/image.jpg",
+        "original_filename": "Sketch-030.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Low-contrast face emerging from a dark, mottled field."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-030"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-031",
+    "original_title": null,
+    "proposed_title": "Sketch 031",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "hands-gesture"
+    ],
+    "motifs": [
+      {
+        "id": "hands-gesture",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-031/image.jpg",
+        "original_filename": "Sketch-031.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Light pencil drawing of a standing nude figure with arms held near the body."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-031"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-032",
+    "original_title": null,
+    "proposed_title": "Sketch 032",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "figures-bodies"
+    ],
+    "motifs": [
+      {
+        "id": "figures-bodies",
+        "confidence": 0.7
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-032/image.jpg",
+        "original_filename": "Sketch-032.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Pencil drawing of a skull-like face, with a smaller face beside it."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-032"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-033",
+    "original_title": null,
+    "proposed_title": "Sketch 033",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "animals-hybrids"
+    ],
+    "motifs": [
+      {
+        "id": "animals-hybrids",
+        "confidence": 0.8
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-033/image.jpg",
+        "original_filename": "Sketch-033.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Line drawing of a mask-like face with large eyes, a long nose, and a rounded lower shape."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-033"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-034",
+    "original_title": null,
+    "proposed_title": "Sketch 034",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "symbols-cosmograms"
+    ],
+    "motifs": [
+      {
+        "id": "symbols-cosmograms",
+        "confidence": 0.9
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-034/image.jpg",
+        "original_filename": "Sketch-034.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Pale pencil drawing of a bulbous head with small facial marks and dangling forms."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-034"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-035",
+    "original_title": null,
+    "proposed_title": "Sketch 035",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "composite-worlds"
+    ],
+    "motifs": [
+      {
+        "id": "composite-worlds",
+        "confidence": 0.5
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-035/image.jpg",
+        "original_filename": "Sketch-035.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Faint pencil drawing of a large rounded head with a small concentric eye-like circle below it."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-035"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-036",
+    "original_title": null,
+    "proposed_title": "Sketch 036",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "visages-masks"
+    ],
+    "motifs": [
+      {
+        "id": "visages-masks",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-036/image.jpg",
+        "original_filename": "Sketch-036.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Surreal vertical composition with a small inverted face beneath a pointed, eye-like form."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-036"
+  },
+  {
+    "title": "Cthodinic",
+    "slug": "sketch-037",
+    "original_title": null,
+    "proposed_title": null,
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "eyes-gaze"
+    ],
+    "motifs": [
+      {
+        "id": "eyes-gaze",
+        "confidence": 0.7
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-037/image.jpg",
+        "original_filename": "Sketch-037.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Faint vertical study of an abstract face and body beneath a small triangular mark."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-037"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-038",
+    "original_title": null,
+    "proposed_title": "Sketch 038",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "hands-gesture"
+    ],
+    "motifs": [
+      {
+        "id": "hands-gesture",
+        "confidence": 0.8
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-038/image.jpg",
+        "original_filename": "Sketch-038.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Very light pencil study of a side-facing human torso and arm."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-038"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-039",
+    "original_title": null,
+    "proposed_title": "Sketch 039",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "figures-bodies"
+    ],
+    "motifs": [
+      {
+        "id": "figures-bodies",
+        "confidence": 0.9
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-039/image.jpg",
+        "original_filename": "Sketch-039.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Large shaded abstract face made from overlapping rounded, tubular forms."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-039"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-040",
+    "original_title": null,
+    "proposed_title": "Sketch 040",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "animals-hybrids"
+    ],
+    "motifs": [
+      {
+        "id": "animals-hybrids",
+        "confidence": 0.5
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-040/image.jpg",
+        "original_filename": "Sketch-040.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Orange-red line drawing of a face in profile, framed by flowing strokes."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-040"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-041",
+    "original_title": null,
+    "proposed_title": "Sketch 041",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "symbols-cosmograms"
+    ],
+    "motifs": [
+      {
+        "id": "symbols-cosmograms",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-041/image.jpg",
+        "original_filename": "Sketch-041.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Frontal mask-like face with rounded eyes, a broad nose, and an open rectangular mouth."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-041"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-042",
+    "original_title": null,
+    "proposed_title": "Sketch 042",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "composite-worlds"
+    ],
+    "motifs": [
+      {
+        "id": "composite-worlds",
+        "confidence": 0.7
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-042/image.jpg",
+        "original_filename": "Sketch-042.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Symmetrical face beneath a web of branching, crown-like lines."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-042"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-043",
+    "original_title": null,
+    "proposed_title": "Sketch 043",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "visages-masks"
+    ],
+    "motifs": [
+      {
+        "id": "visages-masks",
+        "confidence": 0.8
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-043/image.jpg",
+        "original_filename": "Sketch-043.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Shaded frontal portrait with a long beard made of curling lines."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-043"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-044",
+    "original_title": null,
+    "proposed_title": "Sketch 044",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "eyes-gaze"
+    ],
+    "motifs": [
+      {
+        "id": "eyes-gaze",
+        "confidence": 0.9
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-044/image.jpg",
+        "original_filename": "Sketch-044.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Single eye inside a long curved outline, with a small teardrop-like mark below."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-044"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-045",
+    "original_title": null,
+    "proposed_title": "Sketch 045",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "hands-gesture"
+    ],
+    "motifs": [
+      {
+        "id": "hands-gesture",
+        "confidence": 0.5
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-045/image.jpg",
+        "original_filename": "Sketch-045.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Pencil portrait with defined eyes, nose, and an angular, unfinished jaw."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-045"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-046",
+    "original_title": null,
+    "proposed_title": "Sketch 046",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "figures-bodies"
+    ],
+    "motifs": [
+      {
+        "id": "figures-bodies",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-046/image.jpg",
+        "original_filename": "Sketch-046.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Two small face studies above a long, flowing body-like form."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-046"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-047",
+    "original_title": null,
+    "proposed_title": "Sketch 047",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "animals-hybrids"
+    ],
+    "motifs": [
+      {
+        "id": "animals-hybrids",
+        "confidence": 0.7
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-047/image.jpg",
+        "original_filename": "Sketch-047.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Two partial face profiles meeting at the center, with a large eye above them."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-047"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-048",
+    "original_title": null,
+    "proposed_title": "Sketch 048",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "symbols-cosmograms"
+    ],
+    "motifs": [
+      {
+        "id": "symbols-cosmograms",
+        "confidence": 0.8
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-048/image.jpg",
+        "original_filename": "Sketch-048.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Vertical composite face with an eye, nose, and mouth arranged among other facial fragments."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-048"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-049",
+    "original_title": null,
+    "proposed_title": "Sketch 049",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "composite-worlds"
+    ],
+    "motifs": [
+      {
+        "id": "composite-worlds",
+        "confidence": 0.9
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-049/image.jpg",
+        "original_filename": "Sketch-049.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Side-profile portrait with an exaggerated brow, long nose, and full lips."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-049"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-050",
+    "original_title": null,
+    "proposed_title": "Sketch 050",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "visages-masks"
+    ],
+    "motifs": [
+      {
+        "id": "visages-masks",
+        "confidence": 0.5
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-050/image.jpg",
+        "original_filename": "Sketch-050.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Frontal mask-like face with broad horn- or wing-shaped forms extending sideways."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-050"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-051",
+    "original_title": null,
+    "proposed_title": "Sketch 051",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "eyes-gaze"
+    ],
+    "motifs": [
+      {
+        "id": "eyes-gaze",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-051/image.jpg",
+        "original_filename": "Sketch-051.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Ornate symmetrical black-ink mask with curled flourishes and a narrow mouth."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-051"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-052",
+    "original_title": null,
+    "proposed_title": "Sketch 052",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "hands-gesture"
+    ],
+    "motifs": [
+      {
+        "id": "hands-gesture",
+        "confidence": 0.7
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-052/image.jpg",
+        "original_filename": "Sketch-052.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Light pencil drawing of two seated figures, one seen from behind and one in profile."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-052"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-053",
+    "original_title": null,
+    "proposed_title": "Sketch 053",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "figures-bodies"
+    ],
+    "motifs": [
+      {
+        "id": "figures-bodies",
+        "confidence": 0.8
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-053/image.jpg",
+        "original_filename": "Sketch-053.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Vivid multicolor portrait with a red-orange face against blue and green brushstrokes."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-053"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-054",
+    "original_title": null,
+    "proposed_title": "Sketch 054",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "animals-hybrids"
+    ],
+    "motifs": [
+      {
+        "id": "animals-hybrids",
+        "confidence": 0.9
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-054/image.jpg",
+        "original_filename": "Sketch-054.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Frontal face surrounded by concentric bands of green, yellow, orange, and dark blue."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-054"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-055",
+    "original_title": null,
+    "proposed_title": "Sketch 055",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "symbols-cosmograms"
+    ],
+    "motifs": [
+      {
+        "id": "symbols-cosmograms",
+        "confidence": 0.5
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-055/image.jpg",
+        "original_filename": "Sketch-055.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Monochrome portrait of a front-facing man with dark shoulder-length hair."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-055"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-056",
+    "original_title": null,
+    "proposed_title": "Sketch 056",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "composite-worlds"
+    ],
+    "motifs": [
+      {
+        "id": "composite-worlds",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-056/image.jpg",
+        "original_filename": "Sketch-056.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Dense black-ink drawing of overlapping faces, eyes, and curling organic forms."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-056"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-057",
+    "original_title": null,
+    "proposed_title": "Sketch 057",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "visages-masks"
+    ],
+    "motifs": [
+      {
+        "id": "visages-masks",
+        "confidence": 0.7
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-057/image.jpg",
+        "original_filename": "Sketch-057.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Brightly colored abstract composition with an eye and rounded pink and green forms against blue and yellow."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-057"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-058",
+    "original_title": null,
+    "proposed_title": "Sketch 058",
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "eyes-gaze"
+    ],
+    "motifs": [
+      {
+        "id": "eyes-gaze",
+        "confidence": 0.8
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-058/image.jpg",
+        "original_filename": "Sketch-058.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Colorful face fragment with a single large eye above an orange, rounded nose."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-058"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-059",
+    "original_title": null,
+    "proposed_title": "Sketch 059",
+    "classification": {
+      "type": "drawing",
+      "confidence": 0.62
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "hands-gesture"
+    ],
+    "motifs": [
+      {
+        "id": "hands-gesture",
+        "confidence": 0.9
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-059/image.jpg",
+        "original_filename": "Sketch-059.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Abstract colorful face with one large eye, a long blue nose, and red lower contours."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-059"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-060",
+    "original_title": null,
+    "proposed_title": "Sketch 060",
+    "classification": {
+      "type": "drawing",
+      "confidence": 0.62
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "figures-bodies"
+    ],
+    "motifs": [
+      {
+        "id": "figures-bodies",
+        "confidence": 0.5
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-060/image.jpg",
+        "original_filename": "Sketch-060.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Blue, yellow, and red portrait composition with a large eye and a skull-like lower face."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-060"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-061",
+    "original_title": null,
+    "proposed_title": "Sketch 061",
+    "classification": {
+      "type": "drawing",
+      "confidence": 0.62
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "animals-hybrids"
+    ],
+    "motifs": [
+      {
+        "id": "animals-hybrids",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-061/image.jpg",
+        "original_filename": "Sketch-061.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Intricate tree-like black-and-gray face with multiple large eyes and branching forms."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-061"
+  },
+  {
+    "title": "Untitled",
+    "slug": "sketch-062",
+    "original_title": null,
+    "proposed_title": "Sketch 062",
+    "classification": {
+      "type": "drawing",
+      "confidence": 0.62
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "symbols-cosmograms"
+    ],
+    "motifs": [
+      {
+        "id": "symbols-cosmograms",
+        "confidence": 0.7
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/Sketch-062/image.jpg",
+        "original_filename": "Sketch-062.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Pale pencil page of studies showing several partial faces and small head sketches."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-062"
+  }
+]

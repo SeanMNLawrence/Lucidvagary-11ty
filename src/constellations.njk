@@ -1,0 +1,19 @@
+---
+layout: layouts/base.njk
+title: "Constellations - lucid vagary"
+description: "Curated, overlapping groupings of artworks in the Lucid Vagary collection."
+permalink: /constellations/
+---
+<section class="posts-section" aria-labelledby="constellations-title">
+  <h1 class="posts-title" id="constellations-title">constellations</h1>
+  <p class="posts-intro">Curated groups offer overlapping paths through the collection; they are not folders or classifications.</p>
+  <ul class="constellation-list">
+    {% for constellation in collections.constellationPages %}
+    <li>
+      <h2><a href="/constellations/{{ constellation.slug }}/">{{ constellation.title }}</a></h2>
+      <p>{{ constellation.introduction }}</p>
+      <p>{{ constellation.artworks.length }} artwork{% if constellation.artworks.length != 1 %}s{% endif %}</p>
+    </li>
+    {% endfor %}
+  </ul>
+</section>

@@ -80,3 +80,9 @@ The goal is a navigable visual archive in which an artwork can acquire new meani
 Development Status
 
 This document describes the working model and intended architecture. Vocabulary, relationship types, curatorial groupings, and public presentation remain subject to refinement. It does not establish which features are currently implemented or deployed.
+
+## Current implementation notes
+
+The canonical catalogue is `src/_data/artworks.json`, validated against `/src/_data/artwork.schema.json`; controlled terms are in `src/_data/artworkVocabulary.js`. Records use stable `artwork_id` values. Composite works and ordered component references are modeled in `src/_data/compositeArtworks.js`, with schema and reference validation. The Pentaptych currently links the confirmed Sketch 037 component with its sequence left unassigned pending curatorial confirmation; its existing page URL is preserved. Primary digital assets require authored visual alt text in the catalogue; schema and build validation reject missing descriptions, and the site checker verifies that artwork pages render the catalogue text. Run `npm run validate:artwork` to validate metadata and local assets, `npm test` for catalogue/relationship checks, and `npm run build && npm run check:site` for the production build and generated-site link, image, heading, route, and sitemap checks.
+
+Two alternate source photographs are recorded by original filename but are not present in this repository. Validation reports them as warnings, and pages do not render broken links for those unavailable files. Sketch-003 has been withdrawn from the public catalogue and generated routes; its source image is retained under `artwork-source-archive/`, outside Eleventy's published input.

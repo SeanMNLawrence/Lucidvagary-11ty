@@ -5,42 +5,89 @@ layout: layouts/base.njk
   <article class="post-single">
     <header class="post-header">
       <h1>{{ title }}</h1>
-      <p class="post-date">{{ page.date | readableDate }}</p>
+      <p><time class="post-date" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></p>
       {% if tags %}
-      <div class="post-tags">
+      <nav class="post-tags" aria-label="Tags for {{ title }}">
         {% for tag in tags %}
           {% if tag != "poem" and tag != "fragment" and tag != "artwork" %}
-            <a href="/tags/{{ tag | slugify }}/" class="post-tag">{{ tag }}</a>
+            <a href="/tags/{{ tag | slugify }}/" class="post-tag" rel="tag">More {{ tag }} posts</a>
           {% endif %}
         {% endfor %}
-      </div>
+      </nav>
       {% endif %}
     </header>
 
-    {% if image %}
-    <div class="post-image">
-      <img src="{{ image }}" alt="{{ description or title }}">
-    </div>
+    {% set assets = digitalAssets or [] %}
+    {% if not assets.length and image %}
+      {% set assets = [{ src: image, alt: image | artworkAltForImage(description or title), primary: true }] %}
+    {% endif %}
+    {% set primary = primaryAsset or (assets | first) %}
+    {% set primaryIndex = primaryAssetIndex if primaryAssetIndex != null and primaryAssetIndex >= 0 else null %}
+    {% if primary and primaryIndex == null %}
+      {% set primaryIndex = 0 %}
+    {% endif %}
+    {% if primary and not suppressPrimaryImage %}
+    <figure class="post-image">
+      {% optimizedImage primary.src, primary.alt or description or (title + " artwork"), "artwork", "eager" %}
+      {% if imageCaption %}<figcaption>{{ imageCaption }}</figcaption>{% endif %}
+    </figure>
+    {% endif %}
+
+    {% if assets.length > 1 %}
+    <section class="post-alternate-assets">
+      <h2>Alternate photographs</h2>
+      <ul>
+        {% for asset in assets %}
+          {% if primaryIndex == null or loop.index0 != primaryIndex %}
+          <li>
+            <a href="{{ asset.src }}">{{ asset.alt or title }}</a>
+          </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </section>
     {% endif %}
 
     <div class="post-content">
       {{ content | safe }}
     </div>
+
+    {% set composite = collections.compositeArtworks | compositeByUrl(page.url) %}
+    {% if composite %}
+    <section class="composite-components" aria-labelledby="composite-components-title">
+      <h2 id="composite-components-title">Constituent artworks</h2>
+      <ul>
+        {% for component in composite.components %}
+        <li>
+          {% if component.order %}
+          Component {{ component.order }}:
+          {% else %}
+          Component order to be confirmed:
+          {% endif %}
+            {% set componentArtwork = collections.artworks | artworkById(component.artwork_id) %}
+            {% if componentArtwork %}
+            <a href="{{ componentArtwork.url }}">{{ componentArtwork.displayTitle }}</a>
+            {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endif %}
   </article>
 
-  <aside class="post-sidebar">
-    <h4 class="sidebar-title">more from lucid vagary</h4>
+  <aside class="post-sidebar" aria-labelledby="related-posts-heading">
+    <h2 class="sidebar-title" id="related-posts-heading">more from lucid vagary</h2>
     {% set related = collections.posts | relatedPosts(page.url, tags, 4) %}
     {% for post in related %}
     <a href="{{ post.url }}" class="sidebar-card">
       {% if post.data.image %}
       <div class="sidebar-card-image">
-        <img src="{{ post.data.image }}" alt="{{ post.data.description or post.data.title }}" loading="lazy">
+        {% optimizedImage post.data.image, "", "thumbnail", "lazy" %}
       </div>
       {% endif %}
       <div class="sidebar-card-body">
-        <h5>{{ post.data.title }}</h5>
-        <p class="post-date">{{ post.date | readableDate }}</p>
+        <h3>{{ post.data.title }}</h3>
+        <p><time class="post-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time></p>
       </div>
     </a>
     {% endfor %}

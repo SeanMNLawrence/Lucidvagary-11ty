@@ -1,0 +1,139 @@
+---
+layout: layouts/base.njk
+title: "Artwork archive - lucid vagary"
+description: "Browse the complete artwork catalogue by classification, subject, motif, theme, and constellation."
+permalink: /archive/
+---
+<section class="posts-section archive-section" aria-labelledby="archive-title">
+  <div class="archive-header">
+    <div>
+      <h1 class="posts-title" id="archive-title">archive</h1>
+      <p class="archive-intro">A complete, shareable view of the artwork catalogue. Studies and sketches remain part of the collection.</p>
+    </div>
+    <p class="archive-count" aria-live="polite"><span id="archive-visible-count">{{ artworkArchive.count }}</span> of {{ artworkArchive.count }} artworks</p>
+  </div>
+
+  <form class="archive-filters" id="archive-filters" aria-label="Filter the artwork archive">
+    <label class="archive-filter" for="archive-classification">
+      <span>Classification</span>
+      <select name="classification" id="archive-classification">
+        <option value="">All classifications</option>
+        {% for option in artworkArchive.filters.classifications %}
+        <option value="{{ option.value }}">{{ option.label }}</option>
+        {% endfor %}
+      </select>
+    </label>
+
+    {% for facet in ["subject", "motif", "theme", "constellation"] %}
+      {% set options = artworkArchive.filters[facet + "s"] %}
+      {% if options.length %}
+      <label class="archive-filter" for="archive-{{ facet }}">
+        <span>{{ facet | capitalize }}</span>
+        <select name="{{ facet }}" id="archive-{{ facet }}">
+          <option value="">All {{ facet }}s</option>
+          {% for option in options %}
+          <option value="{{ option.value }}">{{ option.label }}</option>
+          {% endfor %}
+        </select>
+      </label>
+      {% endif %}
+    {% endfor %}
+  </form>
+
+  <p class="archive-empty" id="archive-empty" hidden>No artworks match these filters.</p>
+  <div class="posts-list archive-list" id="archive-list" aria-label="Artwork results">
+    {% for artwork in artworkArchive.items %}
+    <article
+      class="post-card archive-card"
+      data-classification="{{ artwork.classification.type }}"
+      data-subjects="{{ artwork.subjects | join('|') }}"
+      data-motifs="{{ artwork.motifs | artworkTermIds | join('|') }}"
+      data-themes="{{ artwork.themes | join('|') }}"
+      data-constellations="{{ artwork.constellations | join('|') }}"
+    >
+      <a href="{{ artwork.url }}" aria-label="View artwork: {{ artwork.displayTitle }}">
+        {% if artwork.primaryAsset.available %}
+        <div class="listing-card-image">
+          {% optimizedImage artwork.primaryAsset.path, artwork.primaryAsset.alt, "card", "lazy" %}
+        </div>
+        {% endif %}
+        <div class="post-card-body">
+          <div class="post-tags-mini">
+            <span class="post-tag-mini">{{ artwork.classification.type | capitalize }}</span>
+            {% for subject in artwork.subjects %}
+            <span class="post-tag-mini">{{ subject | artworkTermLabel("subjects") }}</span>
+            {% endfor %}
+            {% for motif in artwork.motifs %}
+            <span class="post-tag-mini">{{ motif.id | artworkTermLabel("motifs") }}</span>
+            {% endfor %}
+            {% for constellation in artwork.constellations %}
+            <span class="post-tag-mini">{{ constellation | artworkTermLabel("constellations") }}</span>
+            {% endfor %}
+          </div>
+          <h2>{{ artwork.displayTitle }}</h2>
+          {% if artwork.titleIsProposed %}<p class="artwork-title-status">Proposed title</p>{% endif %}
+        </div>
+      </a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<script>
+  (function () {
+    var form = document.getElementById("archive-filters");
+    var cards = Array.prototype.slice.call(document.querySelectorAll(".archive-card"));
+    var count = document.getElementById("archive-visible-count");
+    var empty = document.getElementById("archive-empty");
+    var filterKeys = ["classification", "subject", "motif", "theme", "constellation"];
+    var attributes = {
+      subject: "subjects",
+      motif: "motifs",
+      theme: "themes",
+      constellation: "constellations"
+    };
+
+    function syncInputsFromUrl() {
+      var params = new URLSearchParams(window.location.search);
+      filterKeys.forEach(function (key) {
+        var field = form.elements[key];
+        if (field) field.value = params.get(key) || "";
+      });
+    }
+
+    function applyFilters() {
+      var params = new URLSearchParams();
+      var selected = {};
+      filterKeys.forEach(function (key) {
+        var field = form.elements[key];
+        selected[key] = field ? field.value : "";
+        if (selected[key]) params.set(key, selected[key]);
+      });
+
+      var visible = 0;
+      cards.forEach(function (card) {
+        var matches = filterKeys.every(function (key) {
+          if (!selected[key]) return true;
+          if (key === "classification") return card.dataset.classification === selected[key];
+          var values = (card.dataset[attributes[key]] || "").split("|").filter(Boolean);
+          return values.indexOf(selected[key]) !== -1;
+        });
+        card.hidden = !matches;
+        if (matches) visible += 1;
+      });
+
+      count.textContent = String(visible);
+      empty.hidden = visible !== 0;
+      var query = params.toString();
+      window.history.replaceState({}, "", window.location.pathname + (query ? "?" + query : ""));
+    }
+
+    syncInputsFromUrl();
+    form.addEventListener("change", applyFilters);
+    window.addEventListener("popstate", function () {
+      syncInputsFromUrl();
+      applyFilters();
+    });
+    applyFilters();
+  })();
+</script>

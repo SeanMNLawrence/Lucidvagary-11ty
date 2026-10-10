@@ -1,0 +1,35 @@
+---
+layout: layouts/base.njk
+title: "collection - lucid vagary"
+permalink: /collection/
+---
+<section class="posts-section">
+  <h1 class="posts-title">collection</h1>
+  <p class="posts-intro">A curated entrance into selected anchor works. Continue onward to the <a href="/archive/" class="archive-link">complete artwork archive</a> for every catalogue record.</p>
+
+  <div class="posts-list">
+    {% for post in collections.anchorWorks %}
+    <a href="{{ post.url }}" class="post-card" aria-label="Read {{ post.data.title }}">
+      {% if post.data.image %}
+      <div class="listing-card-image">
+        {% optimizedImage post.data.image, "", "card", "lazy" %}
+      </div>
+      {% endif %}
+      <div class="post-card-body">
+        {% if post.data.tags %}
+        <div class="post-tags-mini">
+          {% for tag in post.data.tags %}
+          <span class="post-tag-mini">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+        <h2>{{ post.data.title }}</h2>
+        <p class="post-date">{{ post.date | readableDate }}</p>
+        {% if post.data.description %}
+        <p class="post-excerpt">{{ post.data.description }}</p>
+        {% endif %}
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
