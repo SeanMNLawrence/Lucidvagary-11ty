@@ -28,7 +28,12 @@ permalink: /archive/
 
     <label class="archive-filter" for="archive-year">
       <span>Year</span>
-      <input type="number" name="year" id="archive-year" min="1" max="{{ currentYear }}" step="1" inputmode="numeric" placeholder="Any year">
+      <select name="year" id="archive-year">
+        <option value="">All years</option>
+        {% for year in collections.archiveYears %}
+        <option value="{{ year }}">{{ year }}</option>
+        {% endfor %}
+      </select>
     </label>
 
     {% for facet in ["subject", "motif", "theme", "constellation"] %}

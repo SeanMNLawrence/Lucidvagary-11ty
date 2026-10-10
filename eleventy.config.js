@@ -206,6 +206,15 @@ module.exports = function (eleventyConfig) {
     return getCanonicalPosts(collectionApi).filter((item) => item.data.tags && item.data.tags.includes("poem"));
   });
 
+  eleventyConfig.addCollection("archiveYears", function (collectionApi) {
+    const years = new Set();
+    getCanonicalPosts(collectionApi).forEach((post) => {
+      const year = new Date(post.date).getUTCFullYear();
+      if (!Number.isNaN(year)) years.add(String(year));
+    });
+    return [...years].sort((a, b) => b - a);
+  });
+
   eleventyConfig.addCollection("archiveLegacyEntries", function (collectionApi) {
     const cataloguedImages = new Set(
       artworkArchive.items.map((artwork) => artwork.primaryAsset.path).filter(Boolean)
