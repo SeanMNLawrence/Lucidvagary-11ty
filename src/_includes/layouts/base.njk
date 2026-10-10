@@ -63,13 +63,9 @@
       <nav class="site-nav" aria-label="Main navigation">
         <div class="site-nav-links" id="site-nav-links">
           <a href="/">home</a>
-          <a href="/collection/">collection</a>
-          <a href="/posts/">posts</a>
-          <a href="/sketches/">sketches</a>
+          <a href="/collection/">collections</a>
           <a href="/archive/">archive</a>
           <a href="/constellations/">constellations</a>
-          <a href="/tags/">tags</a>
-          <a href="/about/">about</a>
         </div>
         <button class="search-toggle" id="search-toggle" aria-label="Search" type="button">
           &#128269;
@@ -91,13 +87,14 @@
   </main>
 
   <footer class="site-footer">
+    <nav aria-label="Footer navigation"><a href="/about/">about</a></nav>
     <p>&copy; {{ currentYear }} lucid vagary</p>
   </footer>
 
   <div class="search-modal-backdrop" id="search-backdrop" style="display: none;"></div>
   <div class="search-modal" id="search-modal" style="display: none;">
-    <label class="visually-hidden" for="search-input">Search posts</label>
-    <input type="search" class="search-input" id="search-input" placeholder="Search posts...">
+    <label class="visually-hidden" for="search-input">Search the archive</label>
+    <input type="search" class="search-input" id="search-input" placeholder="Search the archive...">
     <div class="search-results" id="search-results"></div>
   </div>
 
