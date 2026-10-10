@@ -206,8 +206,21 @@ module.exports = function (eleventyConfig) {
     return getCanonicalPosts(collectionApi).filter((item) => item.data.tags && item.data.tags.includes("poem"));
   });
 
-  eleventyConfig.addCollection("archiveWriting", function (collectionApi) {
-    return getCanonicalPosts(collectionApi).filter((item) => !isArtwork(item));
+  eleventyConfig.addCollection("archiveLegacyEntries", function (collectionApi) {
+    const cataloguedImages = new Set(
+      artworkArchive.items.map((artwork) => artwork.primaryAsset.path).filter(Boolean)
+    );
+    return getCanonicalPosts(collectionApi)
+      .filter((post) => !post.data.image || !cataloguedImages.has(post.data.image))
+      .map((post) => {
+        const tags = post.data.tags || [];
+        const archiveType = tags.includes("sketch")
+          ? "sketch"
+          : tags.includes("artwork")
+            ? "artwork"
+            : "writing";
+        return Object.assign(Object.create(post), { archiveType });
+      });
   });
 
   function artworkFacetValues(artwork, facet) {
@@ -234,6 +247,20 @@ module.exports = function (eleventyConfig) {
   // Canonical records are the sole source for archive and artwork detail routes.
   eleventyConfig.addCollection("artworks", function (collectionApi) {
     return artworkArchive.items;
+  });
+
+  eleventyConfig.addCollection("artworksWithArchiveDates", function (collectionApi) {
+    const datesByImage = new Map(
+      getCanonicalPosts(collectionApi)
+        .filter((post) => post.data.image)
+        .map((post) => [post.data.image, post.date])
+    );
+    return artworkArchive.items.map((artwork) => ({
+      ...artwork,
+      archiveDate: artwork.provenance.artwork_creation_date ||
+        datesByImage.get(artwork.primaryAsset.path) ||
+        null,
+    }));
   });
 
   eleventyConfig.addCollection("compositeArtworks", function () {

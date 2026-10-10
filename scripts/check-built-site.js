@@ -85,13 +85,16 @@ const archiveCards = DomUtils.findAll(
   (node) => node.attribs && String(node.attribs.class || "").split(/\s+/).includes("archive-card"),
   archiveDocument.children
 );
-const artworkCards = archiveCards.filter((card) => card.attribs["data-type"] !== "writing");
+const artworkCards = archiveCards.filter((card) => card.attribs["data-origin"] === "catalogue");
 if (artworkCards.length !== records.length) {
-  failures.push(`archive contains ${artworkCards.length} artwork cards; expected ${records.length}.`);
+  failures.push(`archive contains ${artworkCards.length} catalogue artwork cards; expected ${records.length}.`);
 }
-const writingCards = archiveCards.filter((card) => card.attribs["data-type"] === "writing");
-if (writingCards.length === 0) {
-  failures.push("archive does not contain any writing entries.");
+const legacyCards = archiveCards.filter((card) => card.attribs["data-origin"] === "legacy");
+if (legacyCards.length === 0) {
+  failures.push("archive does not contain any legacy artwork or writing entries.");
+}
+if (!artworkCards.some((card) => card.attribs["data-year"])) {
+  failures.push("archive does not include any artwork dates for its year filter.");
 }
 ["archive-type", "archive-year", "archive-subject", "archive-tag"].forEach((id) => {
   if (!DomUtils.findOne((node) => getAttribute(node, "id") === id, archiveDocument.children)) {

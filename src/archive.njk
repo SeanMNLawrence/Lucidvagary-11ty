@@ -10,7 +10,7 @@ permalink: /archive/
       <h1 class="posts-title" id="archive-title">archive</h1>
       <p class="archive-intro">Browse all artwork and writing, including older pages. Use the filters to explore by type, subject, or year.</p>
     </div>
-    <p class="archive-count" aria-live="polite"><span id="archive-visible-count">{{ artworkArchive.count + collections.archiveWriting.length }}</span> of {{ artworkArchive.count + collections.archiveWriting.length }} entries</p>
+    <p class="archive-count" aria-live="polite"><span id="archive-visible-count">{{ artworkArchive.count + collections.archiveLegacyEntries.length }}</span> of {{ artworkArchive.count + collections.archiveLegacyEntries.length }} entries</p>
   </div>
 
   <form class="archive-filters" id="archive-filters" aria-label="Filter the artwork archive">
@@ -19,6 +19,7 @@ permalink: /archive/
       <select name="type" id="archive-type">
         <option value="">All types</option>
         <option value="writing">Writing</option>
+        <option value="artwork">Older artwork</option>
         {% for option in artworkArchive.filters.classifications %}
         <option value="{{ option.value }}">{{ option.label }} / artwork</option>
         {% endfor %}
@@ -58,11 +59,12 @@ permalink: /archive/
 
   <p class="archive-empty" id="archive-empty" hidden>No archive entries match these filters.</p>
   <div class="posts-list archive-list" id="archive-list" aria-label="Archive results">
-    {% for artwork in artworkArchive.items %}
+    {% for artwork in collections.artworksWithArchiveDates %}
     <article
       class="post-card archive-card"
+      data-origin="catalogue"
       data-type="{{ artwork.classification.type }}"
-      data-year="{{ artwork.provenance.artwork_creation_date | yearNumber }}"
+      data-year="{{ artwork.archiveDate | yearNumber }}"
       data-subjects="{{ artwork.subjects | join('|') }}"
       data-motifs="{{ artwork.motifs | artworkTermIds | join('|') }}"
       data-themes="{{ artwork.themes | join('|') }}"
@@ -89,14 +91,16 @@ permalink: /archive/
             {% endfor %}
           </div>
           <h2>{{ artwork.displayTitle }}</h2>
+          {% if artwork.archiveDate %}<p class="post-date">Year {{ artwork.archiveDate | yearNumber }}</p>{% endif %}
           {% if artwork.titleIsProposed %}<p class="artwork-title-status">Proposed title</p>{% endif %}
         </div>
       </a>
     </article>
     {% endfor %}
-    {% for post in collections.archiveWriting %}
+    {% for post in collections.archiveLegacyEntries %}
     <article class="post-card archive-card"
-      data-type="writing"
+      data-origin="legacy"
+      data-type="{{ post.archiveType }}"
       data-year="{{ post.date | yearNumber }}"
       data-subjects="{{ post.data.tags | join('|') }}"
       data-motifs=""
@@ -110,7 +114,7 @@ permalink: /archive/
         </div>
         {% endif %}
         <div class="post-card-body">
-          <div class="post-tags-mini"><span class="post-tag-mini">Writing</span></div>
+          <div class="post-tags-mini"><span class="post-tag-mini">{{ post.archiveType | capitalize }}</span></div>
           <h2>{{ post.data.title }}</h2>
           <p><time class="post-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time></p>
           {% if post.data.description %}<p class="post-excerpt">{{ post.data.description }}</p>{% endif %}
