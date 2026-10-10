@@ -1,27 +1,33 @@
 ---
 layout: layouts/base.njk
 title: "Artwork archive - lucid vagary"
-description: "Browse the complete artwork catalogue by classification, subject, motif, theme, and constellation."
+description: "Browse the complete archive of artwork and writing by type, subject, and year."
 permalink: /archive/
 ---
 <section class="posts-section archive-section" aria-labelledby="archive-title">
   <div class="archive-header">
     <div>
       <h1 class="posts-title" id="archive-title">archive</h1>
-      <p class="archive-intro">A complete, shareable view of the artwork catalogue. Studies and sketches remain part of the collection.</p>
+      <p class="archive-intro">Browse all artwork and writing, including older pages. Use the filters to explore by type, subject, or year.</p>
     </div>
-    <p class="archive-count" aria-live="polite"><span id="archive-visible-count">{{ artworkArchive.count }}</span> of {{ artworkArchive.count }} artworks</p>
+    <p class="archive-count" aria-live="polite"><span id="archive-visible-count">{{ artworkArchive.count + collections.archiveWriting.length }}</span> of {{ artworkArchive.count + collections.archiveWriting.length }} entries</p>
   </div>
 
   <form class="archive-filters" id="archive-filters" aria-label="Filter the artwork archive">
-    <label class="archive-filter" for="archive-classification">
-      <span>Classification</span>
-      <select name="classification" id="archive-classification">
-        <option value="">All classifications</option>
+    <label class="archive-filter" for="archive-type">
+      <span>Type</span>
+      <select name="type" id="archive-type">
+        <option value="">All types</option>
+        <option value="writing">Writing</option>
         {% for option in artworkArchive.filters.classifications %}
-        <option value="{{ option.value }}">{{ option.label }}</option>
+        <option value="{{ option.value }}">{{ option.label }} / artwork</option>
         {% endfor %}
       </select>
+    </label>
+
+    <label class="archive-filter" for="archive-year">
+      <span>Year</span>
+      <input type="number" name="year" id="archive-year" min="1" max="{{ currentYear }}" step="1" inputmode="numeric" placeholder="Any year">
     </label>
 
     {% for facet in ["subject", "motif", "theme", "constellation"] %}
@@ -38,18 +44,30 @@ permalink: /archive/
       </label>
       {% endif %}
     {% endfor %}
+
+    <label class="archive-filter" for="archive-tag">
+      <span>Tag</span>
+      <select name="tag" id="archive-tag">
+        <option value="">All tags</option>
+        {% for tag in collections.tagList %}
+        <option value="{{ tag }}">{{ tag }}</option>
+        {% endfor %}
+      </select>
+    </label>
   </form>
 
-  <p class="archive-empty" id="archive-empty" hidden>No artworks match these filters.</p>
-  <div class="posts-list archive-list" id="archive-list" aria-label="Artwork results">
+  <p class="archive-empty" id="archive-empty" hidden>No archive entries match these filters.</p>
+  <div class="posts-list archive-list" id="archive-list" aria-label="Archive results">
     {% for artwork in artworkArchive.items %}
     <article
       class="post-card archive-card"
-      data-classification="{{ artwork.classification.type }}"
+      data-type="{{ artwork.classification.type }}"
+      data-year="{{ artwork.provenance.artwork_creation_date | yearNumber }}"
       data-subjects="{{ artwork.subjects | join('|') }}"
       data-motifs="{{ artwork.motifs | artworkTermIds | join('|') }}"
       data-themes="{{ artwork.themes | join('|') }}"
       data-constellations="{{ artwork.constellations | join('|') }}"
+      data-tags="artwork|{{ artwork.classification.type }}|{{ artwork.subjects | join('|') }}|{{ artwork.motifs | artworkTermIds | join('|') }}"
     >
       <a href="{{ artwork.url }}" aria-label="View artwork: {{ artwork.displayTitle }}">
         {% if artwork.primaryAsset.available %}
@@ -76,6 +94,30 @@ permalink: /archive/
       </a>
     </article>
     {% endfor %}
+    {% for post in collections.archiveWriting %}
+    <article class="post-card archive-card"
+      data-type="writing"
+      data-year="{{ post.date | yearNumber }}"
+      data-subjects="{{ post.data.tags | join('|') }}"
+      data-motifs=""
+      data-themes=""
+      data-constellations=""
+      data-tags="{{ post.data.tags | join('|') }}">
+      <a href="{{ post.url }}" aria-label="Read {{ post.data.title }}">
+        {% if post.data.image %}
+        <div class="listing-card-image">
+          {% optimizedImage post.data.image, post.data.description or post.data.title, "card", "lazy" %}
+        </div>
+        {% endif %}
+        <div class="post-card-body">
+          <div class="post-tags-mini"><span class="post-tag-mini">Writing</span></div>
+          <h2>{{ post.data.title }}</h2>
+          <p><time class="post-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time></p>
+          {% if post.data.description %}<p class="post-excerpt">{{ post.data.description }}</p>{% endif %}
+        </div>
+      </a>
+    </article>
+    {% endfor %}
   </div>
 </section>
 
@@ -85,12 +127,13 @@ permalink: /archive/
     var cards = Array.prototype.slice.call(document.querySelectorAll(".archive-card"));
     var count = document.getElementById("archive-visible-count");
     var empty = document.getElementById("archive-empty");
-    var filterKeys = ["classification", "subject", "motif", "theme", "constellation"];
+    var filterKeys = ["type", "year", "subject", "motif", "theme", "constellation", "tag"];
     var attributes = {
       subject: "subjects",
       motif: "motifs",
       theme: "themes",
-      constellation: "constellations"
+      constellation: "constellations",
+      tag: "tags"
     };
 
     function syncInputsFromUrl() {
@@ -114,7 +157,8 @@ permalink: /archive/
       cards.forEach(function (card) {
         var matches = filterKeys.every(function (key) {
           if (!selected[key]) return true;
-          if (key === "classification") return card.dataset.classification === selected[key];
+          if (key === "type") return card.dataset.type === selected[key];
+          if (key === "year") return card.dataset.year === selected[key];
           var values = (card.dataset[attributes[key]] || "").split("|").filter(Boolean);
           return values.indexOf(selected[key]) !== -1;
         });

@@ -206,6 +206,10 @@ module.exports = function (eleventyConfig) {
     return getCanonicalPosts(collectionApi).filter((item) => item.data.tags && item.data.tags.includes("poem"));
   });
 
+  eleventyConfig.addCollection("archiveWriting", function (collectionApi) {
+    return getCanonicalPosts(collectionApi).filter((item) => !isArtwork(item));
+  });
+
   function artworkFacetValues(artwork, facet) {
     if (facet === "classification") return [artwork.classification.type];
     if (facet === "curatorialStatus") return [artwork.curatorial_status];
@@ -442,6 +446,14 @@ module.exports = function (eleventyConfig) {
     });
   });
   eleventyConfig.addFilter("htmlDateString", (dateObj) => new Date(dateObj).toISOString().slice(0, 10));
+  eleventyConfig.addFilter("yearNumber", (value) => {
+    if (typeof value === "string") {
+      const match = value.match(/^(\d{4})/);
+      if (match) return match[1];
+    }
+    const date = new Date(value);
+    return Number.isNaN(date.getTime()) ? "" : String(date.getFullYear());
+  });
 
   // Slugify filter for tag URLs
   eleventyConfig.addFilter("slugify", slugify);

@@ -59,13 +59,45 @@ function checkSrcset(srcset, file) {
 const htmlFiles = listFiles(outputDirectory).filter((file) => file.endsWith(".html"));
 const archiveFile = path.join(outputDirectory, "archive", "index.html");
 const archiveDocument = parseDocument(fs.readFileSync(archiveFile, "utf8"));
+const homeDocument = parseDocument(fs.readFileSync(path.join(outputDirectory, "index.html"), "utf8"));
+const mainNavigation = DomUtils.findOne(
+  (node) => node.name === "nav" && getAttribute(node, "aria-label") === "Main navigation",
+  homeDocument.children
+);
+const mainNavigationLinks = DomUtils.findAll((node) => node.name === "a", mainNavigation ? [mainNavigation] : []);
+const mainNavigationRoutes = mainNavigationLinks.map((link) => getAttribute(link, "href"));
+if (JSON.stringify(mainNavigationRoutes) !== JSON.stringify(["/", "/collection/", "/archive/", "/constellations/"])) {
+  failures.push(`main navigation routes are ${JSON.stringify(mainNavigationRoutes)}; expected home, collections, archive, and constellations.`);
+}
+if (!DomUtils.findOne(
+  (node) => node.name === "a" && getAttribute(node, "href") === "/about/",
+  DomUtils.findAll((node) => node.name === "nav" && getAttribute(node, "aria-label") === "Footer navigation", homeDocument.children)
+)) {
+  failures.push("footer navigation does not link to About.");
+}
+if (!DomUtils.findOne(
+  (node) => node.name === "button" && getAttribute(node, "id") === "search-toggle",
+  homeDocument.children
+)) {
+  failures.push("header does not include the Search control.");
+}
 const archiveCards = DomUtils.findAll(
   (node) => node.attribs && String(node.attribs.class || "").split(/\s+/).includes("archive-card"),
   archiveDocument.children
 );
-if (archiveCards.length !== records.length) {
-  failures.push(`archive contains ${archiveCards.length} cards; expected ${records.length}.`);
+const artworkCards = archiveCards.filter((card) => card.attribs["data-type"] !== "writing");
+if (artworkCards.length !== records.length) {
+  failures.push(`archive contains ${artworkCards.length} artwork cards; expected ${records.length}.`);
 }
+const writingCards = archiveCards.filter((card) => card.attribs["data-type"] === "writing");
+if (writingCards.length === 0) {
+  failures.push("archive does not contain any writing entries.");
+}
+["archive-type", "archive-year", "archive-subject", "archive-tag"].forEach((id) => {
+  if (!DomUtils.findOne((node) => getAttribute(node, "id") === id, archiveDocument.children)) {
+    failures.push(`archive is missing the ${id.replace("archive-", "")} filter.`);
+  }
+});
 
 const artworkPages = records
   .map((artwork) => path.join(outputDirectory, "artwork", artwork.slug, "index.html"))
