@@ -11,7 +11,7 @@ module.exports = [
     slug: "visages-and-masks",
     title: "Visages & Masks",
     introduction: "Faces emerge here as surfaces of persona, concealment, and revelation rather than fixed identity.",
-    artworkSlugs: ["sketch-014", "sketch-024"],
+    artworkSlugs: ["sketch-024"],
   },
   {
     id: "hands-and-gesture",
@@ -39,6 +39,6 @@ module.exports = [
     slug: "chromatic-visions",
     title: "Chromatic Visions",
     introduction: "Works placed together for their color-driven intensity, where hue becomes structure, mood, and image-making force.",
-    artworkSlugs: ["sketch-053", "sketch-054", "sketch-057", "sketch-058", "sketch-059", "sketch-060"],
+    artworkSlugs: ["phelliot-without-his-mask", "sketch-057", "sketch-058", "sketch-059", "sketch-060"],
   },
 ];
