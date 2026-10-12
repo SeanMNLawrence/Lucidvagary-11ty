@@ -45,7 +45,7 @@
       "properties": {
         "type": {
           "type": "string",
-          "enum": ["drawing", "sketch", "undecided"]
+          "enum": ["drawing", "sketch", "concept-development", "undecided"]
         },
         "confidence": {
           "type": "number",
@@ -56,7 +56,7 @@
     },
     "curatorial_status": {
       "type": "string",
-      "enum": ["curatorial-review", "published"]
+      "enum": ["curatorial-review", "published", "retain", "future-realization"]
     },
     "subjects": {
       "type": "array",

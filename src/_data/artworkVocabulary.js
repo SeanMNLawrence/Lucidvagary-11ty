@@ -1,6 +1,6 @@
 module.exports = {
-  classifications: ["drawing", "sketch", "undecided"],
-  curatorialStatuses: ["curatorial-review", "published"],
+  classifications: ["drawing", "sketch", "concept-development", "undecided"],
+  curatorialStatuses: ["curatorial-review", "published", "retain", "future-realization"],
   subjects: [
     { id: "visages-masks", label: "Visages & Masks", aliases: ["visages and masks"] },
     { id: "eyes-gaze", label: "Eyes & Gaze", aliases: ["eyes and gaze"] },

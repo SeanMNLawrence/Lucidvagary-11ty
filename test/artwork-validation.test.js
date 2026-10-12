@@ -60,7 +60,7 @@ test("constellation memberships resolve against canonical artwork slugs", () => 
   assert.deepEqual(validateConstellationGroups(constellations, records, vocabulary.constellations), []);
   assert.deepEqual(
     constellations.find((group) => group.id === "chromatic-visions").artworkSlugs,
-    ["phelliot-without-his-mask", "sketch-057", "sketch-058", "sketch-059", "sketch-060"]
+    ["phelliot-without-his-mask", "the-seed-alive", "growth-happens", "the-embryonic-phoenix", "the-self-emerges"]
   );
   const invalid = structuredClone(constellations);
   invalid[0].artworkSlugs.push("missing-artwork");

@@ -8,7 +8,7 @@
       "type": "sketch",
       "confidence": 0.74
     },
-    "curatorial_status": "curatorial-review",
+    "curatorial_status": "retain",
     "subjects": [
       "eyes-gaze"
     ],
@@ -24,7 +24,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-002/image.jpg",
+        "path": "/posts/chtonic/image.jpg",
         "original_filename": "IMG_20150301_115722.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -57,7 +57,7 @@
       "type": "sketch",
       "confidence": 0.74
     },
-    "curatorial_status": "curatorial-review",
+    "curatorial_status": "retain",
     "subjects": [
       "figures-bodies"
     ],
@@ -73,7 +73,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-004/image.jpg",
+        "path": "/posts/constellation/image.jpg",
         "original_filename": "Sketch-004.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -98,7 +98,7 @@
       "type": "sketch",
       "confidence": 0.74
     },
-    "curatorial_status": "curatorial-review",
+    "curatorial_status": "retain",
     "subjects": [
       "animals-hybrids"
     ],
@@ -114,7 +114,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-005/image.jpg",
+        "path": "/posts/seven-chakras/image.jpg",
         "original_filename": "Sketch-005.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -139,7 +139,7 @@
       "type": "sketch",
       "confidence": 0.74
     },
-    "curatorial_status": "curatorial-review",
+    "curatorial_status": "retain",
     "subjects": [
       "symbols-cosmograms"
     ],
@@ -155,7 +155,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-006/image.jpg",
+        "path": "/posts/face-of-intensity/image.jpg",
         "original_filename": "Sketch-006.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -915,10 +915,10 @@
     "original_title": null,
     "proposed_title": null,
     "classification": {
-      "type": "sketch",
+      "type": "concept-development",
       "confidence": 0.74
     },
-    "curatorial_status": "curatorial-review",
+    "curatorial_status": "retain",
     "subjects": [
       "animals-hybrids"
     ],
@@ -934,7 +934,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-026/image.jpg",
+        "path": "/posts/character-concepts/image.jpg",
         "original_filename": "Sketch-026.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -1328,7 +1328,7 @@
       "type": "sketch",
       "confidence": 0.74
     },
-    "curatorial_status": "curatorial-review",
+    "curatorial_status": "future-realization",
     "subjects": [
       "eyes-gaze"
     ],
@@ -1344,7 +1344,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-037/image.jpg",
+        "path": "/posts/cthonic-eye/image.jpg",
         "original_filename": "Sketch-037.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -1426,7 +1426,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-040/image.jpg",
+        "path": "/posts/firebird-unfinished/image.jpg",
         "original_filename": "Sketch-040.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -1467,7 +1467,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-041/image.jpg",
+        "path": "/posts/mask-of-phelliot/image.jpg",
         "original_filename": "Sketch-041.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -1508,7 +1508,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-042/image.jpg",
+        "path": "/posts/mask-of-uriel/image.jpg",
         "original_filename": "Sketch-042.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -1590,7 +1590,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-044/image.jpg",
+        "path": "/posts/sephiroth-of-waiting/image.jpg",
         "original_filename": "Sketch-044.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -1631,7 +1631,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-045/image.jpg",
+        "path": "/posts/daemon-sticking-its-tongue/image.jpg",
         "original_filename": "Sketch-045.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -1836,7 +1836,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-050/image.jpg",
+        "path": "/posts/daemon-with-a-foetus/image.jpg",
         "original_filename": "Sketch-050.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -1877,7 +1877,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-051/image.jpg",
+        "path": "/posts/magistrate/image.jpg",
         "original_filename": "Sketch-051.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -1918,7 +1918,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-052/image.jpg",
+        "path": "/posts/senator-of-limbo/image.jpg",
         "original_filename": "Sketch-052.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -1959,7 +1959,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-054/image.jpg",
+        "path": "/posts/phelliot-without-his-mask/image.jpg",
         "original_filename": "Sketch-054.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -1976,10 +1976,10 @@
     "artwork_id": "lv-artwork-sketch-054"
   },
   {
-    "title": "Untitled",
-    "slug": "sketch-057",
+    "title": "1 - The Seed Alive",
+    "slug": "the-seed-alive",
     "original_title": null,
-    "proposed_title": "Sketch 057",
+    "proposed_title": null,
     "classification": {
       "type": "sketch",
       "confidence": 0.74
@@ -2000,7 +2000,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-057/image.jpg",
+        "path": "/posts/the-seed-alive/image.jpg",
         "original_filename": "Sketch-057.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -2014,13 +2014,13 @@
         "curatorial-review-v1"
       ]
     },
-    "artwork_id": "lv-artwork-sketch-057"
+    "artwork_id": "lv-artwork-the-seed-alive"
   },
   {
-    "title": "Untitled",
-    "slug": "sketch-058",
+    "title": "2 - Growth Happens",
+    "slug": "growth-happens",
     "original_title": null,
-    "proposed_title": "Sketch 058",
+    "proposed_title": null,
     "classification": {
       "type": "sketch",
       "confidence": 0.74
@@ -2041,7 +2041,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-058/image.jpg",
+        "path": "/posts/growth-happens/image.jpg",
         "original_filename": "Sketch-058.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -2055,13 +2055,13 @@
         "curatorial-review-v1"
       ]
     },
-    "artwork_id": "lv-artwork-sketch-058"
+    "artwork_id": "lv-artwork-growth-happens"
   },
   {
-    "title": "Untitled",
-    "slug": "sketch-059",
+    "title": "3 - The Embryonic Phoenix",
+    "slug": "the-embryonic-phoenix",
     "original_title": null,
-    "proposed_title": "Sketch 059",
+    "proposed_title": null,
     "classification": {
       "type": "drawing",
       "confidence": 0.62
@@ -2082,7 +2082,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-059/image.jpg",
+        "path": "/posts/the-embryonic-phoenix/image.jpg",
         "original_filename": "Sketch-059.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -2096,13 +2096,13 @@
         "curatorial-review-v1"
       ]
     },
-    "artwork_id": "lv-artwork-sketch-059"
+    "artwork_id": "lv-artwork-the-embryonic-phoenix"
   },
   {
-    "title": "Untitled",
-    "slug": "sketch-060",
+    "title": "4 - The Self Emerges",
+    "slug": "the-self-emerges",
     "original_title": null,
-    "proposed_title": "Sketch 060",
+    "proposed_title": null,
     "classification": {
       "type": "drawing",
       "confidence": 0.62
@@ -2123,7 +2123,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-060/image.jpg",
+        "path": "/posts/the-self-emerges/image.jpg",
         "original_filename": "Sketch-060.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -2137,7 +2137,7 @@
         "curatorial-review-v1"
       ]
     },
-    "artwork_id": "lv-artwork-sketch-060"
+    "artwork_id": "lv-artwork-the-self-emerges"
   },
   {
     "title": "Tree of Lefthand",
@@ -2164,7 +2164,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-061/image.jpg",
+        "path": "/posts/tree-of-lefthand/image.jpg",
         "original_filename": "Sketch-061.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -2246,7 +2246,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-063/image.jpg",
+        "path": "/posts/gambit-of-dissimulation/image.jpg",
         "original_filename": "Sketch-063.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -2287,7 +2287,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/untitled-viii/image.jpg",
+        "path": "/posts/holy-guardian-angel/image.jpg",
         "original_filename": "untitled-viii.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
