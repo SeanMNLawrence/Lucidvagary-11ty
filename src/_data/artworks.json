@@ -1,63 +1,14 @@
 [
   {
-    "title": "Untitled",
-    "slug": "sketch-001",
+    "title": "Chtonic",
+    "slug": "chtonic",
     "original_title": null,
-    "proposed_title": "Sketch 001",
+    "proposed_title": null,
     "classification": {
       "type": "sketch",
       "confidence": 0.74
     },
-    "curatorial_status": "curatorial-review",
-    "subjects": [
-      "visages-masks"
-    ],
-    "motifs": [
-      {
-        "id": "visages-masks",
-        "confidence": 0.6
-      }
-    ],
-    "themes": [],
-    "constellations": [],
-    "relationships": [],
-    "assets": [
-      {
-        "role": "primary",
-        "path": "/posts/Sketch-001/image.jpg",
-        "original_filename": "IMG_20150301_114548.jpg",
-        "asset_capture_date": null,
-        "confidence": 0.95,
-        "alt": "Dense black-ink drawing of overlapping faces, eyes, and curling organic forms."
-      },
-      {
-        "role": "alternate",
-        "path": null,
-        "availability": "source-unavailable",
-        "original_filename": "IMG_20150301_114553.jpg",
-        "asset_capture_date": null,
-        "confidence": 0.8
-      }
-    ],
-    "provenance": {
-      "artwork_creation_date": null,
-      "notes": "Creation date not inferred from photograph metadata.",
-      "source_records": [
-        "curatorial-review-v1"
-      ]
-    },
-    "artwork_id": "lv-artwork-sketch-001"
-  },
-  {
-    "title": "Untitled",
-    "slug": "sketch-002",
-    "original_title": null,
-    "proposed_title": "Sketch 002",
-    "classification": {
-      "type": "sketch",
-      "confidence": 0.74
-    },
-    "curatorial_status": "curatorial-review",
+    "curatorial_status": "retain",
     "subjects": [
       "eyes-gaze"
     ],
@@ -73,7 +24,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-002/image.jpg",
+        "path": "/posts/chtonic/image.jpg",
         "original_filename": "IMG_20150301_115722.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -98,15 +49,15 @@
     "artwork_id": "lv-artwork-sketch-002"
   },
   {
-    "title": "Untitled",
-    "slug": "sketch-004",
+    "title": "Constellation",
+    "slug": "constellation",
     "original_title": null,
-    "proposed_title": "Sketch 004",
+    "proposed_title": null,
     "classification": {
       "type": "sketch",
       "confidence": 0.74
     },
-    "curatorial_status": "curatorial-review",
+    "curatorial_status": "retain",
     "subjects": [
       "figures-bodies"
     ],
@@ -122,7 +73,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-004/image.jpg",
+        "path": "/posts/constellation/image.jpg",
         "original_filename": "Sketch-004.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -139,15 +90,15 @@
     "artwork_id": "lv-artwork-sketch-004"
   },
   {
-    "title": "Untitled",
-    "slug": "sketch-005",
+    "title": "Seven Chakras",
+    "slug": "seven-chakras",
     "original_title": null,
-    "proposed_title": "Sketch 005",
+    "proposed_title": null,
     "classification": {
       "type": "sketch",
       "confidence": 0.74
     },
-    "curatorial_status": "curatorial-review",
+    "curatorial_status": "retain",
     "subjects": [
       "animals-hybrids"
     ],
@@ -163,7 +114,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-005/image.jpg",
+        "path": "/posts/seven-chakras/image.jpg",
         "original_filename": "Sketch-005.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -180,15 +131,15 @@
     "artwork_id": "lv-artwork-sketch-005"
   },
   {
-    "title": "Untitled",
-    "slug": "sketch-006",
+    "title": "Face of Intensity",
+    "slug": "face-of-intensity",
     "original_title": null,
-    "proposed_title": "Sketch 006",
+    "proposed_title": null,
     "classification": {
       "type": "sketch",
       "confidence": 0.74
     },
-    "curatorial_status": "curatorial-review",
+    "curatorial_status": "retain",
     "subjects": [
       "symbols-cosmograms"
     ],
@@ -204,7 +155,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-006/image.jpg",
+        "path": "/posts/face-of-intensity/image.jpg",
         "original_filename": "Sketch-006.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -506,47 +457,6 @@
       ]
     },
     "artwork_id": "lv-artwork-sketch-013"
-  },
-  {
-    "title": "Untitled",
-    "slug": "sketch-014",
-    "original_title": null,
-    "proposed_title": "Sketch 014",
-    "classification": {
-      "type": "sketch",
-      "confidence": 0.74
-    },
-    "curatorial_status": "curatorial-review",
-    "subjects": [
-      "composite-worlds"
-    ],
-    "motifs": [
-      {
-        "id": "composite-worlds",
-        "confidence": 0.9
-      }
-    ],
-    "themes": [],
-    "constellations": [],
-    "relationships": [],
-    "assets": [
-      {
-        "role": "primary",
-        "path": "/posts/Sketch-014/image.jpg",
-        "original_filename": "Sketch-014.jpg",
-        "asset_capture_date": null,
-        "confidence": 0.95,
-        "alt": "Close-up of a single eye drawn within a rough circular outline."
-      }
-    ],
-    "provenance": {
-      "artwork_creation_date": null,
-      "notes": "Creation date not inferred from photograph metadata.",
-      "source_records": [
-        "curatorial-review-v1"
-      ]
-    },
-    "artwork_id": "lv-artwork-sketch-014"
   },
   {
     "title": "Untitled",
@@ -1000,15 +910,15 @@
     "artwork_id": "lv-artwork-sketch-025"
   },
   {
-    "title": "Untitled",
-    "slug": "sketch-026",
+    "title": "Character Concepts",
+    "slug": "character-concepts",
     "original_title": null,
-    "proposed_title": "Sketch 026",
+    "proposed_title": null,
     "classification": {
-      "type": "sketch",
+      "type": "concept-development",
       "confidence": 0.74
     },
-    "curatorial_status": "curatorial-review",
+    "curatorial_status": "retain",
     "subjects": [
       "animals-hybrids"
     ],
@@ -1024,7 +934,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-026/image.jpg",
+        "path": "/posts/character-concepts/image.jpg",
         "original_filename": "Sketch-026.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -1039,47 +949,6 @@
       ]
     },
     "artwork_id": "lv-artwork-sketch-026"
-  },
-  {
-    "title": "Untitled",
-    "slug": "sketch-027",
-    "original_title": null,
-    "proposed_title": "Sketch 027",
-    "classification": {
-      "type": "sketch",
-      "confidence": 0.74
-    },
-    "curatorial_status": "curatorial-review",
-    "subjects": [
-      "symbols-cosmograms"
-    ],
-    "motifs": [
-      {
-        "id": "symbols-cosmograms",
-        "confidence": 0.7
-      }
-    ],
-    "themes": [],
-    "constellations": [],
-    "relationships": [],
-    "assets": [
-      {
-        "role": "primary",
-        "path": "/posts/Sketch-027/image.jpg",
-        "original_filename": "Sketch-027.jpg",
-        "asset_capture_date": null,
-        "confidence": 0.95,
-        "alt": "Ink portrait in profile looking upward, with dark textured forms around the head."
-      }
-    ],
-    "provenance": {
-      "artwork_creation_date": null,
-      "notes": "Creation date not inferred from photograph metadata.",
-      "source_records": [
-        "curatorial-review-v1"
-      ]
-    },
-    "artwork_id": "lv-artwork-sketch-027"
   },
   {
     "title": "Untitled",
@@ -1451,15 +1320,15 @@
     "artwork_id": "lv-artwork-sketch-036"
   },
   {
-    "title": "Cthodinic",
-    "slug": "sketch-037",
+    "title": "Cthonic Eye",
+    "slug": "cthonic-eye",
     "original_title": null,
     "proposed_title": null,
     "classification": {
       "type": "sketch",
       "confidence": 0.74
     },
-    "curatorial_status": "curatorial-review",
+    "curatorial_status": "future-realization",
     "subjects": [
       "eyes-gaze"
     ],
@@ -1475,7 +1344,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-037/image.jpg",
+        "path": "/posts/cthonic-eye/image.jpg",
         "original_filename": "Sketch-037.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -1533,51 +1402,10 @@
     "artwork_id": "lv-artwork-sketch-038"
   },
   {
-    "title": "Untitled",
-    "slug": "sketch-039",
+    "title": "Firebird Unfinished",
+    "slug": "firebird-unfinished",
     "original_title": null,
-    "proposed_title": "Sketch 039",
-    "classification": {
-      "type": "sketch",
-      "confidence": 0.74
-    },
-    "curatorial_status": "curatorial-review",
-    "subjects": [
-      "figures-bodies"
-    ],
-    "motifs": [
-      {
-        "id": "figures-bodies",
-        "confidence": 0.9
-      }
-    ],
-    "themes": [],
-    "constellations": [],
-    "relationships": [],
-    "assets": [
-      {
-        "role": "primary",
-        "path": "/posts/Sketch-039/image.jpg",
-        "original_filename": "Sketch-039.jpg",
-        "asset_capture_date": null,
-        "confidence": 0.95,
-        "alt": "Large shaded abstract face made from overlapping rounded, tubular forms."
-      }
-    ],
-    "provenance": {
-      "artwork_creation_date": null,
-      "notes": "Creation date not inferred from photograph metadata.",
-      "source_records": [
-        "curatorial-review-v1"
-      ]
-    },
-    "artwork_id": "lv-artwork-sketch-039"
-  },
-  {
-    "title": "Untitled",
-    "slug": "sketch-040",
-    "original_title": null,
-    "proposed_title": "Sketch 040",
+    "proposed_title": null,
     "classification": {
       "type": "sketch",
       "confidence": 0.74
@@ -1598,7 +1426,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-040/image.jpg",
+        "path": "/posts/firebird-unfinished/image.jpg",
         "original_filename": "Sketch-040.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -1615,10 +1443,10 @@
     "artwork_id": "lv-artwork-sketch-040"
   },
   {
-    "title": "Untitled",
-    "slug": "sketch-041",
+    "title": "Mask of Phelliot",
+    "slug": "mask-of-phelliot",
     "original_title": null,
-    "proposed_title": "Sketch 041",
+    "proposed_title": null,
     "classification": {
       "type": "sketch",
       "confidence": 0.74
@@ -1639,7 +1467,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-041/image.jpg",
+        "path": "/posts/mask-of-phelliot/image.jpg",
         "original_filename": "Sketch-041.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -1656,10 +1484,10 @@
     "artwork_id": "lv-artwork-sketch-041"
   },
   {
-    "title": "Untitled",
-    "slug": "sketch-042",
+    "title": "Mask of Uriel",
+    "slug": "mask-of-uriel",
     "original_title": null,
-    "proposed_title": "Sketch 042",
+    "proposed_title": null,
     "classification": {
       "type": "sketch",
       "confidence": 0.74
@@ -1680,7 +1508,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-042/image.jpg",
+        "path": "/posts/mask-of-uriel/image.jpg",
         "original_filename": "Sketch-042.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -1738,10 +1566,10 @@
     "artwork_id": "lv-artwork-sketch-043"
   },
   {
-    "title": "Untitled",
-    "slug": "sketch-044",
+    "title": "Sephiroth of Waiting",
+    "slug": "sephiroth-of-waiting",
     "original_title": null,
-    "proposed_title": "Sketch 044",
+    "proposed_title": null,
     "classification": {
       "type": "sketch",
       "confidence": 0.74
@@ -1762,7 +1590,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-044/image.jpg",
+        "path": "/posts/sephiroth-of-waiting/image.jpg",
         "original_filename": "Sketch-044.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -1779,10 +1607,10 @@
     "artwork_id": "lv-artwork-sketch-044"
   },
   {
-    "title": "Untitled",
-    "slug": "sketch-045",
+    "title": "Daemon Sticking Its Tongue",
+    "slug": "daemon-sticking-its-tongue",
     "original_title": null,
-    "proposed_title": "Sketch 045",
+    "proposed_title": null,
     "classification": {
       "type": "sketch",
       "confidence": 0.74
@@ -1803,7 +1631,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-045/image.jpg",
+        "path": "/posts/daemon-sticking-its-tongue/image.jpg",
         "original_filename": "Sketch-045.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -1984,10 +1812,10 @@
     "artwork_id": "lv-artwork-sketch-049"
   },
   {
-    "title": "Untitled",
-    "slug": "sketch-050",
+    "title": "Daemon with a Foetus",
+    "slug": "daemon-with-a-foetus",
     "original_title": null,
-    "proposed_title": "Sketch 050",
+    "proposed_title": null,
     "classification": {
       "type": "sketch",
       "confidence": 0.74
@@ -2008,7 +1836,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-050/image.jpg",
+        "path": "/posts/daemon-with-a-foetus/image.jpg",
         "original_filename": "Sketch-050.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -2025,10 +1853,10 @@
     "artwork_id": "lv-artwork-sketch-050"
   },
   {
-    "title": "Untitled",
-    "slug": "sketch-051",
+    "title": "Magistrate",
+    "slug": "magistrate",
     "original_title": null,
-    "proposed_title": "Sketch 051",
+    "proposed_title": null,
     "classification": {
       "type": "sketch",
       "confidence": 0.74
@@ -2049,7 +1877,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-051/image.jpg",
+        "path": "/posts/magistrate/image.jpg",
         "original_filename": "Sketch-051.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -2066,10 +1894,10 @@
     "artwork_id": "lv-artwork-sketch-051"
   },
   {
-    "title": "Untitled",
-    "slug": "sketch-052",
+    "title": "Senator of Limbo",
+    "slug": "senator-of-limbo",
     "original_title": null,
-    "proposed_title": "Sketch 052",
+    "proposed_title": null,
     "classification": {
       "type": "sketch",
       "confidence": 0.74
@@ -2090,7 +1918,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-052/image.jpg",
+        "path": "/posts/senator-of-limbo/image.jpg",
         "original_filename": "Sketch-052.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -2107,51 +1935,10 @@
     "artwork_id": "lv-artwork-sketch-052"
   },
   {
-    "title": "Untitled",
-    "slug": "sketch-053",
+    "title": "Phelliot Without His Mask",
+    "slug": "phelliot-without-his-mask",
     "original_title": null,
-    "proposed_title": "Sketch 053",
-    "classification": {
-      "type": "sketch",
-      "confidence": 0.74
-    },
-    "curatorial_status": "curatorial-review",
-    "subjects": [
-      "figures-bodies"
-    ],
-    "motifs": [
-      {
-        "id": "figures-bodies",
-        "confidence": 0.8
-      }
-    ],
-    "themes": [],
-    "constellations": [],
-    "relationships": [],
-    "assets": [
-      {
-        "role": "primary",
-        "path": "/posts/Sketch-053/image.jpg",
-        "original_filename": "Sketch-053.jpg",
-        "asset_capture_date": null,
-        "confidence": 0.95,
-        "alt": "Vivid multicolor portrait with a red-orange face against blue and green brushstrokes."
-      }
-    ],
-    "provenance": {
-      "artwork_creation_date": null,
-      "notes": "Creation date not inferred from photograph metadata.",
-      "source_records": [
-        "curatorial-review-v1"
-      ]
-    },
-    "artwork_id": "lv-artwork-sketch-053"
-  },
-  {
-    "title": "Untitled",
-    "slug": "sketch-054",
-    "original_title": null,
-    "proposed_title": "Sketch 054",
+    "proposed_title": null,
     "classification": {
       "type": "sketch",
       "confidence": 0.74
@@ -2172,7 +1959,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-054/image.jpg",
+        "path": "/posts/phelliot-without-his-mask/image.jpg",
         "original_filename": "Sketch-054.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -2189,92 +1976,10 @@
     "artwork_id": "lv-artwork-sketch-054"
   },
   {
-    "title": "Untitled",
-    "slug": "sketch-055",
+    "title": "1 - The Seed Alive",
+    "slug": "the-seed-alive",
     "original_title": null,
-    "proposed_title": "Sketch 055",
-    "classification": {
-      "type": "sketch",
-      "confidence": 0.74
-    },
-    "curatorial_status": "curatorial-review",
-    "subjects": [
-      "symbols-cosmograms"
-    ],
-    "motifs": [
-      {
-        "id": "symbols-cosmograms",
-        "confidence": 0.5
-      }
-    ],
-    "themes": [],
-    "constellations": [],
-    "relationships": [],
-    "assets": [
-      {
-        "role": "primary",
-        "path": "/posts/Sketch-055/image.jpg",
-        "original_filename": "Sketch-055.jpg",
-        "asset_capture_date": null,
-        "confidence": 0.95,
-        "alt": "Monochrome portrait of a front-facing man with dark shoulder-length hair."
-      }
-    ],
-    "provenance": {
-      "artwork_creation_date": null,
-      "notes": "Creation date not inferred from photograph metadata.",
-      "source_records": [
-        "curatorial-review-v1"
-      ]
-    },
-    "artwork_id": "lv-artwork-sketch-055"
-  },
-  {
-    "title": "Untitled",
-    "slug": "sketch-056",
-    "original_title": null,
-    "proposed_title": "Sketch 056",
-    "classification": {
-      "type": "sketch",
-      "confidence": 0.74
-    },
-    "curatorial_status": "curatorial-review",
-    "subjects": [
-      "composite-worlds"
-    ],
-    "motifs": [
-      {
-        "id": "composite-worlds",
-        "confidence": 0.6
-      }
-    ],
-    "themes": [],
-    "constellations": [],
-    "relationships": [],
-    "assets": [
-      {
-        "role": "primary",
-        "path": "/posts/Sketch-056/image.jpg",
-        "original_filename": "Sketch-056.jpg",
-        "asset_capture_date": null,
-        "confidence": 0.95,
-        "alt": "Dense black-ink drawing of overlapping faces, eyes, and curling organic forms."
-      }
-    ],
-    "provenance": {
-      "artwork_creation_date": null,
-      "notes": "Creation date not inferred from photograph metadata.",
-      "source_records": [
-        "curatorial-review-v1"
-      ]
-    },
-    "artwork_id": "lv-artwork-sketch-056"
-  },
-  {
-    "title": "Untitled",
-    "slug": "sketch-057",
-    "original_title": null,
-    "proposed_title": "Sketch 057",
+    "proposed_title": null,
     "classification": {
       "type": "sketch",
       "confidence": 0.74
@@ -2291,11 +1996,24 @@
     ],
     "themes": [],
     "constellations": [],
-    "relationships": [],
+    "relationships": [
+      {
+        "type": "belongs-to-series",
+        "target_slug": "growth-happens"
+      },
+      {
+        "type": "belongs-to-series",
+        "target_slug": "the-embryonic-phoenix"
+      },
+      {
+        "type": "belongs-to-series",
+        "target_slug": "the-self-emerges"
+      }
+    ],
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-057/image.jpg",
+        "path": "/posts/the-seed-alive/image.jpg",
         "original_filename": "Sketch-057.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -2309,13 +2027,13 @@
         "curatorial-review-v1"
       ]
     },
-    "artwork_id": "lv-artwork-sketch-057"
+    "artwork_id": "lv-artwork-the-seed-alive"
   },
   {
-    "title": "Untitled",
-    "slug": "sketch-058",
+    "title": "2 - Growth Happens",
+    "slug": "growth-happens",
     "original_title": null,
-    "proposed_title": "Sketch 058",
+    "proposed_title": null,
     "classification": {
       "type": "sketch",
       "confidence": 0.74
@@ -2332,11 +2050,24 @@
     ],
     "themes": [],
     "constellations": [],
-    "relationships": [],
+    "relationships": [
+      {
+        "type": "belongs-to-series",
+        "target_slug": "the-seed-alive"
+      },
+      {
+        "type": "belongs-to-series",
+        "target_slug": "the-embryonic-phoenix"
+      },
+      {
+        "type": "belongs-to-series",
+        "target_slug": "the-self-emerges"
+      }
+    ],
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-058/image.jpg",
+        "path": "/posts/growth-happens/image.jpg",
         "original_filename": "Sketch-058.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -2350,13 +2081,13 @@
         "curatorial-review-v1"
       ]
     },
-    "artwork_id": "lv-artwork-sketch-058"
+    "artwork_id": "lv-artwork-growth-happens"
   },
   {
-    "title": "Untitled",
-    "slug": "sketch-059",
+    "title": "3 - The Embryonic Phoenix",
+    "slug": "the-embryonic-phoenix",
     "original_title": null,
-    "proposed_title": "Sketch 059",
+    "proposed_title": null,
     "classification": {
       "type": "drawing",
       "confidence": 0.62
@@ -2373,11 +2104,24 @@
     ],
     "themes": [],
     "constellations": [],
-    "relationships": [],
+    "relationships": [
+      {
+        "type": "belongs-to-series",
+        "target_slug": "the-seed-alive"
+      },
+      {
+        "type": "belongs-to-series",
+        "target_slug": "growth-happens"
+      },
+      {
+        "type": "belongs-to-series",
+        "target_slug": "the-self-emerges"
+      }
+    ],
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-059/image.jpg",
+        "path": "/posts/the-embryonic-phoenix/image.jpg",
         "original_filename": "Sketch-059.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -2391,13 +2135,13 @@
         "curatorial-review-v1"
       ]
     },
-    "artwork_id": "lv-artwork-sketch-059"
+    "artwork_id": "lv-artwork-the-embryonic-phoenix"
   },
   {
-    "title": "Untitled",
-    "slug": "sketch-060",
+    "title": "4 - The Self Emerges",
+    "slug": "the-self-emerges",
     "original_title": null,
-    "proposed_title": "Sketch 060",
+    "proposed_title": null,
     "classification": {
       "type": "drawing",
       "confidence": 0.62
@@ -2414,11 +2158,24 @@
     ],
     "themes": [],
     "constellations": [],
-    "relationships": [],
+    "relationships": [
+      {
+        "type": "belongs-to-series",
+        "target_slug": "the-seed-alive"
+      },
+      {
+        "type": "belongs-to-series",
+        "target_slug": "growth-happens"
+      },
+      {
+        "type": "belongs-to-series",
+        "target_slug": "the-embryonic-phoenix"
+      }
+    ],
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-060/image.jpg",
+        "path": "/posts/the-self-emerges/image.jpg",
         "original_filename": "Sketch-060.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -2432,13 +2189,13 @@
         "curatorial-review-v1"
       ]
     },
-    "artwork_id": "lv-artwork-sketch-060"
+    "artwork_id": "lv-artwork-the-self-emerges"
   },
   {
-    "title": "Untitled",
-    "slug": "sketch-061",
+    "title": "Tree of Lefthand",
+    "slug": "tree-of-lefthand",
     "original_title": null,
-    "proposed_title": "Sketch 061",
+    "proposed_title": null,
     "classification": {
       "type": "drawing",
       "confidence": 0.62
@@ -2459,7 +2216,7 @@
     "assets": [
       {
         "role": "primary",
-        "path": "/posts/Sketch-061/image.jpg",
+        "path": "/posts/tree-of-lefthand/image.jpg",
         "original_filename": "Sketch-061.jpg",
         "asset_capture_date": null,
         "confidence": 0.95,
@@ -2515,5 +2272,87 @@
       ]
     },
     "artwork_id": "lv-artwork-sketch-062"
+  },
+  {
+    "title": "Gambit of Dissimulation",
+    "slug": "gambit-of-dissimulation",
+    "original_title": null,
+    "proposed_title": null,
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "subjects": [
+      "figures-bodies"
+    ],
+    "motifs": [
+      {
+        "id": "figures-bodies",
+        "confidence": 0.6
+      }
+    ],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/gambit-of-dissimulation/image.jpg",
+        "original_filename": "Sketch-063.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Graphite and black-paint study of a downcast, heavy-lidded face beside a hand holding a chess pawn."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-sketch-063"
+  },
+  {
+    "title": "Holy Guardian Angel",
+    "slug": "holy-guardian-angel",
+    "original_title": null,
+    "proposed_title": null,
+    "classification": {
+      "type": "drawing",
+      "confidence": 0.74
+    },
+    "curatorial_status": "curatorial-review",
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "subjects": [
+      "symbols-cosmograms"
+    ],
+    "motifs": [
+      {
+        "id": "symbols-cosmograms",
+        "confidence": 0.6
+      }
+    ],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/holy-guardian-angel/image.jpg",
+        "original_filename": "untitled-viii.jpg",
+        "asset_capture_date": null,
+        "confidence": 0.95,
+        "alt": "Red, green, and blue pastel drawing of a horned face with a white bird above it."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": null,
+      "notes": "Creation date not inferred from photograph metadata.",
+      "source_records": [
+        "curatorial-review-v1"
+      ]
+    },
+    "artwork_id": "lv-artwork-holy-angel"
   }
 ]

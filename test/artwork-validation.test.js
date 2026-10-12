@@ -11,18 +11,18 @@ const { relatedArtworks } = require("../src/_data/artworkRelations");
 
 const validationVocabulary = { ...vocabulary, constellations };
 
-test("catalogue has 61 unique artworks and 63 assigned digital assets", () => {
-  assert.equal(records.length, 61);
-  assert.equal(records.reduce((count, artwork) => count + artwork.assets.length, 0), 63);
-  assert.equal(new Set(records.map((artwork) => artwork.slug)).size, 61);
-  assert.equal(new Set(records.map((artwork) => artwork.artwork_id)).size, 61);
+test("catalogue has 56 unique artworks and 57 assigned digital assets", () => {
+  assert.equal(records.length, 56);
+  assert.equal(records.reduce((count, artwork) => count + artwork.assets.length, 0), 57);
+  assert.equal(new Set(records.map((artwork) => artwork.slug)).size, 56);
+  assert.equal(new Set(records.map((artwork) => artwork.artwork_id)).size, 56);
   assert.ok(records.every((artwork) => artwork.artwork_id.startsWith("lv-artwork-")));
   assert.equal(records.some((artwork) => artwork.slug === "sketch-003"), false);
-  assert.equal(records.find((artwork) => artwork.slug === "sketch-037").title, "Cthodinic");
+  assert.equal(records.find((artwork) => artwork.slug === "cthonic-eye").title, "Cthonic Eye");
 
   const report = validateArtworkData(records, validationVocabulary, process.cwd());
   assert.deepEqual(report.errors, []);
-  assert.equal(report.warnings.length, 2);
+  assert.equal(report.warnings.length, 1);
   assert.ok(report.warnings.every((warning) => warning.includes("source image")));
 });
 
@@ -60,7 +60,7 @@ test("constellation memberships resolve against canonical artwork slugs", () => 
   assert.deepEqual(validateConstellationGroups(constellations, records, vocabulary.constellations), []);
   assert.deepEqual(
     constellations.find((group) => group.id === "chromatic-visions").artworkSlugs,
-    ["sketch-053", "sketch-054", "sketch-057", "sketch-058", "sketch-059", "sketch-060"]
+    ["phelliot-without-his-mask", "the-seed-alive", "growth-happens", "the-embryonic-phoenix", "the-self-emerges"]
   );
   const invalid = structuredClone(constellations);
   invalid[0].artworkSlugs.push("missing-artwork");
