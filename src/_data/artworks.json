@@ -1996,7 +1996,20 @@
     ],
     "themes": [],
     "constellations": [],
-    "relationships": [],
+    "relationships": [
+      {
+        "type": "belongs-to-series",
+        "target_slug": "growth-happens"
+      },
+      {
+        "type": "belongs-to-series",
+        "target_slug": "the-embryonic-phoenix"
+      },
+      {
+        "type": "belongs-to-series",
+        "target_slug": "the-self-emerges"
+      }
+    ],
     "assets": [
       {
         "role": "primary",
@@ -2037,7 +2050,20 @@
     ],
     "themes": [],
     "constellations": [],
-    "relationships": [],
+    "relationships": [
+      {
+        "type": "belongs-to-series",
+        "target_slug": "the-seed-alive"
+      },
+      {
+        "type": "belongs-to-series",
+        "target_slug": "the-embryonic-phoenix"
+      },
+      {
+        "type": "belongs-to-series",
+        "target_slug": "the-self-emerges"
+      }
+    ],
     "assets": [
       {
         "role": "primary",
@@ -2078,7 +2104,20 @@
     ],
     "themes": [],
     "constellations": [],
-    "relationships": [],
+    "relationships": [
+      {
+        "type": "belongs-to-series",
+        "target_slug": "the-seed-alive"
+      },
+      {
+        "type": "belongs-to-series",
+        "target_slug": "growth-happens"
+      },
+      {
+        "type": "belongs-to-series",
+        "target_slug": "the-self-emerges"
+      }
+    ],
     "assets": [
       {
         "role": "primary",
@@ -2119,7 +2158,20 @@
     ],
     "themes": [],
     "constellations": [],
-    "relationships": [],
+    "relationships": [
+      {
+        "type": "belongs-to-series",
+        "target_slug": "the-seed-alive"
+      },
+      {
+        "type": "belongs-to-series",
+        "target_slug": "growth-happens"
+      },
+      {
+        "type": "belongs-to-series",
+        "target_slug": "the-embryonic-phoenix"
+      }
+    ],
     "assets": [
       {
         "role": "primary",
