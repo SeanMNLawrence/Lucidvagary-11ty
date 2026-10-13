@@ -59,6 +59,7 @@ module.exports = function (eleventyConfig) {
       const relativePath = String(src).replace(/^\/+/, "");
       const sourceRoot = path.join(__dirname, "src");
       const inputPath = path.resolve(sourceRoot, relativePath);
+      const rotateSketch016 = inputPath === path.join(sourceRoot, "posts", "Sketch-016", "image.jpg");
       if (inputPath !== sourceRoot && !inputPath.startsWith(`${sourceRoot}${path.sep}`)) {
         throw new Error(`Image path "${src}" escapes the source directory.`);
       }
@@ -81,6 +82,7 @@ module.exports = function (eleventyConfig) {
             },
             sharpJpegOptions: { quality: 78, mozjpeg: true },
             sharpWebpOptions: { quality: 74 },
+            ...(rotateSketch016 ? { transform: (image) => image.rotate(270) } : {}),
           })
         );
       }

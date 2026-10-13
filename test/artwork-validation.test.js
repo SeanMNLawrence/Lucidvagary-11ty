@@ -71,21 +71,30 @@ test("constellation memberships resolve against canonical artwork slugs", () => 
   );
 });
 
-test("Pentaptych composite links Sketch 037 by stable ID without assuming its sequence", () => {
+test("Pentaptych components retain their ordered stable artwork IDs", () => {
   assert.deepEqual(validateCompositeArtworks(compositeArtworks, records), []);
   const composite = artworkArchive.compositeArtworks.find(
     (item) => item.artwork_id === "lv-composite-the-pentaptych-of-growth"
   );
-  const component = composite.components[0];
 
   assert.equal(composite.url, "/posts/The-Pentaptych-of-Growth/");
-  assert.equal(component.artwork.artwork_id, "lv-artwork-sketch-037");
-  assert.equal(component.order, null);
-  assert.deepEqual(component.artwork.partOf, [{
+  assert.deepEqual(
+    composite.components.map(({ artwork, order }) => [artwork.artwork_id, order]),
+    [
+      ["lv-artwork-the-seed-alive", 1],
+      ["lv-artwork-growth-happens", 2],
+      ["lv-artwork-the-embryonic-phoenix", 3],
+      ["lv-artwork-the-self-emerges", 4],
+      ["lv-artwork-sketch-037", 5],
+    ]
+  );
+  assert.equal(composite.components[4].artwork.title, "Cthonic Eye");
+  assert.equal(composite.components[4].artwork.classification.type, "sketch");
+  assert.deepEqual(composite.components[4].artwork.partOf, [{
     artwork_id: composite.artwork_id,
     title: composite.title,
     url: composite.url,
-    order: null,
+    order: 5,
   }]);
 });
 

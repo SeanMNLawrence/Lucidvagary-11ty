@@ -41,5 +41,11 @@ suppressPrimaryImage: true
       </a>
       <figcaption>Panel 60</figcaption>
     </figure>
+    <figure class="pentaptych-item">
+      <a href="/artwork/cthonic-eye/" aria-label="View artwork component 5: Cthonic Eye">
+        {% optimizedImage "/posts/cthonic-eye/image.jpg", "Faint vertical study of an abstract face and body beneath a small triangular mark.", "artwork", "lazy" %}
+      </a>
+      <figcaption>Component 5: Cthonic Eye</figcaption>
+    </figure>
   </div>
 </section>
