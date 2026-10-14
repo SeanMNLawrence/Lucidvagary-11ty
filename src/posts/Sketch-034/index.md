@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-title: "Sketch 034"
+title: "Untitled [Rounded head with dangling forms]"
 date: 2015-03-01
 tags: ["artwork", "sketch"]
 image: "/posts/Sketch-034/image.jpg"

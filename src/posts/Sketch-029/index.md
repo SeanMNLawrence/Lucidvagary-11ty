@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-title: "Sketch 029"
+title: "Untitled [Two gesturing hands]"
 date: 2015-03-01
 tags: ["artwork", "sketch"]
 image: "/posts/Sketch-029/image.jpg"
