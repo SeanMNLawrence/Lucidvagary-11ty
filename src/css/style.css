@@ -928,27 +928,3 @@ a {
   font-size: 0.9rem;
   text-decoration: underline;
 }
-
-.archive-columns {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  border: 1px solid currentColor;
-}
-.archive-column-heading {
-  padding: 0.75rem 1rem;
-  font-weight: 700;
-  text-align: center;
-  border-bottom: 1px solid currentColor;
-}
-.archive-column-heading + .archive-column-heading,
-.archive-column-future {
-  border-left: 1px solid currentColor;
-}
-.archive-column {
-  min-width: 0;
-}
-@media (max-width: 700px) {
-  .archive-columns { grid-template-columns: 1fr; }
-  .archive-column-heading + .archive-column-heading,
-  .archive-column-future { border-left: 0; }
-}
