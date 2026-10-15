@@ -1,4 +1,5 @@
 const markdownIt = require("markdown-it");
+const crypto = require("node:crypto");
 const fs = require("node:fs");
 const path = require("node:path");
 const eleventyImage = require("@11ty/eleventy-img");
@@ -13,6 +14,14 @@ const { validateCompositeArtworks } = require("./src/_data/compositeArtworkValid
 const { relatedArtworks } = require("./src/_data/artworkRelations");
 
 module.exports = function (eleventyConfig) {
+  const stylesheetPath = path.join(__dirname, "src", "css", "style.css");
+  const stylesheetVersion = crypto
+    .createHash("sha256")
+    .update(fs.readFileSync(stylesheetPath))
+    .digest("hex")
+    .slice(0, 12);
+  eleventyConfig.addGlobalData("stylesheetVersion", stylesheetVersion);
+
   const validation = validateArtworkData(
     require("./src/_data/artworks.json"),
     { ...artworkVocabulary, constellations },
