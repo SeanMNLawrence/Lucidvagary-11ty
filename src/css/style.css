@@ -197,12 +197,15 @@ a {
   padding: 2rem clamp(1.5rem, 6vw, 240px);
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr) minmax(0, 1fr);
+  grid-template-areas: "recent hero bytag";
   gap: 2rem;
   align-items: start;
 }
 
 /* Left: recent feed */
 .home-recent {
+  grid-area: recent;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -234,21 +237,30 @@ a {
 
 /* Center: hero featured post */
 .home-hero {
+  grid-area: hero;
   min-width: 0;
 }
 
 .hero-featured-image {
   display: block;
+  width: 100%;
   border-radius: 0;
   overflow: hidden;
   margin-bottom: 1rem;
 }
 
+.hero-featured-image picture {
+  display: block;
+  width: 100%;
+}
+
 .hero-featured-image img {
   width: 100%;
+  max-width: 100%;
   height: auto;
   max-height: 70vh;
   display: block;
+  object-fit: contain;
 }
 
 .home-hero h2 {
@@ -264,6 +276,8 @@ a {
 
 /* Right: one highlight per tag */
 .home-bytag {
+  grid-area: bytag;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -314,11 +328,11 @@ a {
 
 @media (max-width: 1024px) {
   .home-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "hero hero"
+      "recent bytag";
   }
-  .home-hero { order: 1; }
-  .home-recent { order: 2; }
-  .home-bytag { order: 3; }
   .home-recent {
     flex-direction: row;
     flex-wrap: wrap;
@@ -327,6 +341,25 @@ a {
   .recent-card {
     flex: 1 1 140px;
     min-width: 140px;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "hero"
+      "recent"
+      "bytag";
+  }
+
+  .home-recent {
+    flex-direction: column;
+  }
+
+  .recent-card {
+    flex: initial;
+    min-width: 0;
   }
 }
 
