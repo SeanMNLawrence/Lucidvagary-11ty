@@ -11,7 +11,8 @@ eleventyComputed:
 ---
 {% set relatedGroups = collections.artworks | relatedArtworks(artwork, 4, 4) %}
 
-<article class="artwork-page" aria-labelledby="artwork-title">
+<div class="post-with-sidebar">
+<article class="artwork-page post-single" aria-labelledby="artwork-title">
   <header class="artwork-header">
     <h1 id="artwork-title">{{ artwork.displayTitle }}</h1>
     {% if artwork.titleIsProposed %}
@@ -171,3 +172,35 @@ eleventyComputed:
   </section>
   {% endif %}
 </article>
+
+<aside class="post-sidebar" aria-labelledby="related-artworks-heading">
+  <h2 class="sidebar-title" id="related-artworks-heading">more from the artwork archive</h2>
+  {% for relation in relatedGroups.explicit %}
+  <a href="{{ relation.artwork.url }}" class="sidebar-card">
+    {% if relation.artwork.primaryAsset and relation.artwork.primaryAsset.available %}
+    <div class="sidebar-card-image">
+      {% optimizedImage relation.artwork.primaryAsset.path, relation.artwork.primaryAsset.alt, "thumbnail", "lazy" %}
+    </div>
+    {% endif %}
+    <div class="sidebar-card-body">
+      <h3>{{ relation.artwork.displayTitle }}</h3>
+    </div>
+  </a>
+  {% endfor %}
+  {% for relation in relatedGroups.semantic %}
+  <a href="{{ relation.artwork.url }}" class="sidebar-card">
+    {% if relation.artwork.primaryAsset and relation.artwork.primaryAsset.available %}
+    <div class="sidebar-card-image">
+      {% optimizedImage relation.artwork.primaryAsset.path, relation.artwork.primaryAsset.alt, "thumbnail", "lazy" %}
+    </div>
+    {% endif %}
+    <div class="sidebar-card-body">
+      <h3>{{ relation.artwork.displayTitle }}</h3>
+    </div>
+  </a>
+  {% endfor %}
+  {% if not relatedGroups.explicit.length and not relatedGroups.semantic.length %}
+  <a href="/archive/" class="sidebar-card">Browse the artwork archive</a>
+  {% endif %}
+</aside>
+</div>

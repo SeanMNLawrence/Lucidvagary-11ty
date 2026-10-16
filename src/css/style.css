@@ -673,6 +673,7 @@ a {
   object-fit: cover;
 }
 
+.sidebar-card-body h3,
 .sidebar-card-body h5 {
   font-size: 0.9rem;
   color: var(--text-heading);
@@ -693,9 +694,10 @@ a {
   }
 }
 .post-single {
+  width: 100%;
   max-width: 800px;
   margin: 0;
-  padding: 3rem 1.5rem;
+  padding: 0;
 }
 
 .post-header h1 {
