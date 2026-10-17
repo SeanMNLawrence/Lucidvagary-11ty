@@ -242,7 +242,7 @@ a {
   border-radius: 0;
   overflow: hidden;
   margin-bottom: 1rem;
-  aspect-ratio: 4 / 3;
+  height: clamp(560px, 88vh, 960px);
   background-color: transparent;
 }
 
