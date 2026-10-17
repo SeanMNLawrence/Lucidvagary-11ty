@@ -23,13 +23,13 @@
 }
 
 [data-theme="light"] {
-  --bg-primary: #ffffff;
-  --text-body: #1e293b;
-  --text-heading: #0f172a;
-  --text-muted: #64748b;
-  --text-dim: #94a3b8;
-  --text-content: #334155;
-  --header-bg: rgba(255, 255, 255, 0.85);
+  --bg-primary: #fef5e7;
+  --text-body: #000000;
+  --text-heading: #000000;
+  --text-muted: #000000;
+  --text-dim: #262626;
+  --text-content: #000000;
+  --header-bg: #ffffff;
   --border-accent: rgba(0, 0, 0, 0.35);
   --card-bg: rgba(147, 51, 234, 0.04);
   --card-border: rgba(0, 0, 0, 0.2);
@@ -242,24 +242,38 @@ a {
   border-radius: 0;
   overflow: hidden;
   margin-bottom: 1rem;
+  aspect-ratio: 4 / 3;
+  background-color: var(--card-bg);
+}
+
+.hero-featured-image picture {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .hero-featured-image img {
   width: 100%;
-  height: auto;
-  max-height: 70vh;
+  height: 100%;
+  object-fit: contain;
   display: block;
 }
 
-.home-hero h2 {
-  font-size: 2rem;
+.home-hero h3 {
+  font-size: 2.5rem;
+  line-height: 1.2;
   color: var(--text-heading);
   margin: 0.75rem 0;
 }
 
 .hero-featured-excerpt {
   color: var(--text-muted);
-  font-size: 1.05rem;
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+
+li::marker {
+  font-size: 1.35em;
 }
 
 /* Right: one highlight per tag */
@@ -305,11 +319,11 @@ a {
 
 .post-tag-mini {
   display: inline-block;
-  padding: 0.15rem 0.6rem;
+  padding: 0.2rem 0.75rem;
   border: 1px solid var(--tag-border);
   color: var(--tag-text);
   border-radius: 999px;
-  font-size: 0.7rem;
+  font-size: 0.85rem;
 }
 
 @media (max-width: 1024px) {
@@ -334,8 +348,11 @@ a {
   .home-grid {
     padding: 1.5rem 1rem;
   }
-  .home-hero h2 {
-    font-size: 1.5rem;
+  .home-hero h3 {
+    font-size: 1.85rem;
+  }
+  .hero-featured-excerpt {
+    font-size: 1.15rem;
   }
   .recent-card {
     flex: 1 1 100%;
@@ -576,11 +593,11 @@ a {
 
 .post-tag {
   display: inline-block;
-  padding: 0.25rem 0.75rem;
+  padding: 0.3rem 0.9rem;
   background-color: var(--tag-bg);
   color: var(--tag-text);
   border-radius: 999px;
-  font-size: 0.8rem;
+  font-size: 0.95rem;
 }
 
 .tag-list {
@@ -698,17 +715,14 @@ a {
 /* Pentaptych Grid - "The Pentaptych of Growth" */
 .pentaptych-grid {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
   margin: 2rem 0;
 }
 
-.pentaptych-row-top,
-.pentaptych-row-middle,
-.pentaptych-row-bottom {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+.pentaptych-grid .pentaptych-item {
+  flex: 0 1 calc((100% - 4rem) / 3);
 }
 
 .pentaptych-item {
@@ -744,11 +758,8 @@ a {
     gap: 1.5rem;
   }
 
-  .pentaptych-row-top,
-  .pentaptych-row-middle,
-  .pentaptych-row-bottom {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+  .pentaptych-grid .pentaptych-item {
+    flex-basis: 100%;
   }
 
   .pentaptych-item img {
@@ -926,5 +937,21 @@ a {
   display: block;
   margin-top: 1rem;
   font-size: 0.9rem;
+  text-decoration: underline;
+}
+
+.about-section h2 {
+  font-size: 1.3rem;
+  margin: 1.5rem 0 0.5rem;
+  color: var(--text-heading);
+}
+.about-section p,
+.about-section ul {
+  margin-bottom: 1rem;
+}
+.about-section ul {
+  padding-left: 1.5rem;
+}
+.about-section a {
   text-decoration: underline;
 }

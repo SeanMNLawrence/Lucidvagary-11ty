@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-title: "Holy Angel"
+title: "The Holy Guardian Angel"
 date: 1993-10-01
 anchorWork: true
 anchorOrder: 8
