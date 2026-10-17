@@ -127,6 +127,7 @@ module.exports = function (eleventyConfig) {
 
   // Pass through static assets as-is
   eleventyConfig.addPassthroughCopy("src/css");
+  eleventyConfig.addPassthroughCopy("src/_redirects");
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/posts/**/*.jpg");
   eleventyConfig.addPassthroughCopy("src/posts/**/*.png");
@@ -283,11 +284,6 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addCollection("compositeArtworks", function () {
     return artworkArchive.compositeArtworks;
-  });
-
-  // Preserve the existing post-based sketches page independently of the catalogue.
-  eleventyConfig.addCollection("sketches", function (collectionApi) {
-    return getCanonicalPosts(collectionApi).filter(isArtwork);
   });
 
   eleventyConfig.addFilter("artworksBy", (artworks, facet, value) => {
