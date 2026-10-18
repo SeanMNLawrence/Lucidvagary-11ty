@@ -782,12 +782,46 @@ li::marker {
 
 /* Footer */
 .site-footer {
-  text-align: center;
-  padding: 2rem 1.5rem;
-  color: var(--text-dim);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem clamp(1.5rem, 6vw, 240px);
+  background-color: #000000;
+  color: #ffffff;
   font-size: 0.875rem;
-  border-top: 1px solid var(--border-accent);
-  margin-top: 3rem;
+  margin-top: 0;
+}
+
+.site-footer a {
+  color: #ffffff;
+}
+
+.footer-about {
+  max-width: 34rem;
+  margin-left: auto;
+  text-align: left;
+}
+
+.footer-about-title {
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.footer-about p {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .site-footer {
+    flex-direction: column;
+  }
+  .footer-about {
+    margin-left: 0;
+  }
 }
 
 /* Search modal */
@@ -979,7 +1013,15 @@ li::marker {
 }
 
 .home-sketchbook {
-  border-top: 1px solid var(--border-accent);
+  background-color: #f2f3f4;
+  color: #000000;
+}
+
+.home-sketchbook .posts-title,
+.home-sketchbook .posts-intro,
+.home-sketchbook-grid span,
+.home-sketchbook .home-sketchbook-link {
+  color: #000000;
 }
 
 .home-sketchbook-heading {
