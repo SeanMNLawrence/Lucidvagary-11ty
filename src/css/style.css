@@ -1053,8 +1053,7 @@ li::marker {
   object-fit: cover;
 }
 
-.home-sketchbook-grid span,
-.home-sketchbook .home-sketchbook-link {
+.home-sketchbook-grid span {
   display: block;
   margin-top: 0.5rem;
   color: var(--text-muted);
