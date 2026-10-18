@@ -955,3 +955,32 @@ li::marker {
 .about-section a {
   text-decoration: underline;
 }
+
+.sketchbook-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.sketchbook-item {
+  min-width: 0;
+}
+
+.sketchbook-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.sketchbook-item figcaption {
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .sketchbook-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
