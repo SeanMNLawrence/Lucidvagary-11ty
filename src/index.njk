@@ -16,6 +16,7 @@ title: "lucid vagary"
       <div class="recent-image">
         {% optimizedImage post.data.image, "", "thumbnail", "lazy" %}
       </div>
+
       {% endif %}
       {% if post.data.tags %}
       <div class="post-tags-mini">
@@ -71,3 +72,35 @@ title: "lucid vagary"
   </aside>
 
 </div>
+
+<section class="home-sketchbook posts-section" aria-labelledby="home-sketchbook-title">
+  <div class="home-sketchbook-heading">
+    <div>
+      <h2 class="posts-title" id="home-sketchbook-title">From the sketchbook</h2>
+      <p class="posts-intro">Watercolor and drawing studies from the sketchbook.</p>
+    </div>
+    <a class="home-sketchbook-link" href="/sketchbook/">View all sketchbook pages &rarr;</a>
+  </div>
+  <div class="home-sketchbook-grid">
+    <a href="/sketchbook/#water-and-trees" aria-label="View Water and trees sketchbook page">
+      {% optimizedImage "/images/sketchbook-riverside.jpg", "Watercolor sketch of trees along a river or lake, with loose green washes across the water.", "card", "lazy" %}
+      <span>Water and trees</span>
+    </a>
+    <a href="/sketchbook/#building-study" aria-label="View Building study sketchbook page">
+      {% optimizedImage "/images/sketchbook-building.jpg", "Loose pen and watercolor sketch of a building facade, storefronts, and architectural details.", "card", "lazy" %}
+      <span>Building study</span>
+    </a>
+    <a href="/sketchbook/#still-life" aria-label="View Still life and flowers sketchbook page">
+      {% optimizedImage "/images/sketchbook-still-life.jpg", "Colorful sketchbook study with flowers, foliage, containers, and water in green, orange, and violet washes.", "card", "lazy" %}
+      <span>Still life and flowers</span>
+    </a>
+    <a href="/sketchbook/#street-study" aria-label="View Street study sketchbook page">
+      {% optimizedImage "/images/sketchbook-street.jpg", "Watercolor and ink sketch of an urban street between buildings, with loose figures in the distance.", "card", "lazy" %}
+      <span>Street study</span>
+    </a>
+    <a href="/sketchbook/#street-perspective" aria-label="View Street perspective sketchbook page">
+      {% optimizedImage "/images/sketchbook-street-study.jpg", "Pencil sketchbook study looking down a city street, with buildings, pedestrians, and a figure in the foreground.", "card", "lazy" %}
+      <span>Street perspective</span>
+    </a>
+  </div>
+</section>

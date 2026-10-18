@@ -66,8 +66,8 @@ const mainNavigation = DomUtils.findOne(
 );
 const mainNavigationLinks = DomUtils.findAll((node) => node.name === "a", mainNavigation ? [mainNavigation] : []);
 const mainNavigationRoutes = mainNavigationLinks.map((link) => getAttribute(link, "href"));
-if (JSON.stringify(mainNavigationRoutes) !== JSON.stringify(["/", "/collection/", "/archive/", "/constellations/"])) {
-  failures.push(`main navigation routes are ${JSON.stringify(mainNavigationRoutes)}; expected home, collections, archive, and constellations.`);
+if (JSON.stringify(mainNavigationRoutes) !== JSON.stringify(["/", "/collection/", "/archive/", "/constellations/", "/about/"])) {
+  failures.push(`main navigation routes are ${JSON.stringify(mainNavigationRoutes)}; expected home, collections, archive, constellations, and about.`);
 }
 if (!DomUtils.findOne(
   (node) => node.name === "a" && getAttribute(node, "href") === "/about/",
