@@ -47,6 +47,7 @@ title: "lucid vagary"
     </div>
     {% endif %}
     <h3><a href="{{ hero.url }}">{{ hero.data.title }}</a></h3>
+    <p><time class="post-date" datetime="{{ hero.date | htmlDateString }}">{{ hero.date | readableDate }}</time></p>
     {% if hero.data.description %}
     <p class="hero-featured-excerpt">{{ hero.data.description }}</p>
     {% endif %}
@@ -64,6 +65,7 @@ title: "lucid vagary"
       {% endif %}
       <div class="bytag-body">
         <span class="post-tag-mini">{{ item.tag }}</span>
+        <p><time class="post-date" datetime="{{ item.post.date | htmlDateString }}">{{ item.post.date | readableDate }}</time></p>
         <p class="bytag-excerpt">{{ item.post.data.description or item.post.data.title }}</p>
       </div>
     </a>
