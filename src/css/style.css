@@ -978,6 +978,55 @@ li::marker {
   margin-top: 0.5rem;
 }
 
+.home-sketchbook {
+  border-top: 1px solid var(--border-accent);
+}
+
+.home-sketchbook-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.home-sketchbook-link {
+  text-decoration: underline;
+  white-space: nowrap;
+}
+
+.home-sketchbook-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.home-sketchbook-grid a {
+  min-width: 0;
+}
+
+.home-sketchbook-grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.home-sketchbook-grid span {
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 767px) {
+  .home-sketchbook-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .home-sketchbook-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 640px) {
   .sketchbook-grid {
     grid-template-columns: 1fr;
