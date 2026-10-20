@@ -1077,3 +1077,11 @@ li::marker {
     gap: 1.5rem;
   }
 }
+
+.home-sketchbook-grid time,
+.sketchbook-item time {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
