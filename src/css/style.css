@@ -1049,14 +1049,15 @@ li::marker {
 .home-sketchbook-grid img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1280 / 614;
   object-fit: cover;
 }
 
 .home-sketchbook-grid span {
   display: block;
   margin-top: 0.5rem;
-  color: var(--text-muted);
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
 @media (max-width: 767px) {
