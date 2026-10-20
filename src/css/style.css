@@ -1049,7 +1049,8 @@ li::marker {
 .home-sketchbook-grid img {
   display: block;
   width: 100%;
-  aspect-ratio: 1280 / 614;
+  height: clamp(110px, 12vw, 220px);
+  aspect-ratio: auto;
   object-fit: cover;
 }
 
