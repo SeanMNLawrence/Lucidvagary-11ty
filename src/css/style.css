@@ -1085,3 +1085,14 @@ li::marker {
   font-size: 0.875rem;
   font-weight: 400;
 }
+
+.home-sketchbook-grid .post-tags-mini,
+.sketchbook-item .post-tags-mini {
+  margin-top: 0.6rem;
+  margin-bottom: 0;
+}
+
+.home-sketchbook .post-tag-mini {
+  border-color: #000000;
+  color: #000000;
+}
