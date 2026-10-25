@@ -11,11 +11,11 @@ const { relatedArtworks } = require("../src/_data/artworkRelations");
 
 const validationVocabulary = { ...vocabulary, constellations };
 
-test("catalogue has 56 unique artworks and 57 assigned digital assets", () => {
-  assert.equal(records.length, 56);
-  assert.equal(records.reduce((count, artwork) => count + artwork.assets.length, 0), 57);
-  assert.equal(new Set(records.map((artwork) => artwork.slug)).size, 56);
-  assert.equal(new Set(records.map((artwork) => artwork.artwork_id)).size, 56);
+test("catalogue has 63 unique artworks and 64 assigned digital assets", () => {
+  assert.equal(records.length, 63);
+  assert.equal(records.reduce((count, artwork) => count + artwork.assets.length, 0), 64);
+  assert.equal(new Set(records.map((artwork) => artwork.slug)).size, 63);
+  assert.equal(new Set(records.map((artwork) => artwork.artwork_id)).size, 63);
   assert.ok(records.every((artwork) => artwork.artwork_id.startsWith("lv-artwork-")));
   assert.equal(records.some((artwork) => artwork.slug === "sketch-003"), false);
   assert.equal(records.find((artwork) => artwork.slug === "cthonic-eye").title, "Cthonic Eye");

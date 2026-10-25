@@ -2354,5 +2354,292 @@
       ]
     },
     "artwork_id": "lv-artwork-holy-angel"
+  },
+  {
+    "title": "Water and trees",
+    "slug": "water-and-trees",
+    "original_title": null,
+    "proposed_title": null,
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.9
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "composite-worlds"
+    ],
+    "motifs": [
+      {
+        "id": "composite-worlds",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/water-and-trees/image.jpg",
+        "original_filename": "sketchbook-riverside.jpg",
+        "asset_capture_date": "2026-10-03",
+        "confidence": 0.95,
+        "alt": "Watercolor sketch of trees along a river or lake, with loose green washes across the water."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": "2026-10-03",
+      "notes": "Sketchbook page; date supplied by the artist.",
+      "source_records": [
+        "artist-supplied-2026-10"
+      ]
+    },
+    "artwork_id": "lv-artwork-water-and-trees"
+  },
+  {
+    "title": "Building study",
+    "slug": "building-study",
+    "original_title": null,
+    "proposed_title": null,
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.9
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "composite-worlds"
+    ],
+    "motifs": [
+      {
+        "id": "composite-worlds",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/building-study/image.jpg",
+        "original_filename": "sketchbook-building.jpg",
+        "asset_capture_date": "2026-10-03",
+        "confidence": 0.95,
+        "alt": "Loose pen and watercolor sketch of a building facade, storefronts, and architectural details."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": "2026-10-03",
+      "notes": "Sketchbook page; date supplied by the artist.",
+      "source_records": [
+        "artist-supplied-2026-10"
+      ]
+    },
+    "artwork_id": "lv-artwork-building-study"
+  },
+  {
+    "title": "Still life and flowers",
+    "slug": "still-life-and-flowers",
+    "original_title": null,
+    "proposed_title": null,
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.9
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "composite-worlds"
+    ],
+    "motifs": [
+      {
+        "id": "composite-worlds",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/still-life-and-flowers/image.jpg",
+        "original_filename": "sketchbook-still-life.jpg",
+        "asset_capture_date": "2026-10-04",
+        "confidence": 0.95,
+        "alt": "Colorful sketchbook study with flowers, foliage, containers, and water in green, orange, and violet washes."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": "2026-10-04",
+      "notes": "Sketchbook page; date supplied by the artist.",
+      "source_records": [
+        "artist-supplied-2026-10"
+      ]
+    },
+    "artwork_id": "lv-artwork-still-life-and-flowers"
+  },
+  {
+    "title": "Street study",
+    "slug": "street-study",
+    "original_title": null,
+    "proposed_title": null,
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.9
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "composite-worlds"
+    ],
+    "motifs": [
+      {
+        "id": "composite-worlds",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/street-study/image.jpg",
+        "original_filename": "sketchbook-street.jpg",
+        "asset_capture_date": "2026-10-15",
+        "confidence": 0.95,
+        "alt": "Watercolor and ink sketch of an urban street between buildings, with loose figures in the distance."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": "2026-10-15",
+      "notes": "Sketchbook page; date supplied by the artist.",
+      "source_records": [
+        "artist-supplied-2026-10"
+      ]
+    },
+    "artwork_id": "lv-artwork-street-study"
+  },
+  {
+    "title": "Street perspective",
+    "slug": "street-perspective",
+    "original_title": null,
+    "proposed_title": null,
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.9
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "composite-worlds"
+    ],
+    "motifs": [
+      {
+        "id": "composite-worlds",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/street-perspective/image.jpg",
+        "original_filename": "sketchbook-street-study.jpg",
+        "asset_capture_date": "2026-10-17",
+        "confidence": 0.95,
+        "alt": "Pencil sketchbook study looking down a city street, with buildings, pedestrians, and a figure in the foreground."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": "2026-10-17",
+      "notes": "Sketchbook page; date supplied by the artist.",
+      "source_records": [
+        "artist-supplied-2026-10"
+      ]
+    },
+    "artwork_id": "lv-artwork-street-perspective"
+  },
+  {
+    "title": "Lake shore",
+    "slug": "lake-shore",
+    "original_title": null,
+    "proposed_title": null,
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.9
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "composite-worlds"
+    ],
+    "motifs": [
+      {
+        "id": "composite-worlds",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/lake-shore/image.jpg",
+        "original_filename": "sketchbook-lake.jpg",
+        "asset_capture_date": "2026-10-25",
+        "confidence": 0.95,
+        "alt": "Watercolor and pen sketch of a tree-lined lake shore with green foliage, blue water reflections, and a yellow sun."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": "2026-10-25",
+      "notes": "Sketchbook page; date supplied by the artist.",
+      "source_records": [
+        "artist-supplied-2026-10"
+      ]
+    },
+    "artwork_id": "lv-artwork-lake-shore"
+  },
+  {
+    "title": "Blue city",
+    "slug": "blue-city",
+    "original_title": null,
+    "proposed_title": null,
+    "classification": {
+      "type": "sketch",
+      "confidence": 0.9
+    },
+    "curatorial_status": "curatorial-review",
+    "subjects": [
+      "composite-worlds"
+    ],
+    "motifs": [
+      {
+        "id": "composite-worlds",
+        "confidence": 0.6
+      }
+    ],
+    "themes": [],
+    "constellations": [],
+    "relationships": [],
+    "assets": [
+      {
+        "role": "primary",
+        "path": "/posts/blue-city/image.jpg",
+        "original_filename": "sketchbook-blue-city.jpg",
+        "asset_capture_date": "2026-10-25",
+        "confidence": 0.95,
+        "alt": "Pen sketch of fragmented city scenes, buildings, and a figure, set among diagonal blue watercolor strokes."
+      }
+    ],
+    "provenance": {
+      "artwork_creation_date": "2026-10-25",
+      "notes": "Sketchbook page; date supplied by the artist.",
+      "source_records": [
+        "artist-supplied-2026-10"
+      ]
+    },
+    "artwork_id": "lv-artwork-blue-city"
   }
 ]
