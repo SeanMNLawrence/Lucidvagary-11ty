@@ -10,7 +10,7 @@ layout: layouts/base.njk
       <nav class="post-tags" aria-label="Tags for {{ title }}">
         {% for tag in tags %}
           {% if tag != "poem" and tag != "fragment" and tag != "artwork" %}
-            <a href="/tags/{{ tag | slugify }}/" class="post-tag" rel="tag">More {{ tag }} posts</a>
+            <a href="/tags/{{ tag | slugify }}/" class="post-tag" rel="tag">{{ tag }}</a>
           {% endif %}
         {% endfor %}
       </nav>
